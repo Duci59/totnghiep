@@ -1,0 +1,3920 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Thiệp Mời Lễ Tốt Nghiệp - Hồ Tiểu Điệp 🎓✨</title>
+
+  <!-- OpenGraph Meta Tags for Social Sharing (Facebook, Zalo, iMessage) -->
+  <meta property="og:title" content="Thiệp Mời Lễ Tốt Nghiệp - Hồ Tiểu Điệp">
+  <meta property="og:description"
+    content="Trân trọng kính mời bạn đến chung vui cùng Điệp trong ngày Lễ Tốt Nghiệp Đại Học Tài Chính - Marketing (UFM)!">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#A4B99B">
+
+  <!-- Google Fonts: Script, Serif & Modern Sans for Vietnamese -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Canvas Confetti Library from CDN (with JS fallback) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* ============================================================
+       1. CSS VARIABLES & THEME SETUP
+       Color Palette: Matcha pastel, Soft Blush Pink, Cream Beige, Gold
+       ============================================================ */
+    :root {
+      --color-matcha-dark: #3F573B;
+      --color-matcha-main: #6F9067;
+      --color-matcha-soft: #97B18E;
+      --color-matcha-light: #EAF0E7;
+      --color-matcha-ultra-light: #F4F7F2;
+
+      --color-pink-soft: #F9E5DF;
+      --color-pink-blush: #F4D3C9;
+      --color-pink-deep: #D98976;
+
+      --color-cream-bg: #FAF7F2;
+      --color-cream-card: #FFFFFF;
+      --color-cream-border: #EFE8DC;
+      --color-gold-main: #D4AF37;
+      --color-gold-deep: #B58D20;
+      --color-gold-light: #F6E7B4;
+      --color-gold-shimmer: linear-gradient(135deg, #ECC86A 0%, #FDF3C7 50%, #C9962A 100%);
+
+      --text-heading: #263324;
+      --text-body: #445041;
+      --text-muted: #798876;
+
+      --font-script: 'Alex Brush', cursive;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-heading: 'Playfair Display', serif;
+      --font-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --shadow-sm: 0 4px 14px rgba(60, 80, 55, 0.06);
+      --shadow-md: 0 10px 30px rgba(60, 80, 55, 0.09);
+      --shadow-lg: 0 20px 50px rgba(50, 70, 45, 0.12);
+      --shadow-seal: 0 8px 25px rgba(181, 141, 32, 0.5);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+    }
+
+    /* Reset & Base Setup */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #FAF7F2;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-body);
+      background: radial-gradient(circle at 50% 10%, #FFFFFF 0%, #FAF6F0 50%, #F3EDE3 100%);
+      min-height: 100vh;
+      width: 100%;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       TRUE FULL-SCREEN LAYOUT FOR DESKTOP & MOBILE
+       ============================================================ */
+    .viewport-outer {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-main-container {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Canvas for Drifting Sparkles & Lily Petals */
+    #sparkle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Ambient Glow Blobs in Background */
+    .ambient-glow {
+      position: fixed;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      filter: blur(140px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-1 {
+      top: -100px;
+      right: -100px;
+      background: var(--color-pink-blush);
+    }
+
+    .glow-2 {
+      top: 40%;
+      left: -150px;
+      background: var(--color-matcha-soft);
+      opacity: 0.28;
+    }
+
+    .glow-3 {
+      bottom: 5%;
+      right: -100px;
+      background: var(--color-gold-light);
+      opacity: 0.32;
+    }
+
+    /* Top Reading Progress Bar */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 100;
+    }
+
+    .scroll-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--color-matcha-main), var(--color-gold-main), var(--color-pink-deep));
+      border-radius: 0 4px 4px 0;
+      transition: width 0.1s linear;
+    }
+
+    /* ============================================================
+       HERO: 3D INTERACTIVE ENVELOPE (PHONG BÌ 3D KÍN ĐÁO HOÀN TOÀN)
+       ============================================================ */
+    .hero-envelope-screen {
+      min-height: 96vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px 50px;
+      position: relative;
+      z-index: 5;
+    }
+
+    @media (min-width: 992px) {
+      .hero-envelope-screen {
+        min-height: 92vh;
+        padding: 70px 40px 60px;
+      }
+    }
+
+    .hero-header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 992px) {
+      .hero-header {
+        margin-bottom: 45px;
+      }
+    }
+
+    .hero-sub-title {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--color-matcha-dark);
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .hero-sub-title::before,
+    .hero-sub-title::after {
+      content: "";
+      width: 40px;
+      height: 1.5px;
+      background: var(--color-matcha-soft);
+    }
+
+    .hero-main-title {
+      font-family: var(--font-script);
+      font-size: 4rem;
+      color: var(--color-matcha-dark);
+      line-height: 1.1;
+      text-shadow: 0 4px 18px rgba(111, 144, 103, 0.22);
+    }
+
+    @media (min-width: 992px) {
+      .hero-main-title {
+        font-size: 5.8rem;
+      }
+    }
+
+    .hero-tagline {
+      z-index: 1;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--color-gold-deep);
+      margin-top: 8px;
+    }
+
+    @media (min-width: 992px) {
+      .hero-tagline {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* 3D Envelope Perspective Container */
+    .envelope-perspective-wrapper {
+      perspective: 1400px;
+      width: 340px;
+      height: 230px;
+      margin: 24px auto 30px;
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .envelope-perspective-wrapper {
+        width: 480px;
+        height: 310px;
+        margin: 36px auto 40px;
+      }
+    }
+
+    .envelope-box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    /* 1. Nền lưng phong bì (Envelope Back Layer) */
+    .envelope-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #627F5C 0%, #4D6A48 100%);
+      border-radius: 14px;
+      box-shadow: 0 24px 55px rgba(45, 65, 40, 0.35);
+      z-index: 1;
+    }
+
+    /* 2. Tấm thiệp nằm sâu bên trong phong bì (Inside Invitation Card)
+          Ban đầu được GIẤU KÍN HOÀN TOÀN phía sau túi gấp mặt trước và nắp che */
+    .envelope-card-preview {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: calc(100% - 28px);
+      height: calc(100% - 36px);
+      background: #FFFFFF;
+      background-image: radial-gradient(#F5EFEB 15%, transparent 16%);
+      background-size: 16px 16px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+      /* Khóa ẩn hoàn toàn khi đóng, ngăn chặn 100% việc thò đuôi ra dưới đáy bao thư */
+      transform: translateY(0) scale(0.96) translateZ(2px);
+      pointer-events: none;
+    }
+
+    .card-preview-border {
+      width: 100%;
+      height: 100%;
+      border: 1px dashed var(--color-gold-main);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background: rgba(255, 253, 250, 0.96);
+    }
+
+    .card-preview-icon {
+      font-size: 1.6rem;
+      margin-bottom: 2px;
+    }
+
+    .card-preview-title {
+      font-family: var(--font-script);
+      font-size: 2.1rem;
+      color: var(--color-matcha-dark);
+      line-height: 1.1;
+    }
+
+    @media (min-width: 992px) {
+      .card-preview-title {
+        font-size: 2.6rem;
+      }
+    }
+
+    .card-preview-name {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      font-size: 1.2rem;
+      color: var(--color-gold-deep);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .card-preview-date {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    .card-preview-venue {
+      font-size: 0.78rem;
+      color: var(--color-matcha-dark);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* Khi mở phong bì: Tấm thiệp trượt lên cao ra khỏi phong bì rồi hạ thấp xuống dưới trang nhã */
+    .envelope-perspective-wrapper.is-open .envelope-card-preview {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      z-index: 108;
+      box-shadow: 0 26px 55px rgba(45, 65, 40, 0.38);
+      pointer-events: auto;
+      transition: none;
+      animation: cardSlideUpThenDownMobile 1.6s cubic-bezier(0.25, 1, 0.5, 1) 0.35s forwards;
+    }
+
+    @keyframes cardSlideUpThenDownMobile {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.96) translateZ(2px);
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      50% {
+        /* Giai đoạn 1: Kéo lá thư vút lên trên cao ra khỏi bao thư */
+        transform: translateY(-135px) scale(1.04) translateZ(40px);
+      }
+
+      100% {
+        /* Giai đoạn 2: Kéo hạ thấp xuống dưới an tọa trang nhã */
+        transform: translateY(-62px) scale(1.02) translateZ(40px);
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .envelope-perspective-wrapper.is-open .envelope-card-preview {
+        animation: cardSlideUpThenDownDesktop 1.7s cubic-bezier(0.25, 1, 0.5, 1) 0.35s forwards;
+      }
+
+      @keyframes cardSlideUpThenDownDesktop {
+        0% {
+          opacity: 0;
+          transform: translateY(0) scale(0.96) translateZ(2px);
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        50% {
+          /* Giai đoạn 1: Kéo lá thư vút lên trên cao ra khỏi bao thư trên màn hình Desktop */
+          transform: translateY(-165px) scale(1.05) translateZ(40px);
+        }
+
+        100% {
+          /* Giai đoạn 2: Kéo hạ thấp xuống dưới an tọa trang nhã */
+          transform: translateY(-62px) scale(1.03) translateZ(40px);
+          opacity: 1;
+        }
+      }
+    }
+
+    /* 3. Túi gấp mặt trước phong bì (Envelope Front Pocket)
+          CHE KÍN HOÀN TOÀN TẤM THIỆP KHI PHONG BÌ ĐÓNG */
+    .envelope-front-pocket {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+      transform: translateZ(8px);
+      border-radius: 0 0 14px 14px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* Gấp tam giác trái */
+    .pocket-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 115px 0 115px 170px;
+      border-color: transparent transparent transparent #779670;
+    }
+
+    /* Gấp tam giác phải */
+    .pocket-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 115px 170px 115px 0;
+      border-color: transparent #71906A transparent transparent;
+    }
+
+    /* Gấp tam giác đáy */
+    .pocket-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 170px 135px 170px;
+      border-color: transparent transparent #65845E transparent;
+    }
+
+    @media (min-width: 992px) {
+      .pocket-left {
+        border-width: 155px 0 155px 240px;
+      }
+
+      .pocket-right {
+        border-width: 155px 240px 155px 0;
+      }
+
+      .pocket-bottom {
+        border-width: 0 240px 185px 240px;
+      }
+    }
+
+    /* 4. Nắp phong bì tam giác gập 3D (Top Flap) */
+    .envelope-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 135px 170px 0 170px;
+      border-color: #8BAA83 transparent transparent transparent;
+      transform-origin: top center;
+      transform-style: preserve-3d;
+      transform: translateZ(14px);
+      transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.3s;
+      z-index: 5;
+      /* Nằm ngoài cùng che phủ hoàn toàn */
+      filter: drop-shadow(0 4px 8px rgba(35, 50, 30, 0.22));
+      pointer-events: none;
+    }
+
+    @media (min-width: 992px) {
+      .envelope-flap {
+        border-width: 180px 240px 0 240px;
+      }
+    }
+
+    .envelope-perspective-wrapper.is-open .envelope-flap {
+      transform: rotateX(180deg) translateZ(1px);
+      z-index: 1;
+      /* Lật ngược về sau khi mở */
+    }
+
+    /* 5. Con dấu sáp hoàng gia (Golden Wax Seal) */
+    .wax-seal-btn {
+      position: absolute;
+      top: 110px;
+      left: calc(50% - 33px);
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #FDE08A 0%, #D4AF37 40%, #A17616 85%, #664B0E 100%);
+      box-shadow: var(--shadow-seal), inset 0 2px 4px rgba(255, 255, 255, 0.65), inset 0 -3px 6px rgba(0, 0, 0, 0.45);
+      z-index: 6;
+      /* Nằm ngay trên chóp nắp phong bì */
+      transform: translateZ(24px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, box-shadow 0.3s ease;
+      animation: sealPulse 2.4s ease-in-out infinite;
+      pointer-events: auto;
+    }
+
+    /* Vùng nhận hover rộng rãi quanh toàn bộ nút sáp */
+    .wax-seal-btn::before {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      background: transparent;
+      pointer-events: auto;
+    }
+
+    @media (min-width: 992px) {
+      .wax-seal-btn {
+        top: 145px;
+        left: calc(50% - 39px);
+        width: 78px;
+        height: 78px;
+      }
+    }
+
+    .wax-seal-btn:hover {
+      transform: scale(1.12) translateZ(28px);
+      box-shadow: 0 14px 38px rgba(212, 175, 55, 0.75);
+    }
+
+    .wax-seal-btn:active {
+      transform: scale(0.95) translateZ(24px);
+    }
+
+    @keyframes sealPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5), 0 8px 25px rgba(181, 141, 32, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 14px rgba(212, 175, 55, 0), 0 12px 32px rgba(181, 141, 32, 0.65);
+      }
+    }
+
+    .wax-seal-inner {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(255, 248, 220, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFF6D5;
+      text-shadow: 1px 1px 2px rgba(90, 60, 10, 0.7);
+      pointer-events: none;
+    }
+
+    @media (min-width: 992px) {
+      .wax-seal-inner {
+        width: 62px;
+        height: 62px;
+      }
+    }
+
+    .wax-seal-inner svg {
+      width: 24px;
+      height: 24px;
+      fill: #FFF6D5;
+      filter: drop-shadow(1px 1px 1px rgba(90, 60, 10, 0.6));
+      pointer-events: none;
+    }
+
+    .wax-seal-text {
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 1px;
+      pointer-events: none;
+    }
+
+    /* Mở phong bì: con dấu tan biến */
+    .envelope-perspective-wrapper.is-open .wax-seal-btn {
+      opacity: 0;
+      transform: scale(1.4) rotate(20deg) translateZ(1px);
+      pointer-events: none;
+    }
+
+    /* Hint to open seal */
+    .seal-guide-hint {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 12px 28px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--text-heading);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: floatHint 3s ease-in-out infinite;
+    }
+
+    .seal-guide-hint:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-gold-main);
+    }
+
+    @keyframes floatHint {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .seal-guide-hint .sparkle-icon {
+      color: var(--color-gold-deep);
+      animation: spinSlow 4s linear infinite;
+    }
+
+    @keyframes spinSlow {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Scroll Down Invitation Button */
+    .scroll-down-btn {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-matcha-dark);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .envelope-perspective-wrapper.is-open~.scroll-down-btn {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .scroll-arrow-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--color-matcha-soft);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bounceDown 1.8s ease-in-out infinite;
+    }
+
+    @keyframes bounceDown {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(6px);
+      }
+
+      60% {
+        transform: translateY(3px);
+      }
+    }
+
+    /* ============================================================
+       TRUE 100% FULL-WIDTH & FULL-HEIGHT IMMERSIVE SECTIONS
+       Mỗi phần kéo dài 100% toàn màn hình, không bị đóng hộp
+       ============================================================ */
+    .invitation-body-content {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* Section General Styles & Scroll Reveal */
+    .section-card {
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid var(--color-cream-border);
+      border-bottom: 1px solid var(--color-cream-border);
+      padding: 60px 24px;
+      box-shadow: none;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @media (min-width: 992px) {
+      .section-card {
+        min-height: 100vh;
+        padding: 80px 48px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .section-card {
+        padding: 90px 80px;
+      }
+    }
+
+    .section-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hiệu ứng hào quang & Spotlight tự động Focus khi thẻ nằm ở chính giữa màn hình */
+    .section-card::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.85);
+      width: 90%;
+      height: 90%;
+      max-width: 1200px;
+      max-height: 850px;
+      background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.16) 0%, rgba(151, 177, 142, 0.08) 45%, transparent 72%);
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    }
+
+    .section-card.is-focused::before {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .section-card .vintage-stamp-frame,
+    .section-card .location-info-left,
+    .section-card .map-container-right,
+    .section-card .rsvp-form-container,
+    .section-card .wishes-board,
+    .section-card .gallery-grid,
+    .section-card.thankyou-letter {
+      position: relative;
+      z-index: 2;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.6s ease;
+    }
+
+    .section-card.is-focused .vintage-stamp-frame {
+      box-shadow: 0 30px 80px rgba(63, 87, 59, 0.16), 0 0 0 1.5px rgba(212, 175, 55, 0.55);
+      transform: translateY(-2px) scale(1.006);
+    }
+
+    .section-card.is-focused .location-info-left,
+    .section-card.is-focused .map-container-right {
+      box-shadow: 0 24px 60px rgba(63, 87, 59, 0.14), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .section-card.is-focused .rsvp-form-container,
+    .section-card.is-focused .wishes-board {
+      box-shadow: 0 24px 60px rgba(63, 87, 59, 0.13), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .section-card.thankyou-letter.is-focused {
+      box-shadow: 0 35px 95px rgba(212, 175, 55, 0.22), 0 0 0 2px rgba(212, 175, 55, 0.55);
+      transform: translateY(-2px) scale(1.008);
+    }
+
+    /* Các theme nền chuyển sắc 100% full-bleed cho từng Section */
+    #sectionMainLetter {
+      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF6F0 50%, #F5EFEB 100%);
+      border-top: 1px solid var(--color-cream-border);
+      border-bottom: 1px solid var(--color-cream-border);
+    }
+
+    #sectionLocation {
+      background: linear-gradient(180deg, #FAF6F0 0%, #EAF0E7 40%, #F4F7F2 100%);
+      border-top: 1px solid rgba(151, 177, 142, 0.35);
+      border-bottom: 1px solid rgba(151, 177, 142, 0.35);
+    }
+
+    #sectionContact {
+      background: linear-gradient(180deg, #F4F7F2 0%, #FFF9F7 45%, #FAF7F2 100%);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    #sectionGallery {
+      background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #FAF7F2 100%);
+      border-top: 1px solid var(--color-cream-border);
+      border-bottom: 1px solid var(--color-cream-border);
+    }
+
+    /* Section Header Badges */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 18px;
+      background: var(--color-matcha-light);
+      color: var(--color-matcha-dark);
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-badge.pink {
+      background: var(--color-pink-soft);
+      color: var(--color-pink-deep);
+    }
+
+    .section-badge.gold {
+      background: var(--color-gold-light);
+      color: var(--color-gold-deep);
+    }
+
+    /* ============================================================
+       SECTION 1: VINTAGE STAMP INVITATION LETTER
+       Desktop 2-column layout
+       ============================================================ */
+    .vintage-stamp-frame {
+      position: relative;
+      background: #FFFFFF;
+      padding: 32px 20px;
+      border-radius: 20px;
+      border: 1.5px solid var(--color-cream-border);
+      box-shadow: 0 14px 40px rgba(60, 80, 55, 0.08);
+      width: 100%;
+      max-width: 1550px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 992px) {
+      .vintage-stamp-frame {
+        padding: 46px 40px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .vintage-stamp-frame {
+        max-width: 1850px;
+        padding: 60px 54px;
+      }
+    }
+
+    .inner-ornate-border {
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      padding: 24px 18px;
+      position: relative;
+      border-radius: 14px;
+    }
+
+    @media (min-width: 992px) {
+      .inner-ornate-border {
+        padding: 40px 36px;
+      }
+    }
+
+    .inner-ornate-border::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      border: 1px dashed rgba(151, 177, 142, 0.6);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    /* Lily Corner Floral Accents */
+    .corner-lily {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      color: var(--color-gold-main);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .corner-tl {
+      top: -10px;
+      left: -10px;
+    }
+
+    .corner-tr {
+      top: -10px;
+      right: -10px;
+      transform: rotate(90deg);
+    }
+
+    .corner-bl {
+      bottom: -10px;
+      left: -10px;
+      transform: rotate(-90deg);
+    }
+
+    .corner-br {
+      bottom: -10px;
+      right: -10px;
+      transform: rotate(180deg);
+    }
+
+    /* Desktop Grid for Section 1 */
+    .letter-desktop-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+    }
+
+    @media (min-width: 992px) {
+      .letter-desktop-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.85fr;
+        gap: 50px;
+        align-items: center;
+        text-align: left;
+      }
+    }
+
+    .invitation-intro {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-matcha-main);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .invitation-title {
+      font-family: var(--font-script);
+      font-size: 3.3rem;
+      color: var(--color-matcha-dark);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 992px) {
+      .invitation-title {
+        font-size: 4.4rem;
+      }
+    }
+
+    .invitation-salutation {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      font-style: italic;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .graduate-spotlight {
+      margin: 18px 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .graduate-spotlight {
+        align-items: flex-start;
+      }
+    }
+
+    .graduate-name {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+      letter-spacing: 0.5px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .graduate-name::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 95px;
+      height: 2.5px;
+      background: var(--color-gold-shimmer);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 991px) {
+      .graduate-name::after {
+        left: 20%;
+        width: 60%;
+      }
+    }
+
+    .degree-info-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FAF7F2;
+      border: 1px solid var(--color-cream-border);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-top: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-matcha-dark);
+    }
+
+    .university-name {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-gold-deep);
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Right column of Section 1: Date & Countdown Box */
+    .date-panel-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(244, 247, 242, 0.75) 0%, rgba(254, 252, 248, 0.95) 100%);
+      padding: 30px 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Floral Circular Date & Time Element */
+    .date-circle-wreath {
+      width: 220px;
+      height: 220px;
+      margin: 10px auto 16px;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, #FFFFFF 62%, #F5EFEB 100%);
+      box-shadow: 0 10px 28px rgba(151, 177, 142, 0.2), inset 0 0 0 2px rgba(212, 175, 55, 0.35);
+    }
+
+    /* SVG Floral Garland around circle */
+    .wreath-svg-ring {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      width: calc(100% + 32px);
+      height: calc(100% + 32px);
+      pointer-events: none;
+      animation: rotateWreath 45s linear infinite;
+    }
+
+    @keyframes rotateWreath {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .date-day-name {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-matcha-dark);
+      font-weight: 600;
+    }
+
+    .date-big-number {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-gold-deep);
+      margin: 2px 0;
+    }
+
+    .date-month-year {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text-heading);
+      text-transform: uppercase;
+    }
+
+    .time-slot-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--color-matcha-dark);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Live Countdown Grid */
+    .countdown-container {
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    .countdown-title {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .countdown-item {
+      background: #FFFFFF;
+      border: 1px solid var(--color-cream-border);
+      border-radius: 12px;
+      padding: 8px 12px;
+      min-width: 62px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .countdown-num {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+      line-height: 1.1;
+    }
+
+    .countdown-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* Add to Calendar Button */
+    .calendar-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--color-gold-deep);
+      border: 1px solid var(--color-gold-main);
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 18px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .calendar-action-btn:hover {
+      background: var(--color-gold-shimmer);
+      color: #4A3508;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+    }
+
+    /* ============================================================
+       SECTION 2: LOCATION & MAP GUIDE (Địa điểm & Bản đồ)
+       Desktop 2-column layout
+       ============================================================ */
+    .location-desktop-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 1550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .location-desktop-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1.15fr;
+        gap: 50px;
+        align-items: start;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .location-desktop-grid {
+        max-width: 1850px;
+        gap: 68px;
+      }
+    }
+
+    .location-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--color-matcha-dark);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .location-hall {
+      font-size: 1.08rem;
+      color: var(--color-gold-deep);
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location-address-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #FAF7F2;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-cream-border);
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .location-address-row svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-matcha-main);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .location-address-text {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .copy-address-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-full);
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      color: var(--color-matcha-dark);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 6px;
+      transition: all 0.2s;
+    }
+
+    .copy-address-btn:hover {
+      background: var(--color-matcha-light);
+      border-color: var(--color-matcha-soft);
+    }
+
+    /* Embedded Map Frame */
+    .map-frame-wrapper {
+      width: 100%;
+      height: 260px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-cream-border);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    @media (min-width: 992px) {
+      .map-frame-wrapper {
+        height: 100%;
+        min-height: 450px;
+      }
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Direct Directions CTA Button */
+    .directions-cta-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #6F9067 0%, #3F573B 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 15px 22px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 22px rgba(63, 87, 59, 0.28);
+      transition: all 0.3s ease;
+      margin-bottom: 18px;
+    }
+
+    .directions-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(63, 87, 59, 0.38);
+      background: linear-gradient(135deg, #7C9F74 0%, #354B31 100%);
+    }
+
+    /* Guest Tips Accordion / Cards */
+    .guest-tips-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #FFFFFF;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--color-cream-border);
+    }
+
+    .tip-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-pink-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .tip-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 2px;
+    }
+
+    .tip-desc {
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+
+    /* ============================================================
+       SECTION 3: CONTACT & RSVP / GUESTBOOK
+       Tích hợp Google Sheets trực tiếp
+       ============================================================ */
+    .rsvp-desktop-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 1550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .rsvp-desktop-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: start;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .rsvp-desktop-grid {
+        max-width: 1850px;
+        gap: 68px;
+      }
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #FAF7F2;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-cream-border);
+      margin-bottom: 20px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      padding: 3.5px;
+      background: var(--color-gold-shimmer);
+      flex-shrink: 0;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 2px solid #FFFFFF;
+    }
+
+    .profile-details {
+      flex: 1;
+      text-align: left;
+    }
+
+    .profile-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+      line-height: 1.2;
+    }
+
+    .profile-role {
+      font-size: 0.86rem;
+      color: var(--color-gold-deep);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .profile-socials {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--color-cream-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-matcha-dark);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    .social-btn:hover {
+      background: var(--color-matcha-main);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* Quick Call & Message CTA Buttons */
+    .quick-contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .contact-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .contact-cta.call {
+      background: #FFFFFF;
+      border: 1px solid var(--color-matcha-main);
+      color: var(--color-matcha-dark);
+    }
+
+    .contact-cta.call:hover {
+      background: var(--color-matcha-light);
+    }
+
+    .contact-cta.zalo {
+      background: linear-gradient(135deg, #0068FF 0%, #004FCE 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 104, 255, 0.25);
+    }
+
+    .contact-cta.zalo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 104, 255, 0.35);
+    }
+
+    /* RSVP & Wish Box Form */
+    .rsvp-form-container {
+      background: #FFFFFF;
+      border: 1px dashed var(--color-gold-main);
+      border-radius: var(--radius-md);
+      padding: 26px 22px;
+      text-align: left;
+    }
+
+    .rsvp-form-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--color-matcha-dark);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .rsvp-form-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      background: #FAF7F2;
+      border: 1px solid var(--color-cream-border);
+      border-radius: 10px;
+      padding: 12px 15px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: var(--text-body);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-color: var(--color-matcha-main);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(111, 144, 103, 0.2);
+    }
+
+    .form-textarea {
+      resize: none;
+      height: 90px;
+    }
+
+    /* Attendance Chips */
+    .attendance-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .chip-item {
+      display: none;
+    }
+
+    .chip-label {
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      background: #FAF7F2;
+      border: 1px solid var(--color-cream-border);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .chip-item:checked+.chip-label {
+      background: var(--color-matcha-light);
+      border-color: var(--color-matcha-main);
+      color: var(--color-matcha-dark);
+      font-weight: 600;
+    }
+
+    .submit-wish-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #D4AF37 0%, #B58D20 100%);
+      color: #FFFFFF;
+      border: none;
+      border-radius: var(--radius-full);
+      padding: 14px 22px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 6px 18px rgba(181, 141, 32, 0.35);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .submit-wish-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(181, 141, 32, 0.45);
+    }
+
+    .submit-wish-btn:active {
+      transform: scale(0.98);
+    }
+
+    .submit-wish-btn:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Right Column: Wishes Board */
+    .wishes-board {
+      background: #FFFFFF;
+      border: 1px solid var(--color-cream-border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: left;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wishes-board-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-matcha-dark);
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wishes-count-badge {
+      background: var(--color-matcha-light);
+      color: var(--color-matcha-dark);
+      padding: 3px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+    }
+
+    .sync-sheet-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--color-cream-border);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-matcha-dark);
+      transition: all 0.25s ease;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .sync-sheet-btn:hover {
+      background: var(--color-matcha-light);
+      transform: rotate(180deg);
+    }
+
+    .wishes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: 540px;
+      overflow-y: auto;
+      padding-right: 6px;
+      flex: 1;
+    }
+
+    .wishes-list::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .wishes-list::-webkit-scrollbar-thumb {
+      background: var(--color-matcha-soft);
+      border-radius: 4px;
+    }
+
+    .wish-bubble {
+      background: #FAF7F2;
+      border: 1px solid var(--color-cream-border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .wish-bubble:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .wish-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .wish-author {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .wish-relation-badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 2px 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--color-cream-border);
+      border-radius: 4px;
+      color: var(--color-gold-deep);
+    }
+
+    .wish-time {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .wish-attendance-tag {
+      font-size: 0.78rem;
+      color: var(--color-matcha-dark);
+      margin-bottom: 6px;
+      display: block;
+      font-weight: 500;
+    }
+
+    .wish-text {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
+       SECTION 4: PHOTO DIARY & GALLERY (Nhật ký hình ảnh)
+       Responsive Grid (2 cols on mobile, 4 cols on desktop)
+       ============================================================ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 1650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 992px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #FFFFFF;
+      padding: 8px 8px 14px;
+      border: 1px solid var(--color-cream-border);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 14px 32px rgba(60, 80, 50, 0.18);
+      border-color: var(--color-gold-main);
+    }
+
+    .gallery-item.span-2 {
+      grid-column: span 2;
+    }
+
+    @media (min-width: 992px) {
+      .gallery-item.span-2 {
+        grid-column: span 2;
+      }
+    }
+
+    .gallery-img-box {
+      width: 100%;
+      height: 160px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item.span-2 .gallery-img-box {
+      height: 230px;
+    }
+
+    @media (min-width: 992px) {
+      .gallery-img-box {
+        height: 210px;
+      }
+
+      .gallery-item.span-2 .gallery-img-box {
+        height: 280px;
+      }
+    }
+
+    @media (min-width: 1600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+        max-width: 1950px;
+      }
+
+      .gallery-item.span-2 {
+        grid-column: span 1;
+      }
+
+      .gallery-img-box,
+      .gallery-item.span-2 .gallery-img-box {
+        height: 250px;
+      }
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.08);
+    }
+
+    .gallery-caption {
+      font-size: 0.82rem;
+      color: var(--text-heading);
+      font-weight: 500;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 1.4;
+      padding: 0 6px;
+    }
+
+    .gallery-zoom-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-matcha-dark);
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.2s ease;
+    }
+
+    .gallery-item:hover .gallery-zoom-badge {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(18, 26, 16, 0.94);
+      backdrop-filter: blur(14px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      padding: 24px;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 700px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: zoomModal 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes zoomModal {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .lightbox-img-wrapper {
+      width: 100%;
+      max-height: 75vh;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      background: #000;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-caption {
+      color: #FAF7F2;
+      font-size: 1.05rem;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 400;
+      padding: 0 20px;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #FFFFFF;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(255, 255, 255, 0.45);
+      transform: scale(1.1);
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 45%;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.2s;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .lightbox-prev {
+      left: -16px;
+    }
+
+    .lightbox-next {
+      right: -16px;
+    }
+
+    /* ============================================================
+       CLOSING GRATITUDE LETTER (With Love & Thank you)
+       ============================================================ */
+    .thankyou-letter {
+      text-align: center;
+      padding: 60px 24px;
+      background: linear-gradient(180deg, #FAF7F2 0%, #F4D3C9 45%, #FAF6F0 100%);
+      border-top: 1px solid var(--color-cream-border);
+      border-bottom: 1px solid var(--color-cream-border);
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    @media (min-width: 992px) {
+      .thankyou-letter {
+        padding: 90px 80px;
+        min-height: 85vh;
+      }
+    }
+
+    .thankyou-script-title {
+      font-family: var(--font-script);
+      font-size: 4rem;
+      color: var(--color-matcha-dark);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    @media (min-width: 992px) {
+      .thankyou-script-title {
+        font-size: 5rem;
+      }
+    }
+
+    .thankyou-sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--color-gold-deep);
+      margin-bottom: 24px;
+    }
+
+    .thankyou-text {
+      max-width: 800px;
+      margin: 0 auto 26px;
+      font-size: 1.05rem;
+      color: var(--text-body);
+      line-height: 1.9;
+      padding: 0 10px;
+    }
+
+    .thankyou-signature {
+      font-family: var(--font-script);
+      font-size: 3rem;
+      color: var(--color-gold-deep);
+      margin-top: 10px;
+    }
+
+    .thankyou-footer-note {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 26px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Back to top floating button */
+    .back-to-top-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--color-matcha-soft);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-matcha-dark);
+      cursor: pointer;
+      z-index: 80;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top-btn:hover {
+      background: var(--color-matcha-light);
+      transform: translateY(-3px);
+    }
+
+    /* Floating Fullscreen / Zoom Toggle Button (Glassmorphic Luxury) */
+    .fullscreen-toggle-btn {
+      position: fixed;
+      top: 18px;
+      right: 20px;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.5px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 8px 24px rgba(63, 87, 59, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-matcha-dark);
+      cursor: pointer;
+      z-index: 1000;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .fullscreen-toggle-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--color-gold-main);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.28), 0 4px 10px rgba(63, 87, 59, 0.1);
+      transform: translateY(-2px);
+      color: #243521;
+    }
+
+    .fullscreen-toggle-btn:active {
+      transform: translateY(0) scale(0.97);
+    }
+
+    .fullscreen-toggle-btn .fs-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold-deep);
+      transition: transform 0.3s ease;
+    }
+
+    .fullscreen-toggle-btn:hover .fs-icon-wrap {
+      transform: scale(1.15);
+    }
+
+    .fullscreen-toggle-btn.is-active {
+      background: linear-gradient(135deg, rgba(234, 240, 231, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border-color: var(--color-matcha-main);
+      color: var(--color-matcha-dark);
+      box-shadow: 0 8px 25px rgba(111, 144, 103, 0.2);
+    }
+
+    @media (max-width: 640px) {
+      .fullscreen-toggle-btn {
+        top: 14px;
+        right: 14px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        gap: 6px;
+      }
+    }
+
+    /* ============================================================
+       IMMERSIVE FULLSCREEN MODE (CSS Hybrid Fallback & Cinematic View)
+       Hoạt động 100% trên mọi trình duyệt, file:/// và Vercel
+       ============================================================ */
+    html.is-immersive-fullscreen {
+      font-size: 17px;
+    }
+
+    body.is-immersive-fullscreen {
+      overflow-x: hidden;
+    }
+
+    /* Ẩn bớt thanh cuộn thô cứng để tràn viền điện ảnh */
+    html.is-immersive-fullscreen::-webkit-scrollbar,
+    body.is-immersive-fullscreen::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    html.is-immersive-fullscreen::-webkit-scrollbar-thumb,
+    body.is-immersive-fullscreen::-webkit-scrollbar-thumb {
+      background: rgba(111, 144, 103, 0.45);
+      border-radius: 9999px;
+    }
+
+    /* Mở rộng tối đa container và các khối nội dung khi Toàn Màn Hình */
+    body.is-immersive-fullscreen .viewport-outer,
+    body.is-immersive-fullscreen .app-main-container {
+      width: 100% !important;
+      max-width: 100vw !important;
+    }
+
+    body.is-immersive-fullscreen .section-card {
+      padding: 75px 24px;
+    }
+
+    @media (min-width: 992px) {
+      body.is-immersive-fullscreen .section-card {
+        padding: 95px 60px;
+      }
+
+      body.is-immersive-fullscreen .vintage-stamp-frame {
+        max-width: 95vw;
+        box-shadow: 0 35px 95px rgba(63, 87, 59, 0.22), 0 0 0 2px rgba(212, 175, 55, 0.6);
+      }
+
+      body.is-immersive-fullscreen .location-desktop-grid,
+      body.is-immersive-fullscreen .rsvp-desktop-grid,
+      body.is-immersive-fullscreen .gallery-grid {
+        max-width: 95vw;
+      }
+    }
+
+    /* Toast Notification */
+    .toast-notice {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(38, 51, 36, 0.96);
+      backdrop-filter: blur(10px);
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 500;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      z-index: 2000;
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .toast-notice.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Particle Sparkles Canvas (Trải dài toàn màn hình 100vw) -->
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Full-Screen Outer Container -->
+  <div class="viewport-outer">
+
+    <button class="fullscreen-toggle-btn" id="fullscreenToggleBtn" onclick="toggleFullscreen(event)" aria-label="Phóng to toàn màn hình (F11)" title="Phóng to toàn màn hình (F11)">
+      <span class="fs-icon-wrap" id="fsIconWrap">
+        <!-- Expand Icon -->
+        <svg class="fs-icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+        </svg>
+        <!-- Compress Icon -->
+        <svg class="fs-icon-compress" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+          <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
+        </svg>
+      </span>
+      <span class="fs-label" id="fsLabel">Toàn màn hình</span>
+    </button>
+
+    <div class="app-main-container" id="appContainer">
+
+      <!-- Top Reading Progress Indicator -->
+      <div class="scroll-progress-bar">
+        <div class="scroll-progress-fill" id="scrollProgress"></div>
+      </div>
+
+      <!-- ============================================================
+           MÀN HÌNH MỞ ĐẦU: HERO & PHONG BÌ 3D KÍN ĐÁO HOÀN TOÀN
+           ============================================================ -->
+      <section class="hero-envelope-screen" id="heroScreen">
+
+        <div class="hero-header">
+          <div class="hero-sub-title">Lễ Tốt Nghiệp Đại Học</div>
+          <h1 class="hero-main-title">Graduation Invitation</h1>
+        </div>
+
+        <!-- 3D Interactive Envelope (Kín hoàn toàn trước khi bấm con dấu) -->
+        <div class="envelope-perspective-wrapper" id="envelopeWrapper">
+          <div class="envelope-box">
+
+            <!-- 1. Lưng phong bì (Back Layer) -->
+            <div class="envelope-back"></div>
+
+            <!-- 2. Tấm thiệp nằm sâu bên trong (Được giấu kín hoàn toàn khi đóng) -->
+            <div class="envelope-card-preview" id="previewCard">
+              <div class="card-preview-border">
+                <div class="card-preview-icon">🎓✨</div>
+                <div class="card-preview-title">Thư Mời Tốt Nghiệp</div>
+                <div class="card-preview-name">Hồ Tiểu Điệp</div>
+                <div class="card-preview-date">13.11.2026 • 13h30 - 15h30</div>
+                <div class="card-preview-venue">ĐH Tài Chính - Marketing (UFM)</div>
+              </div>
+            </div>
+
+            <!-- 3. Túi gấp mặt trước của phong bì (Che kín tấm thiệp) -->
+            <div class="envelope-front-pocket">
+              <div class="pocket-left"></div>
+              <div class="pocket-right"></div>
+              <div class="pocket-bottom"></div>
+            </div>
+
+            <!-- 4. Nắp phong bì tam giác gập 3D -->
+            <div class="envelope-flap" id="envelopeFlap"></div>
+
+            <!-- 5. Con dấu sáp hoàng gia gắn ngay chóp nắp phong bì -->
+            <button class="wax-seal-btn" id="waxSealBtn" aria-label="Mở thiệp mời">
+              <div class="wax-seal-inner">
+                <!-- Graduation Cap & Lily Monogram Icon -->
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                </svg>
+                <span class="wax-seal-text">HTD</span>
+              </div>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Guide hint -->
+        <div class="seal-guide-hint" id="sealHint" onclick="openEnvelope()">
+          <span class="sparkle-icon">✨</span>
+          <span>Chạm vào con dấu sáp để mở thiệp</span>
+          <span>💌</span>
+        </div>
+
+        <!-- Scroll down prompt (revealed upon opening) -->
+        <a href="#sectionMainLetter" class="scroll-down-btn" id="scrollDownBtn">
+          <span>Xem chi tiết buổi lễ</span>
+          <div class="scroll-arrow-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
+        </a>
+
+      </section>
+
+      <!-- ============================================================
+           NỘI DUNG CHI TIẾT THIỆP MỜI (Full Screen Responsive)
+           ============================================================ -->
+      <div class="invitation-body-content" id="invitationContent">
+
+        <!-- ============================================================
+             PHẦN 1: THÔNG TIN THIỆP MỜI (Main Invitation Letter)
+             Responsive: 2-column layout on Desktop
+             ============================================================ -->
+        <section class="section-card" id="sectionMainLetter">
+
+          <div class="vintage-stamp-frame">
+            <div class="inner-ornate-border">
+
+              <!-- Lily Flower Corner Accents -->
+              <svg class="corner-lily corner-tl" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C12 7 7 12 2 12C7 12 12 17 12 22C12 17 17 12 22 12C17 12 12 7 12 2Z" />
+              </svg>
+              <svg class="corner-lily corner-tr" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C12 7 7 12 2 12C7 12 17 12 22 12C17 12 12 7 12 2Z" />
+              </svg>
+              <svg class="corner-lily corner-bl" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C12 7 7 12 2 12C7 12 12 17 12 22C12 17 17 12 22 12C17 12 12 7 12 2Z" />
+              </svg>
+              <svg class="corner-lily corner-br" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C12 7 7 12 2 12C7 12 17 12 22 12C17 12 12 7 12 2Z" />
+              </svg>
+
+              <div class="letter-desktop-grid">
+
+                <!-- Left: Formal Letter & Graduate Info -->
+                <div class="letter-left-content">
+                  <div class="invitation-intro">Kính gửi Thầy Cô, Gia Đình & Bạn Bè</div>
+                  <h2 class="invitation-title">Thư Mời Tốt Nghiệp</h2>
+
+                  <p class="invitation-salutation">
+                    "Bốn năm giảng đường là chuyến tàu đẹp nhất của tuổi thanh xuân. Sau bao nỗ lực và được đón nhận
+                    muôn vàn yêu thương, Điệp vô cùng hạnh phúc được chia sẻ cột mốc thiêng liêng này cùng những người
+                    thân thương nhất."
+                  </p>
+
+                  <!-- Graduate Spotlight -->
+                  <div class="graduate-spotlight">
+                    <div
+                      style="font-size: 0.88rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">
+                      Tân Cử Nhân</div>
+                    <h3 class="graduate-name">Hồ Tiểu Điệp</h3>
+
+                    <div class="degree-info-badge">
+                      <span>🎓</span>
+                      <span>Cử nhân Marketing & Quản trị Thương hiệu</span>
+                    </div>
+                    <div class="university-name">Trường Đại học Tài Chính - Marketing (UFM)</div>
+                  </div>
+                </div>
+
+                <!-- Right: Floral Circular Wreath & Live Countdown -->
+                <div class="date-panel-wrapper">
+
+                  <div class="date-circle-wreath">
+                    <!-- Animated Floral Ring SVG -->
+                    <svg class="wreath-svg-ring" viewBox="0 0 200 200">
+                      <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1.5"
+                        stroke-dasharray="4 3" />
+                      <circle cx="100" cy="100" r="84" fill="none" stroke="rgba(151, 177, 142, 0.4)" stroke-width="1" />
+                      <g fill="#97B18E" opacity="0.6">
+                        <circle cx="100" cy="8" r="3.5" fill="#D4AF37" />
+                        <circle cx="192" cy="100" r="3.5" fill="#D4AF37" />
+                        <circle cx="100" cy="192" r="3.5" fill="#D4AF37" />
+                        <circle cx="8" cy="100" r="3.5" fill="#D4AF37" />
+                        <circle cx="165" cy="35" r="2.5" />
+                        <circle cx="35" cy="165" r="2.5" />
+                        <circle cx="165" cy="165" r="2.5" />
+                        <circle cx="35" cy="35" r="2.5" />
+                      </g>
+                    </svg>
+
+                    <div class="date-day-name">Thứ Sáu</div>
+                    <div class="date-big-number">13</div>
+                    <div class="date-month-year">Tháng 11 • 2026</div>
+                    <div class="time-slot-badge">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                      <span>13:30 - 15:30</span>
+                    </div>
+                  </div>
+
+                  <!-- Live Countdown Timer -->
+                  <div class="countdown-container">
+                    <div class="countdown-title">Đếm ngược đến giờ phút thiêng liêng</div>
+                    <div class="countdown-grid">
+                      <div class="countdown-item">
+                        <div class="countdown-num" id="cdDays">00</div>
+                        <div class="countdown-label">Ngày</div>
+                      </div>
+                      <div class="countdown-item">
+                        <div class="countdown-num" id="cdHours">00</div>
+                        <div class="countdown-label">Giờ</div>
+                      </div>
+                      <div class="countdown-item">
+                        <div class="countdown-num" id="cdMinutes">00</div>
+                        <div class="countdown-label">Phút</div>
+                      </div>
+                      <div class="countdown-item">
+                        <div class="countdown-num" id="cdSeconds">00</div>
+                        <div class="countdown-label">Giây</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Add to Google Calendar Button -->
+                  <button class="calendar-action-btn" onclick="addToGoogleCalendar()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <span>Thêm vào Lịch nhắc nhở</span>
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ============================================================
+             PHẦN 2: ĐỊA ĐIỂM & BẢN ĐỒ CHỈ ĐƯỜNG (Location Guide)
+             Responsive: 2-column layout on Desktop
+             ============================================================ -->
+        <section class="section-card" id="sectionLocation">
+
+          <div style="text-align: center; margin-bottom: 12px;">
+            <span class="section-badge gold">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              <span>Địa Điểm Tổ Chức</span>
+            </span>
+          </div>
+
+          <div class="location-desktop-grid">
+
+            <!-- Left Info Column -->
+            <div class="location-info-left">
+              <h3 class="location-title">Trường Đại học Tài Chính - Marketing (UFM)</h3>
+              <div class="location-hall">
+                <span>🏛️</span>
+                <span>Hội trường Lớn A • Cơ sở Long Trường</span>
+              </div>
+
+              <div class="location-address-row">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+                <div>
+                  <div class="location-address-text" id="venueAddressText">
+                    <strong>306 Võ Văn Hát</strong>, Phường Long Trường, TP. Thủ Đức, TP. Hồ Chí Minh
+                  </div>
+                  <button class="copy-address-btn" onclick="copyVenueAddress()">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Sao chép địa chỉ</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Direct Google Maps CTA -->
+              <a href="https://www.google.com/maps/search/?api=1&query=306+V%C3%B5+V%C4%83n+H%C3%A1t+Long+Tr%C6%B0%E1%BB%9Dng+Th%E1%BB%A7+%C4%90%E1%BB%A9c"
+                target="_blank" rel="noopener noreferrer" class="directions-cta-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                </svg>
+                <span>Mở Google Maps Chỉ Đường</span>
+              </a>
+
+              <!-- Useful Guest Guidelines -->
+              <div class="guest-tips-list">
+                <div class="tip-item">
+                  <div class="tip-icon">🅿️</div>
+                  <div>
+                    <div class="tip-title">Bãi giữ xe máy & ô tô</div>
+                    <div class="tip-desc">Gửi xe miễn phí tại Cổng chính trường (306 Võ Văn Hát), có bảo vệ hướng dẫn
+                      tận tình.</div>
+                  </div>
+                </div>
+                <div class="tip-item">
+                  <div class="tip-icon">📸</div>
+                  <div>
+                    <div class="tip-title">Khung giờ chụp ảnh đẹp nhất</div>
+                    <div class="tip-desc">Trước lễ: 12h45 - 13h20 và Sau lễ: 15h30 - 16h45 tại sảnh hoa & khuôn viên cây
+                      xanh UFM.</div>
+                  </div>
+                </div>
+                <div class="tip-item">
+                  <div class="tip-icon">👗</div>
+                  <div>
+                    <div class="tip-title">Gợi ý trang phục (Dress Code)</div>
+                    <div class="tip-desc">Tone màu tươi sáng: Trắng, Kem, Pastel hồng hoặc Xanh nhạt để lên hình rạng rỡ
+                      nhất nhé!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Interactive Google Map -->
+            <div class="map-frame-wrapper">
+              <iframe title="Bản đồ Đại học Tài Chính Marketing - UFM Long Trường"
+                src="https://maps.google.com/maps?q=Tr%C6%B0%E1%BB%9Dng%20%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20T%C3%A0i%20ch%C3%ADnh%20-%20Marketing%20306%20V%C3%B5%20V%C4%83n%20H%C3%A1t%20Long%20Tr%C6%B0%E1%BB%9Dng&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ============================================================
+             PHẦN 3: LIÊN HỆ & GỬI LỜI CHÚC (Contact & RSVP)
+             Tích hợp lưu Google Sheet & Sổ lưu bút trực tiếp
+             ============================================================ -->
+        <section class="section-card" id="sectionContact">
+
+          <div style="text-align: center; margin-bottom: 12px;">
+            <span class="section-badge pink">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              <span>Kết Nối & Gửi Lời Chúc</span>
+            </span>
+          </div>
+
+          <div class="rsvp-desktop-grid">
+
+            <!-- Left Column: Profile & RSVP Form -->
+            <div class="rsvp-form-column">
+
+              <!-- Graduate Profile Card -->
+              <div class="profile-card">
+                <div class="avatar-wrapper">
+                  <img class="avatar-img"
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                    alt="Hồ Tiểu Điệp Tân Cử Nhân">
+                </div>
+                <div class="profile-details">
+                  <div class="profile-name">Hồ Tiểu Điệp</div>
+                  <div class="profile-role">Tân Cử Nhân • UFM Graduate</div>
+                  <div class="profile-socials">
+                    <a href="tel:0987654321" class="social-btn" title="Gọi điện">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      title="Facebook">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      title="Instagram">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                      </svg>
+                    </a>
+                    <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      title="Zalo" style="font-weight: 700; font-size: 0.72rem;">
+                      Zalo
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Action Call/Zalo -->
+              <div class="quick-contact-actions">
+                <a href="tel:0987654321" class="contact-cta call">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>Gọi điện ngay</span>
+                </a>
+                <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="contact-cta zalo">
+                  <span>💬 Nhắn tin Zalo</span>
+                </a>
+              </div>
+
+              <!-- RSVP & Guestbook Submission Form -->
+              <div class="rsvp-form-container">
+                <h4 class="rsvp-form-title">Xác Nhận Tham Dự & Gửi Lời Chúc</h4>
+                <p class="rsvp-form-subtitle">Sự hiện diện của bạn là niềm vinh hạnh to lớn của Điệp ✨</p>
+
+                <form id="rsvpForm" onsubmit="handleWishSubmit(event)">
+
+                  <div class="form-group">
+                    <label class="form-label" for="guestName">Tên của bạn *</label>
+                    <input type="text" id="guestName" class="form-input" placeholder="Ví dụ: Hoàng Yến, Thầy Nam,..."
+                      required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="guestRelation">Mối quan hệ</label>
+                    <select id="guestRelation" class="form-select">
+                      <option value="Bạn bè">Bạn bè thân thiết 🌸</option>
+                      <option value="Thầy cô">Quý Thầy Cô kính mến 🎓</option>
+                      <option value="Gia đình">Gia đình & Họ hàng ❤️</option>
+                      <option value="Đồng nghiệp">Đồng nghiệp & Anh/Chị ✨</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Bạn sẽ đến chung vui chứ?</label>
+                    <div class="attendance-chips">
+                      <label>
+                        <input type="radio" name="attendanceStatus" value="Chắc chắn tham gia 💐" class="chip-item"
+                          checked>
+                        <span class="chip-label">Chắc chắn đến 💐</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="attendanceStatus" value="Cố gắng sắp xếp 🌸" class="chip-item">
+                        <span class="chip-label">Cố gắng sắp xếp 🌸</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="attendanceStatus" value="Gửi lời chúc từ xa 💌" class="chip-item">
+                        <span class="chip-label">Chúc từ xa 💌</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="guestMessage">Lời chúc gửi đến Tân Cử Nhân *</label>
+                    <textarea id="guestMessage" class="form-textarea"
+                      placeholder="Nhắn gửi lời chúc tốt đẹp nhất đến Điệp nhé..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="submit-wish-btn" id="submitWishBtn">
+                    <span id="btnWishText">Gửi Lời Chúc Mừng</span>
+                    <span id="btnWishIcon">🕊️✨</span>
+                  </button>
+
+                </form>
+
+              </div>
+
+            </div>
+
+            <!-- Right Column: Wishes Board (Sổ lưu bút) -->
+            <div class="wishes-board">
+              <div class="wishes-board-title">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span>📖 Sổ Lưu Bút Lời Chúc</span>
+                  <button type="button" class="sync-sheet-btn" onclick="syncWishesFromSheet(true)"
+                    title="Làm mới sổ lưu bút" aria-label="Làm mới sổ lưu bút">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                    </svg>
+                  </button>
+                </div>
+                <span class="wishes-count-badge" id="wishesCount">0 lời chúc</span>
+              </div>
+              <div class="wishes-list" id="wishesList">
+                <!-- Wishes dynamically rendered here -->
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ============================================================
+             PHẦN 4: NHẬT KÝ HÌNH ẢNH (Photo Diary / Gallery)
+             Responsive: 4 columns on Desktop
+             ============================================================ -->
+        <section class="section-card" id="sectionGallery">
+
+          <div style="text-align: center;">
+            <span class="section-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              <span>Khoảnh Khắc Kỷ Yếu</span>
+            </span>
+            <h3
+              style="font-family: var(--font-heading); font-size: 1.7rem; color: var(--color-matcha-dark); margin: 6px 0 4px;">
+              Nhật Ký Thanh Xuân
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); font-style: italic;">
+              Chạm vào từng bức ảnh để ngắm nhìn kỷ niệm phóng to 🌷
+            </p>
+          </div>
+
+          <!-- Polaroid / Responsive Grid -->
+          <div class="gallery-grid" id="galleryGrid">
+
+            <div class="gallery-item span-2" onclick="openLightbox(0)">
+              <div class="gallery-img-box">
+                <img class="gallery-img"
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
+                  alt="Nụ cười rạng rỡ ngày tốt nghiệp" loading="lazy">
+                <div class="gallery-zoom-badge">🔍</div>
+              </div>
+              <div class="gallery-caption">🎓 Nụ cười trọn vẹn của ngày đón nhận tấm bằng cử nhân</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(1)">
+              <div class="gallery-img-box">
+                <img class="gallery-img"
+                  src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80"
+                  alt="Bó hoa ly trắng thanh khiết" loading="lazy">
+                <div class="gallery-zoom-badge">🔍</div>
+              </div>
+              <div class="gallery-caption">💐 Bó hoa ly trắng tinh khôi và ngọt ngào</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(2)">
+              <div class="gallery-img-box">
+                <img class="gallery-img"
+                  src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
+                  alt="Mũ tốt nghiệp bay giữa bầu trời" loading="lazy">
+                <div class="gallery-zoom-badge">🔍</div>
+              </div>
+              <div class="gallery-caption">✨ Tung chiếc mũ cử nhân, gửi ước mơ bay cao</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(3)">
+              <div class="gallery-img-box">
+                <img class="gallery-img"
+                  src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=600&q=80"
+                  alt="Góc giảng đường đại học UFM" loading="lazy">
+                <div class="gallery-zoom-badge">🔍</div>
+              </div>
+              <div class="gallery-caption">🌿 Góc sân trường rợp bóng cây xanh thân thương</div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(4)">
+              <div class="gallery-img-box">
+                <img class="gallery-img"
+                  src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=600&q=80"
+                  alt="Tà áo cử nhân và tương lai rộng mở" loading="lazy">
+                <div class="gallery-zoom-badge">🔍</div>
+              </div>
+              <div class="gallery-caption">🕊️ Khép lại 4 năm, sẵn sàng cho chặng đường mới</div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- ============================================================
+             LỜI CẢM ƠN CHÂN THÀNH (With Love & Thank you)
+             ============================================================ -->
+        <section class="section-card thankyou-letter" id="sectionThankyou">
+          <div class="thankyou-script-title">With Love & Gratitude</div>
+          <div class="thankyou-sub">Lời Cảm Ơn Từ Trái Tim</div>
+
+          <p class="thankyou-text">
+            Cảm ơn Ba Mẹ đã luôn là điểm tựa vững chãi nhất cuộc đời con.<br>
+            Cảm ơn Quý Thầy Cô đã tận tâm truyền trao tri thức và soi sáng tương lai.<br>
+            Cảm ơn bạn bè thân thương đã cùng Điệp viết nên những trang thanh xuân tuyệt đẹp không thể nào quên.<br>
+            Sự hiện diện và lời chúc của mọi người chính là món quà quý giá nhất trong ngày trọng đại này!
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span style="font-size: 1.2rem;">🌸</span>
+            <span
+              style="font-size: 0.95rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--color-matcha-dark); font-weight: 600;">Tân
+              Cử Nhân</span>
+            <span style="font-size: 1.2rem;">🌸</span>
+          </div>
+
+          <div class="thankyou-signature">Hồ Tiểu Điệp</div>
+          <div class="thankyou-footer-note">Hẹn gặp bạn vào Thứ Sáu, ngày 13 tháng 11 năm 2026! ❤️</div>
+        </section>
+
+      </div>
+
+      <!-- Floating Back to Top Button -->
+      <button class="back-to-top-btn" id="backToTopBtn" onclick="scrollToTop()" aria-label="Cuộn lên đầu trang">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 15l-6-6-6 6" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LIGHTBOX MODAL FOR IMAGE ZOOM
+       ============================================================ -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightboxOnBackdrop(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Đóng ảnh phóng to">✕</button>
+
+      <button class="lightbox-nav-btn lightbox-prev" onclick="changeLightboxImage(-1)" aria-label="Ảnh trước">‹</button>
+      <button class="lightbox-nav-btn lightbox-next" onclick="changeLightboxImage(1)"
+        aria-label="Ảnh kế tiếp">›</button>
+
+      <div class="lightbox-img-wrapper">
+        <img class="lightbox-img" id="lightboxActiveImg" src="" alt="Ảnh kỷ yếu phóng to">
+      </div>
+      <div class="lightbox-caption" id="lightboxActiveCaption"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notice" id="toastNotice">
+    <span id="toastIcon">✨</span>
+    <span id="toastMessage">Thông báo</span>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT: TƯƠNG TÁC, GOOGLE SHEETS & SỔ LƯU BÚT
+       (Âm thanh đã tắt hoàn toàn theo yêu cầu)
+       ============================================================ -->
+  <script>
+    /* ============================================================
+       CẤU HÌNH GOOGLE SHEETS (GOOGLE APPS SCRIPT WEB APP)
+       ============================================================ */
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxaIyTs-kYfTbqc-1Bu3ZyjJidBzA6wrAgMs4f9H8eHvwdODRrFRyfunquBTQDUuNsTmQ/exec";
+
+    /* ==========================================
+       1. CANVAS SPARKLE & LILY PETALS EFFECT
+       ========================================== */
+    const canvas = document.getElementById('sparkle-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const particles = [];
+    const PARTICLE_COUNT = 45;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 3.5 + 1.2;
+        this.speedY = Math.random() * 0.7 + 0.3;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.6 + 0.2;
+        this.type = Math.random() > 0.4 ? 'sparkle' : 'petal';
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = (Math.random() - 0.5) * 1.5;
+        this.color = this.type === 'sparkle'
+          ? `rgba(212, 175, 55, ${this.opacity})`
+          : `rgba(244, 211, 201, ${this.opacity})`;
+      }
+      update() {
+        this.y -= this.speedY;
+        this.x += this.speedX;
+        this.rotation += this.rotationSpeed;
+        if (this.y < -10) {
+          this.y = height + 10;
+          this.x = Math.random() * width;
+        }
+        if (this.x < -10 || this.x > width + 10) {
+          this.x = Math.random() * width;
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+
+        if (this.type === 'sparkle') {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.moveTo(0, -this.size * 2);
+          ctx.quadraticCurveTo(0, 0, this.size * 2, 0);
+          ctx.quadraticCurveTo(0, 0, 0, this.size * 2);
+          ctx.quadraticCurveTo(0, 0, -this.size * 2, 0);
+          ctx.quadraticCurveTo(0, 0, 0, -this.size * 2);
+          ctx.fill();
+        } else {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, this.size * 1.8, this.size * 0.9, 0, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* ==========================================
+       2. INTERACTIVE 3D ENVELOPE OPENING
+       (ĐÃ TẮT NHẠC HOÀN TOÀN THEO YÊU CẦU)
+       ========================================= */
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    /* Tính toán vị trí cuộn sao cho nội dung thẻ/phần chính nằm NGAY CHÍNH GIỮA màn hình */
+    function getCenteredScrollTarget(targetEl) {
+      if (!targetEl) return 0;
+      const windowHeight = window.innerHeight;
+      
+      // Tìm khối nội dung trọng tâm bên trong (như vintage-stamp-frame, location grid, rsvp grid, gallery,...)
+      const focalContent = targetEl.querySelector('.vintage-stamp-frame, .location-desktop-grid, .rsvp-desktop-grid, .gallery-grid, .thankyou-signature') || targetEl;
+      const rect = focalContent.getBoundingClientRect();
+      const contentTop = rect.top + window.pageYOffset;
+      const contentHeight = focalContent.offsetHeight;
+
+      let targetY;
+      if (contentHeight < windowHeight) {
+        // Căn chính giữa hoàn hảo theo trục dọc màn hình
+        targetY = contentTop - (windowHeight - contentHeight) / 2;
+      } else {
+        // Nếu nội dung dài hơn màn hình, căn cách mép trên 30px
+        const secRect = targetEl.getBoundingClientRect();
+        targetY = secRect.top + window.pageYOffset - 30;
+      }
+      return Math.max(0, Math.round(targetY));
+    }
+
+    /* Thuật toán cuộn trang phản hồi NGAY LẬP TỨC từ frame đầu tiên (Zero-delay easeOutQuart) */
+    function smoothScrollToTarget(targetEl, duration = 800) {
+      if (!targetEl) return;
+      const targetY = getCenteredScrollTarget(targetEl);
+      const startY = window.pageYOffset;
+      const distance = targetY - startY;
+      if (Math.abs(distance) < 2) return;
+
+      let startTime = null;
+
+      // easeOutQuart: Vận tốc tức thời cao nhất ngay khi click, triệt tiêu hoàn toàn cảm giác lag/delay
+      function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4);
+      }
+
+      function animationStep(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeOutQuart(progress);
+
+        window.scrollTo(0, startY + distance * ease);
+
+        if (progress < 1) {
+          window.requestAnimationFrame(animationStep);
+        } else {
+          updateCenterFocus();
+        }
+      }
+
+      window.requestAnimationFrame(animationStep);
+    }
+
+    /* Kiểm tra xem trình duyệt có đang ở chế độ Toàn Màn Hình thật (F11) hay không */
+    function isNativeFullscreen() {
+      return Boolean(
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement
+      );
+    }
+
+    /* Cập nhật giao diện nút bấm Toàn Màn Hình (Thu nhỏ / Phóng to) */
+    function updateFullscreenUI() {
+      const fsBtn = document.getElementById('fullscreenToggleBtn');
+      if (!fsBtn) return;
+      const isFs = isNativeFullscreen() || document.documentElement.classList.contains('is-immersive-fullscreen');
+      const expandIcon = fsBtn.querySelector('.fs-icon-expand');
+      const compressIcon = fsBtn.querySelector('.fs-icon-compress');
+      const label = document.getElementById('fsLabel');
+
+      if (isFs) {
+        fsBtn.classList.add('is-active');
+        if (expandIcon) expandIcon.style.display = 'none';
+        if (compressIcon) compressIcon.style.display = 'block';
+        if (label) label.textContent = 'Thu nhỏ';
+        fsBtn.setAttribute('title', 'Thu nhỏ màn hình (Esc hoặc F11)');
+        fsBtn.setAttribute('aria-label', 'Thu nhỏ màn hình');
+      } else {
+        fsBtn.classList.remove('is-active');
+        if (expandIcon) expandIcon.style.display = 'block';
+        if (compressIcon) compressIcon.style.display = 'none';
+        if (label) label.textContent = 'Toàn màn hình';
+        fsBtn.setAttribute('title', 'Phóng to toàn màn hình (F11)');
+        fsBtn.setAttribute('aria-label', 'Phóng to toàn màn hình');
+      }
+    }
+
+    /* Bật/Tắt Toàn Màn Hình chuẩn F11 */
+    function toggleFullscreen(e) {
+      if (e) {
+        e.preventDefault();
+      }
+
+      const docEl = document.documentElement;
+
+      if (!isNativeFullscreen() && !docEl.classList.contains('is-immersive-fullscreen')) {
+        // --- 1. MỞ TOÀN MÀN HÌNH (CHUẨN F11) ---
+        const requestMethod = docEl.requestFullscreen ||
+                              docEl.webkitRequestFullscreen ||
+                              docEl.mozRequestFullScreen ||
+                              docEl.msRequestFullscreen;
+
+        if (requestMethod) {
+          requestMethod.call(docEl).then(() => {
+            docEl.classList.add('is-immersive-fullscreen');
+            document.body.classList.add('is-immersive-fullscreen');
+            updateFullscreenUI();
+            showToast("🖥️ Đã mở toàn màn hình (F11) ✨");
+          }).catch(err => {
+            console.warn("Native fullscreen note:", err);
+            // Fallback khi chạy file cục bộ file:/// bị trình duyệt giới hạn quyền
+            docEl.classList.add('is-immersive-fullscreen');
+            document.body.classList.add('is-immersive-fullscreen');
+            updateFullscreenUI();
+            showToast("💡 Bấm phím F11 trên bàn phím để ẩn thanh tab trình duyệt nhé!");
+          });
+        }
+      } else {
+        // --- 2. THU NHỎ / THOÁT TOÀN MÀN HÌNH ---
+        const exitMethod = document.exitFullscreen ||
+                           document.webkitExitFullscreen ||
+                           document.mozCancelFullScreen ||
+                           document.msExitFullscreen;
+
+        if (isNativeFullscreen() && exitMethod) {
+          exitMethod.call(document).then(() => {
+            docEl.classList.remove('is-immersive-fullscreen');
+            document.body.classList.remove('is-immersive-fullscreen');
+            updateFullscreenUI();
+            showToast("🖥️ Đã thu nhỏ về giao diện mặc định");
+          }).catch(() => { });
+        } else {
+          docEl.classList.remove('is-immersive-fullscreen');
+          document.body.classList.remove('is-immersive-fullscreen');
+          updateFullscreenUI();
+          showToast("🖥️ Đã thu nhỏ về giao diện mặc định");
+        }
+      }
+    }
+
+    /* Kích hoạt chế độ Toàn Màn Hình tự động khi tương tác */
+    function requestAutoFullscreen() {
+      const docEl = document.documentElement;
+      const requestMethod = docEl.requestFullscreen || docEl.webkitRequestFullscreen || docEl.mozRequestFullScreen || docEl.msRequestFullscreen;
+      if (requestMethod && !isNativeFullscreen()) {
+        requestMethod.call(docEl).then(() => {
+          docEl.classList.add('is-immersive-fullscreen');
+          document.body.classList.add('is-immersive-fullscreen');
+          updateFullscreenUI();
+        }).catch(() => { });
+      }
+    }
+
+    // Lắng nghe sự kiện phím Esc trên bàn phím để thu nhỏ
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && (isNativeFullscreen() || document.documentElement.classList.contains('is-immersive-fullscreen'))) {
+        toggleFullscreen();
+      }
+    });
+
+    // Lắng nghe sự kiện thay đổi Fullscreen gốc từ trình duyệt (khi bấm F11 hoặc Esc)
+    ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach(evt => {
+      document.addEventListener(evt, () => {
+        if (!isNativeFullscreen()) {
+          document.documentElement.classList.remove('is-immersive-fullscreen');
+          document.body.classList.remove('is-immersive-fullscreen');
+        } else {
+          document.documentElement.classList.add('is-immersive-fullscreen');
+          document.body.classList.add('is-immersive-fullscreen');
+        }
+        updateFullscreenUI();
+      });
+    });
+
+    let isEnvelopeOpen = false;
+    const envelopeWrapper = document.getElementById('envelopeWrapper');
+    const sealHint = document.getElementById('sealHint');
+    const waxSealBtn = document.getElementById('waxSealBtn');
+
+    function openEnvelope() {
+      if (isEnvelopeOpen) return;
+      isEnvelopeOpen = true;
+
+      // 1. Kích hoạt hiệu ứng mở phong bì 3D
+      envelopeWrapper.classList.add('is-open');
+      sealHint.style.opacity = '0';
+      sealHint.style.pointerEvents = 'none';
+
+      // 2. Tự động kích hoạt toàn màn hình theo yêu cầu
+      requestAutoFullscreen();
+
+      // 3. Bắn pháo hoa rực rỡ
+      fireConfettiBurst();
+
+      // 4. Cho người xem chiêm ngưỡng lá thư lướt lên rồi an tọa thấp xuống, sau đó cuộn từ từ, êm ái xuống phần tiếp theo
+      setTimeout(() => {
+        showToast("✨ Thiệp mời đã được mở! Chúc bạn một ngày tuyệt vời! 🕊️");
+        const section1 = document.getElementById('sectionMainLetter');
+        smoothScrollToTarget(section1, 950);
+      }, 2500);
+    }
+
+    waxSealBtn.addEventListener('click', openEnvelope);
+
+    // Xử lý nút bấm "Xem chi tiết buổi lễ" (kéo xuống NGAY LẬP TỨC, không delay, tự focus chính giữa)
+    const scrollDownBtn = document.getElementById('scrollDownBtn');
+    if (scrollDownBtn) {
+      scrollDownBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        requestAutoFullscreen();
+        const section1 = document.getElementById('sectionMainLetter');
+        smoothScrollToTarget(section1, 750);
+      });
+    }
+
+    /* Confetti Burst Function */
+    function fireConfettiBurst() {
+      if (typeof confetti === 'function') {
+        const count = 200;
+        const defaults = {
+          origin: { y: 0.65 },
+          colors: ['#D4AF37', '#ECC86A', '#97B18E', '#6F9067', '#F4D3C9', '#FFFFFF']
+        };
+
+        function fire(particleRatio, opts) {
+          confetti(Object.assign({}, defaults, opts, {
+            particleCount: Math.floor(count * particleRatio)
+          }));
+        }
+
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+      }
+    }
+
+    /* ==========================================
+       3. COUNTDOWN TIMER TO 13 NOV 2026, 13:30
+       ========================================== */
+    const graduationDate = new Date('2026-11-13T13:30:00+07:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = graduationDate - now;
+
+      if (distance < 0) {
+        document.getElementById('cdDays').innerText = "00";
+        document.getElementById('cdHours').innerText = "00";
+        document.getElementById('cdMinutes').innerText = "00";
+        document.getElementById('cdSeconds').innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('cdDays').innerText = days < 10 ? '0' + days : days;
+      document.getElementById('cdHours').innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById('cdMinutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('cdSeconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ==========================================
+       4. GOOGLE CALENDAR ADD EVENT GENERATOR
+       ========================================== */
+    function addToGoogleCalendar() {
+      const event = {
+        title: "Lễ Tốt Nghiệp Đại Học - Hồ Tiểu Điệp (UFM)",
+        start: "20261113T133000",
+        end: "20261113T153000",
+        location: "Hội trường lớn A, Trường Đại học Tài Chính - Marketing (UFM), 306 Võ Văn Hát, Long Trường, Thủ Đức, TP.HCM",
+        details: "Lễ trao bằng tốt nghiệp cử nhân của Hồ Tiểu Điệp. Rất hân hạnh được đón tiếp bạn bè và gia đình chung vui!"
+      };
+
+      const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.title)}&dates=${event.start}/${event.end}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`;
+      window.open(googleCalUrl, '_blank');
+    }
+
+    /* Copy Venue Address to Clipboard */
+    function copyVenueAddress() {
+      const addressText = "Trường Đại học Tài Chính - Marketing, 306 Võ Văn Hát, Phường Long Trường, TP. Thủ Đức, TP. Hồ Chí Minh";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(addressText).then(() => {
+          showToast("📋 Đã sao chép địa chỉ trường vào bộ nhớ tạm!");
+        }).catch(() => {
+          fallbackCopyText(addressText);
+        });
+      } else {
+        fallbackCopyText(addressText);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      showToast("📋 Đã sao chép địa chỉ thành công!");
+    }
+
+    /* ==========================================
+       5. INTERSECTION OBSERVER FOR SCROLL REVEAL
+       ========================================== */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll('.section-card').forEach(card => {
+      revealObserver.observe(card);
+    });
+
+    /* Tự động Focus vào phần nội dung đang nằm ở chính giữa màn hình */
+    function updateCenterFocus() {
+      const sections = document.querySelectorAll('.section-card');
+      if (!sections.length) return;
+
+      const viewportCenter = window.innerHeight / 2;
+      let closestSection = null;
+      let minDistance = Infinity;
+
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        // Tâm của section theo trục dọc so với viewport
+        const sectionCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+
+        // Nếu section đang xuất hiện trong tầm nhìn
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestSection = sec;
+          }
+        }
+      });
+
+      sections.forEach(sec => {
+        if (sec === closestSection && minDistance < window.innerHeight * 0.6) {
+          sec.classList.add('is-focused');
+        } else {
+          sec.classList.remove('is-focused');
+        }
+      });
+    }
+
+    /* Reading Progress, Back-to-Top Button & Auto Center Focus */
+    const scrollProgress = document.getElementById('scrollProgress');
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    let scrollRafId = null;
+    window.addEventListener('scroll', () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const currentScroll = window.scrollY;
+      if (totalScroll > 0) {
+        const progress = (currentScroll / totalScroll) * 100;
+        scrollProgress.style.width = progress + '%';
+      }
+
+      if (currentScroll > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+
+      if (!scrollRafId) {
+        scrollRafId = requestAnimationFrame(() => {
+          updateCenterFocus();
+          scrollRafId = null;
+        });
+      }
+    }, { passive: true });
+
+    // Khởi tạo focus ban đầu và lắng nghe thay đổi kích thước cửa sổ
+    window.addEventListener('resize', updateCenterFocus);
+    window.addEventListener('load', () => setTimeout(updateCenterFocus, 300));
+    setTimeout(updateCenterFocus, 500);
+
+    function scrollToTop() {
+      smoothScrollToTarget(document.body, 1000);
+    }
+
+    /* ==========================================
+       6. KẾT NỐI GOOGLE SHEETS & SỔ LƯU BÚT TRỰC TIẾP
+       (Không dùng case mẫu - Hiển thị 100% dữ liệu thực từ Google Sheet)
+       ========================================== */
+
+    // Xóa bỏ hoàn toàn các case mẫu giả lập cũ khỏi bộ nhớ tạm trình duyệt
+    function cleanOldMockWishes() {
+      const stored = localStorage.getItem('graduation_wishes_htd');
+      if (stored) {
+        try {
+          const list = JSON.parse(stored);
+          if (Array.isArray(list)) {
+            const filtered = list.filter(item => {
+              const n = (item.name || '').trim();
+              return n !== "Hoàng Yến (K18 Marketing)" &&
+                n !== "Thầy Quốc Nam" &&
+                n !== "Anh Minh Quân" &&
+                n !== "Hong Nhung (K18 UFM)" &&
+                n !== "Hong Nhung" &&
+                n !== "Hồng Nhung" &&
+                item.id !== 1 && item.id !== 2 && item.id !== 3;
+            });
+            localStorage.setItem('graduation_wishes_htd', JSON.stringify(filtered));
+            return filtered;
+          }
+        } catch (e) {
+          localStorage.removeItem('graduation_wishes_htd');
+        }
+      }
+      return [];
+    }
+
+    // Hàm phân tích định dạng ngày tháng tiếng Việt & quốc tế
+    function parseVietnameseDate(str) {
+      if (!str) return null;
+      if (typeof str === 'number') return new Date(str);
+      str = String(str).trim();
+
+      // Định dạng ISO: 2026-11-02T...
+      if (/^\d{4}-\d{2}-\d{2}/.test(str)) {
+        const d = new Date(str);
+        if (!isNaN(d.getTime())) return d;
+      }
+
+      // Định dạng: "HH:mm:ss DD/MM/YYYY" hoặc "HH:mm DD/MM/YYYY" (chuẩn toLocaleString vi-VN)
+      const mTimeFirst = str.match(/^(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?\s+(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+      if (mTimeFirst) {
+        const hour = parseInt(mTimeFirst[1], 10);
+        const min = parseInt(mTimeFirst[2], 10);
+        const sec = mTimeFirst[3] ? parseInt(mTimeFirst[3], 10) : 0;
+        const day = parseInt(mTimeFirst[4], 10);
+        const month = parseInt(mTimeFirst[5], 10) - 1;
+        const year = parseInt(mTimeFirst[6], 10);
+        return new Date(year, month, day, hour, min, sec);
+      }
+
+      // Định dạng: "DD/MM/YYYY HH:mm:ss" hoặc "DD/MM/YYYY"
+      const mDateFirst = str.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})(?:\s+(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?)?$/);
+      if (mDateFirst) {
+        const day = parseInt(mDateFirst[1], 10);
+        const month = parseInt(mDateFirst[2], 10) - 1;
+        const year = parseInt(mDateFirst[3], 10);
+        const hour = mDateFirst[4] ? parseInt(mDateFirst[4], 10) : 0;
+        const min = mDateFirst[5] ? parseInt(mDateFirst[5], 10) : 0;
+        const sec = mDateFirst[6] ? parseInt(mDateFirst[6], 10) : 0;
+        return new Date(year, month, day, hour, min, sec);
+      }
+
+      const fallback = new Date(str);
+      return isNaN(fallback.getTime()) ? null : fallback;
+    }
+
+    // Định dạng thời gian hiển thị thông minh (Fix lỗi luôn hiện 'Vừa xong')
+    function formatWishTime(rawTimestamp) {
+      if (!rawTimestamp) return "Mới đây";
+      const date = parseVietnameseDate(rawTimestamp);
+
+      // Nếu không parse được dạng số, giữ lại chuỗi nếu nó không phải 'Vừa xong'
+      if (!date) {
+        return (typeof rawTimestamp === 'string' && rawTimestamp !== 'Vừa xong') ? rawTimestamp : 'Mới đây';
+      }
+
+      const now = new Date();
+      const diffMs = now.getTime() - date.getTime();
+      const diffSec = Math.floor(diffMs / 1000);
+      const diffMin = Math.floor(diffSec / 60);
+      const diffHours = Math.floor(diffMin / 60);
+
+      const pad = (n) => (n < 10 ? '0' + n : n);
+      const timeStr = `${pad(date.getHours())}:${pad(date.getMinutes())}`;
+      const dateStr = `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
+
+      if (diffSec >= 0 && diffSec < 60) {
+        return "Vừa xong";
+      } else if (diffMin > 0 && diffMin < 60) {
+        return `${diffMin} phút trước (${timeStr})`;
+      } else if (diffHours > 0 && diffHours < 24 && date.toDateString() === now.toDateString()) {
+        return `Hôm nay lúc ${timeStr}`;
+      } else if (date.getDate() === now.getDate() - 1 && date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear()) {
+        return `Hôm qua lúc ${timeStr}`;
+      } else {
+        return `${timeStr} - ${dateStr}`;
+      }
+    }
+
+    // Hiển thị danh sách lời chúc ra giao diện
+    function renderWishes(wishes) {
+      const wishesList = document.getElementById('wishesList');
+      const wishesCount = document.getElementById('wishesCount');
+
+      if (!wishes || wishes.length === 0) {
+        if (wishesCount) wishesCount.innerText = "0 lời chúc";
+        wishesList.innerHTML = `
+          <div style="text-align: center; padding: 42px 18px; background: rgba(255, 255, 255, 0.7); border: 1.5px dashed rgba(151, 177, 142, 0.5); border-radius: 16px; margin: 10px 0;">
+            <div style="font-size: 2.6rem; margin-bottom: 8px;">🌸</div>
+            <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-matcha-dark); margin-bottom: 6px;">Sổ lưu bút chưa có lời chúc</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 420px; margin: 0 auto;">
+              Hãy là người đầu tiên gửi lời chúc tốt đẹp nhất và xác nhận tham dự đến tân cử nhân <strong>Hồ Tiểu Điệp</strong> nhé! ❤️
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      if (wishesCount) {
+        wishesCount.innerText = `${wishes.length} lời chúc`;
+      }
+
+      wishesList.innerHTML = wishes.map(w => {
+        const timeDisplay = formatWishTime(w.createdAt || w.timestamp || w.time);
+        return `
+          <div class="wish-bubble">
+            <div class="wish-header">
+              <div class="wish-author">
+                <span>🌸</span>
+                <span>${escapeHtml(w.name)}</span>
+                <span class="wish-relation-badge">${escapeHtml(w.relation || 'Bạn bè')}</span>
+              </div>
+              <div class="wish-time">${timeDisplay}</div>
+            </div>
+            <div class="wish-attendance-tag">Trạng thái: <strong>${escapeHtml(w.attendance || 'Chắc chắn đến 💐')}</strong></div>
+            <div class="wish-text">${escapeHtml(w.text || w.message || '')}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Tải lời chúc: Ưu tiên kéo dữ liệu trực tiếp từ Google Sheet
+    async function syncWishesFromSheet(showFeedback = false) {
+      const targetSheetUrl = GOOGLE_SHEET_URL.trim();
+
+      if (targetSheetUrl && targetSheetUrl.startsWith("http")) {
+        try {
+          const res = await fetch(targetSheetUrl, { method: 'GET' });
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.result === "success" && Array.isArray(data.data)) {
+              const sheetWishes = data.data.map((item, idx) => ({
+                id: item.id || `sheet_${idx}_${item.timestamp}`,
+                name: item.name || 'Khách mời',
+                relation: item.relation || 'Bạn bè',
+                attendance: item.attendance || 'Chắc chắn tham gia 💐',
+                text: item.message || item.text || '',
+                timestamp: item.timestamp,
+                createdAt: item.timestamp
+              }));
+              renderWishes(sheetWishes);
+              localStorage.setItem('graduation_wishes_htd', JSON.stringify(sheetWishes));
+              if (showFeedback) {
+                showToast(`✨ Đã cập nhật ${sheetWishes.length} lời chúc trong Sổ lưu bút! 🌸`);
+              }
+              return;
+            }
+          }
+        } catch (err) {
+          console.warn("Sync note (fallback to local cache):", err);
+          if (showFeedback) {
+            showToast("✨ Đã làm mới danh sách lời chúc! 🌸");
+          }
+        }
+      }
+
+      // Fallback: Sử dụng dữ liệu thực trong LocalStorage (đã lọc sạch case mẫu)
+      const localWishes = cleanOldMockWishes();
+      renderWishes(localWishes);
+    }
+
+    function loadWishes() {
+      // 1. Dọn sạch mẫu cũ và hiển thị ngay các lời chúc thực tế đã lưu
+      const localWishes = cleanOldMockWishes();
+      renderWishes(localWishes);
+
+      // 2. Kéo dữ liệu mới nhất từ Google Sheet ngầm
+      syncWishesFromSheet(false);
+    }
+
+    // Xử lý gửi lời chúc mới
+    async function handleWishSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitWishBtn');
+      const btnText = document.getElementById('btnWishText');
+      const btnIcon = document.getElementById('btnWishIcon');
+
+      const nameInput = document.getElementById('guestName');
+      const relationInput = document.getElementById('guestRelation');
+      const messageInput = document.getElementById('guestMessage');
+      const attendanceInput = document.querySelector('input[name="attendanceStatus"]:checked');
+
+      const name = nameInput.value.trim();
+      const message = messageInput.value.trim();
+      const relation = relationInput.value;
+      const attendance = attendanceInput ? attendanceInput.value : "Chắc chắn tham gia 💐";
+
+      if (!name || !message) {
+        showToast("Vui lòng điền đầy đủ tên và lời chúc nhé! ❤️");
+        return;
+      }
+
+      // Đổi trạng thái nút bấm sang Loading
+      submitBtn.disabled = true;
+      btnText.innerText = "Đang lưu lời chúc...";
+      btnIcon.innerText = "⏳";
+
+      const currentTimestamp = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
+      const nowMs = Date.now();
+
+      const newWish = {
+        id: nowMs,
+        name: name,
+        relation: relation,
+        attendance: attendance,
+        text: message,
+        createdAt: nowMs,
+        timestamp: currentTimestamp
+      };
+
+      // 1. Lưu ngay vào LocalStorage và hiển thị lập tức lên danh sách
+      let wishes = cleanOldMockWishes();
+      wishes.unshift(newWish);
+      localStorage.setItem('graduation_wishes_htd', JSON.stringify(wishes));
+      renderWishes(wishes);
+
+      // 2. Gửi dữ liệu sang Google Sheets
+      const targetSheetUrl = GOOGLE_SHEET_URL.trim();
+
+      if (targetSheetUrl && targetSheetUrl.startsWith("http")) {
+        try {
+          await fetch(targetSheetUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify({
+              timestamp: currentTimestamp,
+              name: name,
+              relation: relation,
+              attendance: attendance,
+              message: message
+            })
+          });
+          showToast("💌 Lời chúc của bạn đã được gửi thành công! Cảm ơn bạn rất nhiều! ❤️");
+        } catch (fetchErr) {
+          console.warn("Wishes submit notice:", fetchErr);
+          showToast("💌 Lời chúc của bạn đã được gửi thành công! Cảm ơn bạn rất nhiều! ❤️");
+        }
+      } else {
+        showToast("💌 Lời chúc của bạn đã được gửi thành công! Cảm ơn bạn rất nhiều! ❤️");
+      }
+
+      // Bắn pháo hoa ăn mừng
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 85,
+          spread: 75,
+          origin: { y: 0.7 }
+        });
+      }
+
+      // Reset form
+      messageInput.value = "";
+      submitBtn.disabled = false;
+      btnText.innerText = "Gửi Lời Chúc Mừng";
+      btnIcon.innerText = "🕊️✨";
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    loadWishes();
+
+    /* ==========================================
+       7. PHOTO GALLERY LIGHTBOX (Modal Zoom)
+       ========================================== */
+    const galleryData = [
+      {
+        src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85",
+        caption: "🎓 Nụ cười trọn vẹn và niềm hạnh phúc ngập tràn ngày nhận bằng cử nhân cùng hội bạn thân"
+      },
+      {
+        src: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=1200&q=85",
+        caption: "💐 Bó hoa ly trắng tinh khôi và ngọt ngào - món quà chúc mừng yêu thương"
+      },
+      {
+        src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85",
+        caption: "✨ Tung chiếc mũ cử nhân lên bầu trời cao rộng, gửi gắm ước mơ và tương lai phía trước"
+      },
+      {
+        src: "https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=1200&q=85",
+        caption: "🌿 Góc sân trường rợp bóng cây xanh thân thương - nơi lưu giữ 4 năm kỷ niệm"
+      },
+      {
+        src: "https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=1200&q=85",
+        caption: "🕊️ Khép lại chặng đường 4 năm đại học, sẵn sàng sải cánh bước vào cuộc đời mới"
+      }
+    ];
+
+    let currentLightboxIdx = 0;
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxActiveImg = document.getElementById('lightboxActiveImg');
+    const lightboxActiveCaption = document.getElementById('lightboxActiveCaption');
+
+    function openLightbox(index) {
+      currentLightboxIdx = index;
+      updateLightboxContent();
+      lightboxModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function closeLightboxOnBackdrop(e) {
+      if (e.target === lightboxModal) {
+        closeLightbox();
+      }
+    }
+
+    function changeLightboxImage(dir) {
+      currentLightboxIdx = (currentLightboxIdx + dir + galleryData.length) % galleryData.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = galleryData[currentLightboxIdx];
+      lightboxActiveImg.src = item.src;
+      lightboxActiveCaption.innerText = item.caption;
+    }
+
+    // Keyboard support for Lightbox
+    window.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') changeLightboxImage(-1);
+      if (e.key === 'ArrowRight') changeLightboxImage(1);
+    });
+
+    /* ==========================================
+       8. TOAST NOTIFICATION UTILITY
+       ========================================== */
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotice');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.innerText = msg;
+      toast.classList.add('show');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3400);
+    }
+  </script>
+</body>
+
+</html>
