@@ -3250,14 +3250,12 @@
             docEl.classList.add('is-immersive-fullscreen');
             document.body.classList.add('is-immersive-fullscreen');
             updateFullscreenUI();
-            showToast("🖥️ Đã mở toàn màn hình (F11) ✨");
           }).catch(err => {
             console.warn("Native fullscreen note:", err);
             // Fallback khi chạy file cục bộ file:/// bị trình duyệt giới hạn quyền
             docEl.classList.add('is-immersive-fullscreen');
             document.body.classList.add('is-immersive-fullscreen');
             updateFullscreenUI();
-            showToast("💡 Bấm phím F11 trên bàn phím để ẩn thanh tab trình duyệt nhé!");
           });
         }
       } else {
@@ -3272,13 +3270,11 @@
             docEl.classList.remove('is-immersive-fullscreen');
             document.body.classList.remove('is-immersive-fullscreen');
             updateFullscreenUI();
-            showToast("🖥️ Đã thu nhỏ về giao diện mặc định");
           }).catch(() => { });
         } else {
           docEl.classList.remove('is-immersive-fullscreen');
           document.body.classList.remove('is-immersive-fullscreen');
           updateFullscreenUI();
-          showToast("🖥️ Đã thu nhỏ về giao diện mặc định");
         }
       }
     }
@@ -3339,7 +3335,6 @@
 
       // 4. Cho người xem chiêm ngưỡng lá thư lướt lên rồi an tọa thấp xuống, sau đó cuộn từ từ, êm ái xuống phần tiếp theo
       setTimeout(() => {
-        showToast("✨ Thiệp mời đã được mở! Chúc bạn một ngày tuyệt vời! 🕊️");
         const section1 = document.getElementById('sectionMainLetter');
         smoothScrollToTarget(section1, 950);
       }, 2500);
@@ -3428,17 +3423,25 @@
       window.open(googleCalUrl, '_blank');
     }
 
-    /* Copy Venue Address to Clipboard */
+    /* Copy Venue Address to Clipboard (Phản hồi trực tiếp trên nút, không hiện toast popup) */
     function copyVenueAddress() {
       const addressText = "Trường Đại học Tài Chính - Marketing, 306 Võ Văn Hát, Phường Long Trường, TP. Thủ Đức, TP. Hồ Chí Minh";
+      const copyBtn = document.querySelector('.copy-address-btn span');
+      function onCopied() {
+        if (copyBtn) {
+          const oldText = copyBtn.innerText;
+          copyBtn.innerText = "✓ Đã sao chép";
+          setTimeout(() => { copyBtn.innerText = oldText; }, 2000);
+        }
+      }
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(addressText).then(() => {
-          showToast("📋 Đã sao chép địa chỉ trường vào bộ nhớ tạm!");
-        }).catch(() => {
+        navigator.clipboard.writeText(addressText).then(onCopied).catch(() => {
           fallbackCopyText(addressText);
+          onCopied();
         });
       } else {
         fallbackCopyText(addressText);
+        onCopied();
       }
     }
 
@@ -3449,7 +3452,6 @@
       textArea.select();
       document.execCommand('copy');
       document.body.removeChild(textArea);
-      showToast("📋 Đã sao chép địa chỉ thành công!");
     }
 
     /* ==========================================
@@ -3706,17 +3708,20 @@
               }));
               renderWishes(sheetWishes);
               localStorage.setItem('graduation_wishes_htd', JSON.stringify(sheetWishes));
-              if (showFeedback) {
-                showToast(`✨ Đã cập nhật ${sheetWishes.length} lời chúc trong Sổ lưu bút! 🌸`);
+              const syncBtnSvg = document.querySelector('.sync-sheet-btn svg');
+              if (syncBtnSvg && showFeedback) {
+                syncBtnSvg.style.transition = 'transform 0.6s ease';
+                syncBtnSvg.style.transform = 'rotate(360deg)';
+                setTimeout(() => {
+                  syncBtnSvg.style.transition = 'none';
+                  syncBtnSvg.style.transform = 'rotate(0deg)';
+                }, 650);
               }
               return;
             }
           }
         } catch (err) {
           console.warn("Sync note (fallback to local cache):", err);
-          if (showFeedback) {
-            showToast("✨ Đã làm mới danh sách lời chúc! 🌸");
-          }
         }
       }
 
