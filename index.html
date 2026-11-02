@@ -3545,9 +3545,16 @@
        (Không dùng case mẫu - Hiển thị 100% dữ liệu thực từ Google Sheet)
        ========================================== */
 
-    // Xóa bỏ hoàn toàn các case mẫu giả lập cũ khỏi bộ nhớ tạm trình duyệt
+    // Đặt tên key cache phiên bản mới để tự động dọn sạch các lời chúc test cũ khỏi bộ nhớ tạm
+    const WISHES_CACHE_KEY = 'graduation_wishes_htd_v3';
+
+    // Xóa bỏ hoàn toàn các case mẫu giả lập và cache cũ khỏi bộ nhớ tạm trình duyệt
     function cleanOldMockWishes() {
-      const stored = localStorage.getItem('graduation_wishes_htd');
+      // Dọn sạch các key cũ để không bị lưu lời chúc ma
+      localStorage.removeItem('graduation_wishes_htd');
+      localStorage.removeItem('graduation_wishes_htd_v2');
+
+      const stored = localStorage.getItem(WISHES_CACHE_KEY);
       if (stored) {
         try {
           const list = JSON.parse(stored);
@@ -3560,13 +3567,15 @@
                 n !== "Hong Nhung (K18 UFM)" &&
                 n !== "Hong Nhung" &&
                 n !== "Hồng Nhung" &&
+                n !== "Test Guest" &&
+                n !== "Test Check" &&
                 item.id !== 1 && item.id !== 2 && item.id !== 3;
             });
-            localStorage.setItem('graduation_wishes_htd', JSON.stringify(filtered));
+            localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(filtered));
             return filtered;
           }
         } catch (e) {
-          localStorage.removeItem('graduation_wishes_htd');
+          localStorage.removeItem(WISHES_CACHE_KEY);
         }
       }
       return [];
@@ -3693,9 +3702,16 @@
 
       if (targetSheetUrl && targetSheetUrl.startsWith("http")) {
         try {
-          const res = await fetch(targetSheetUrl, { method: 'GET' });
+          const res = await fetch(targetSheetUrl, { method: 'GET', redirect: 'follow' });
           if (res.ok) {
-            const data = await res.json();
+            const text = await res.text();
+            let data = null;
+            try {
+              data = JSON.parse(text);
+            } catch (jsonErr) {
+              console.warn("Google Sheet chưa kích hoạt doGet(e) đúng cách. Phản hồi:", text.slice(0, 150));
+            }
+
             if (data && data.result === "success" && Array.isArray(data.data)) {
               const sheetWishes = data.data.map((item, idx) => ({
                 id: item.id || `sheet_${idx}_${item.timestamp}`,
@@ -3707,7 +3723,8 @@
                 createdAt: item.timestamp
               }));
               renderWishes(sheetWishes);
-              localStorage.setItem('graduation_wishes_htd', JSON.stringify(sheetWishes));
+              localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(sheetWishes));
+
               const syncBtnSvg = document.querySelector('.sync-sheet-btn svg');
               if (syncBtnSvg && showFeedback) {
                 syncBtnSvg.style.transition = 'transform 0.6s ease';
@@ -3782,7 +3799,7 @@
       // 1. Lưu ngay vào LocalStorage và hiển thị lập tức lên danh sách
       let wishes = cleanOldMockWishes();
       wishes.unshift(newWish);
-      localStorage.setItem('graduation_wishes_htd', JSON.stringify(wishes));
+      localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(wishes));
       renderWishes(wishes);
 
       // 2. Gửi dữ liệu sang Google Sheets
