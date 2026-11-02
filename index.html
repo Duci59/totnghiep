@@ -503,36 +503,23 @@
       padding: 6px 5px 8px;
       box-shadow: 0 16px 36px rgba(35, 50, 30, 0.3), 0 3px 8px rgba(0, 0, 0, 0.12);
       border: 1px solid rgba(212, 175, 55, 0.4);
-      display: none;
+      display: flex;
+      flex-direction: column;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
       cursor: pointer;
       z-index: 109;
       transform: translateY(0) rotate(-13deg) translateZ(45px);
-      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      transition: opacity 0.6s ease 0.4s, visibility 0.6s ease 0.4s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
       user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
 
     .envelope-perspective-wrapper.is-open .photobooth-strip {
-      display: flex;
-      flex-direction: column;
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
-      animation: photoboothFadeInDesktop 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.35s forwards;
-    }
-
-    @keyframes photoboothFadeInDesktop {
-      0% {
-        opacity: 0;
-        transform: translateY(8px) scale(0.96) rotate(-13deg) translateZ(45px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1) rotate(-13deg) translateZ(45px);
-      }
     }
 
     @media (max-width: 991px) {
@@ -545,27 +532,13 @@
         border-radius: 5px;
         transform: translateY(0) rotate(-8deg) translateZ(45px);
       }
-
-      .envelope-perspective-wrapper.is-open .photobooth-strip {
-        animation: photoboothFadeInMobile 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.35s forwards;
-      }
-
-      @keyframes photoboothFadeInMobile {
-        0% {
-          opacity: 0;
-          transform: translateY(6px) scale(0.96) rotate(-8deg) translateZ(45px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1) rotate(-8deg) translateZ(45px);
-        }
-      }
     }
 
     .photobooth-strip:hover {
       transform: translateY(-8px) scale(1.08) rotate(-7deg) translateZ(60px) !important;
       box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(212, 175, 55, 0.35);
       border-color: var(--color-gold-main);
+      transition-delay: 0s !important;
     }
 
     .photobooth-tape {
