@@ -664,27 +664,7 @@
     }
 
     .photobooth-zoom-hint {
-      position: absolute;
-      bottom: 6px;
-      right: 6px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.6rem;
-      opacity: 0;
-      transform: scale(0.7);
-      transition: all 0.2s ease;
-      pointer-events: none;
-    }
-
-    .photobooth-strip:hover .photobooth-zoom-hint {
-      opacity: 1;
-      transform: scale(1);
+      display: none !important;
     }
 
     /* 3. Túi gấp mặt trước phong bì (Envelope Front Pocket)
@@ -2492,28 +2472,7 @@
     }
 
     .gallery-zoom-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(4px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-matcha-dark);
-      font-size: 0.9rem;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.3s ease;
-      z-index: 4;
-    }
-
-    .gallery-item:hover .gallery-zoom-badge {
-      opacity: 1;
-      transform: scale(1);
+      display: none !important;
     }
 
     /* Lightbox Modal */
@@ -3142,7 +3101,6 @@
                   <div class="photobooth-date">13.11.2026 • With Love ❤️</div>
                 </div>
               </div>
-              <div class="photobooth-zoom-hint">🔍</div>
             </div>
 
             <!-- 3. Túi gấp mặt trước của phong bì (Che kín tấm thiệp) -->
@@ -3599,7 +3557,6 @@
                 <img class="gallery-img"
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80"
                   alt="Nụ cười rạng rỡ ngày tốt nghiệp" loading="lazy">
-                <div class="gallery-zoom-badge">🔍</div>
               </div>
               <div class="gallery-caption">🎓 Nụ cười trọn vẹn của ngày đón nhận tấm bằng cử nhân</div>
             </div>
@@ -3609,7 +3566,6 @@
                 <img class="gallery-img"
                   src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80"
                   alt="Bó hoa ly trắng thanh khiết" loading="lazy">
-                <div class="gallery-zoom-badge">🔍</div>
               </div>
               <div class="gallery-caption">💐 Bó hoa ly trắng tinh khôi và ngọt ngào</div>
             </div>
@@ -3619,7 +3575,6 @@
                 <img class="gallery-img"
                   src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
                   alt="Mũ tốt nghiệp bay giữa bầu trời" loading="lazy">
-                <div class="gallery-zoom-badge">🔍</div>
               </div>
               <div class="gallery-caption">✨ Tung chiếc mũ cử nhân, gửi ước mơ bay cao</div>
             </div>
@@ -3629,7 +3584,6 @@
                 <img class="gallery-img"
                   src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=600&q=80"
                   alt="Góc giảng đường đại học UFM" loading="lazy">
-                <div class="gallery-zoom-badge">🔍</div>
               </div>
               <div class="gallery-caption">🌿 Góc sân trường rợp bóng cây xanh thân thương</div>
             </div>
@@ -3639,7 +3593,6 @@
                 <img class="gallery-img"
                   src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=600&q=80"
                   alt="Tà áo cử nhân và tương lai rộng mở" loading="lazy">
-                <div class="gallery-zoom-badge">🔍</div>
               </div>
               <div class="gallery-caption">🕊️ Khép lại 4 năm, sẵn sàng cho chặng đường mới</div>
             </div>
@@ -3649,7 +3602,6 @@
                 <img class="gallery-img"
                   src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
                   alt="Tự hào và hạnh phúc bên những người thân yêu" loading="lazy">
-                <div class="gallery-zoom-badge">🔍</div>
               </div>
               <div class="gallery-caption">🌸 Tự hào và hạnh phúc bên những người thân yêu</div>
             </div>
