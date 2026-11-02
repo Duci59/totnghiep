@@ -2409,14 +2409,17 @@
   <!-- Full-Screen Outer Container -->
   <div class="viewport-outer">
 
-    <button class="fullscreen-toggle-btn" id="fullscreenToggleBtn" onclick="toggleFullscreen(event)" aria-label="Phóng to toàn màn hình (F11)" title="Phóng to toàn màn hình (F11)">
+    <button class="fullscreen-toggle-btn" id="fullscreenToggleBtn" onclick="toggleFullscreen(event)"
+      aria-label="Phóng to toàn màn hình (F11)" title="Phóng to toàn màn hình (F11)">
       <span class="fs-icon-wrap" id="fsIconWrap">
         <!-- Expand Icon -->
-        <svg class="fs-icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="fs-icon-expand" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
         </svg>
         <!-- Compress Icon -->
-        <svg class="fs-icon-compress" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+        <svg class="fs-icon-compress" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
           <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
         </svg>
       </span>
@@ -3043,7 +3046,7 @@
     /* ============================================================
        CẤU HÌNH GOOGLE SHEETS (GOOGLE APPS SCRIPT WEB APP)
        ============================================================ */
-    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxaIyTs-kYfTbqc-1Bu3ZyjJidBzA6wrAgMs4f9H8eHvwdODRrFRyfunquBTQDUuNsTmQ/exec";
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycby6wgq6IfA7dXUg7fWily_pzOo1r_fYZHEl328jBct0pBH-YH1-JlD7oyiZyRDS3rWhtA/exec";
 
     /* ==========================================
        1. CANVAS SPARKLE & LILY PETALS EFFECT
@@ -3142,7 +3145,7 @@
     function getCenteredScrollTarget(targetEl) {
       if (!targetEl) return 0;
       const windowHeight = window.innerHeight;
-      
+
       // Tìm khối nội dung trọng tâm bên trong (như vintage-stamp-frame, location grid, rsvp grid, gallery,...)
       const focalContent = targetEl.querySelector('.vintage-stamp-frame, .location-desktop-grid, .rsvp-desktop-grid, .gallery-grid, .thankyou-signature') || targetEl;
       const rect = focalContent.getBoundingClientRect();
@@ -3241,9 +3244,9 @@
       if (!isNativeFullscreen() && !docEl.classList.contains('is-immersive-fullscreen')) {
         // --- 1. MỞ TOÀN MÀN HÌNH (CHUẨN F11) ---
         const requestMethod = docEl.requestFullscreen ||
-                              docEl.webkitRequestFullscreen ||
-                              docEl.mozRequestFullScreen ||
-                              docEl.msRequestFullscreen;
+          docEl.webkitRequestFullscreen ||
+          docEl.mozRequestFullScreen ||
+          docEl.msRequestFullscreen;
 
         if (requestMethod) {
           requestMethod.call(docEl).then(() => {
@@ -3261,9 +3264,9 @@
       } else {
         // --- 2. THU NHỎ / THOÁT TOÀN MÀN HÌNH ---
         const exitMethod = document.exitFullscreen ||
-                           document.webkitExitFullscreen ||
-                           document.mozCancelFullScreen ||
-                           document.msExitFullscreen;
+          document.webkitExitFullscreen ||
+          document.mozCancelFullScreen ||
+          document.msExitFullscreen;
 
         if (isNativeFullscreen() && exitMethod) {
           exitMethod.call(document).then(() => {
