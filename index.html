@@ -79,6 +79,25 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* Triệt tiêu hoàn toàn giao diện mặc định thô ráp của iOS Safari */
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    button,
+    [type="button"],
+    [type="submit"] {
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
     html {
       scroll-behavior: smooth;
       background-color: #FAF7F2;
@@ -1666,49 +1685,13 @@
       margin-bottom: 8px;
     }
 
-    .profile-actions-row {
+    .profile-socials {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
       gap: 8px;
     }
 
-    .contact-pill-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 7px 14px;
-      border-radius: var(--radius-full);
-      font-size: 0.82rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .contact-pill-btn.call {
-      background: #FAF7F2;
-      border: 1px solid var(--color-matcha-main);
-      color: var(--color-matcha-dark);
-    }
-
-    .contact-pill-btn.call:hover {
-      background: var(--color-matcha-main);
-      color: #FFFFFF;
-      transform: translateY(-2px);
-    }
-
-    .contact-pill-btn.zalo {
-      background: linear-gradient(135deg, #0068FF 0%, #004FCE 100%);
-      color: #FFFFFF;
-      box-shadow: 0 3px 10px rgba(0, 104, 255, 0.25);
-    }
-
-    .contact-pill-btn.zalo:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 104, 255, 0.35);
-    }
-
-    .social-circle-btn {
+    .social-btn {
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -1720,12 +1703,61 @@
       color: var(--color-matcha-dark);
       text-decoration: none;
       transition: all 0.2s ease;
+      font-size: 0.72rem;
+      font-weight: 700;
     }
 
-    .social-circle-btn:hover {
+    .social-btn:hover {
       background: var(--color-matcha-main);
       color: #FFFFFF;
       transform: translateY(-2px);
+    }
+
+    /* Quick Action Call / Zalo Buttons (Đồng nhất hoàn hảo giữa Desktop Web & iOS) */
+    .quick-contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .contact-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .contact-cta.call {
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-matcha-main);
+      color: var(--color-matcha-dark);
+      box-shadow: 0 2px 8px rgba(111, 144, 103, 0.12);
+    }
+
+    .contact-cta.call:hover {
+      background: var(--color-matcha-light);
+      transform: translateY(-2px);
+    }
+
+    .contact-cta.zalo {
+      background: linear-gradient(135deg, #0068FF 0%, #004FCE 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 104, 255, 0.25);
+    }
+
+    .contact-cta.zalo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 104, 255, 0.35);
     }
 
     /* RSVP & Wish Box Form */
@@ -1733,8 +1765,9 @@
       background: #FFFFFF;
       border: 1px dashed var(--color-gold-main);
       border-radius: var(--radius-md);
-      padding: 26px 22px;
+      padding: 26px 20px 24px;
       text-align: left;
+      position: relative;
     }
 
     .rsvp-form-title {
@@ -1751,7 +1784,6 @@
       text-align: center;
       margin-bottom: 16px;
     }
-
 
     .form-group {
       margin-bottom: 14px;
@@ -1778,6 +1810,26 @@
       color: var(--text-body);
       outline: none;
       transition: all 0.2s ease;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    /* Ngăn ngừa lỗi iOS Safari tự động zoom trang khi chạm vào ô nhập liệu */
+    @media (max-width: 768px) {
+      .form-input,
+      .form-textarea,
+      .form-select {
+        font-size: 16px !important;
+      }
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233F573B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 13px;
+      padding-right: 36px;
     }
 
     .form-input:focus,
@@ -1793,12 +1845,18 @@
       height: 90px;
     }
 
-    /* Attendance Chips */
+    /* Attendance Chips: Grid 3 cột đều tăm tắp trên cả web lẫn iOS Mobile */
     .attendance-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .attendance-chips label {
+      display: block;
+      width: 100%;
+      margin: 0;
     }
 
     .chip-item {
@@ -1806,15 +1864,31 @@
     }
 
     .chip-label {
-      padding: 7px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 9px 4px;
       border-radius: var(--radius-full);
       background: #FAF7F2;
       border: 1px solid var(--color-cream-border);
-      font-size: 0.82rem;
+      font-size: 0.76rem;
       font-weight: 500;
       color: var(--text-body);
       cursor: pointer;
       transition: all 0.2s;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-appearance: none;
+      appearance: none;
+      user-select: none;
+    }
+
+    @media (max-width: 360px) {
+      .chip-label {
+        font-size: 0.7rem;
+        padding: 8px 2px;
+      }
     }
 
     .chip-item:checked+.chip-label {
@@ -1822,12 +1896,14 @@
       border-color: var(--color-matcha-main);
       color: var(--color-matcha-dark);
       font-weight: 600;
+      box-shadow: 0 2px 8px rgba(111, 144, 103, 0.18);
     }
 
     .submit-wish-btn {
       width: 100%;
       background: linear-gradient(135deg, #D4AF37 0%, #B58D20 100%);
       color: #FFFFFF;
+      -webkit-text-fill-color: #FFFFFF;
       border: none;
       border-radius: var(--radius-full);
       padding: 14px 22px;
@@ -1842,6 +1918,11 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      -webkit-appearance: none;
+      appearance: none;
+      touch-action: manipulation;
+      position: relative;
+      z-index: 2;
     }
 
     .submit-wish-btn:hover {
@@ -2403,10 +2484,11 @@
 
     @media (max-width: 640px) {
       .back-to-top-btn {
-        bottom: 20px;
-        right: 16px;
-        width: 42px;
-        height: 42px;
+        bottom: max(16px, env(safe-area-inset-bottom, 16px));
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
       }
     }
 
@@ -2949,7 +3031,7 @@
             <!-- Left Column: Profile & RSVP Form -->
             <div class="rsvp-form-column">
 
-              <!-- Graduate Profile Card (Integrated Contact & Socials) -->
+              <!-- Graduate Profile Card -->
               <div class="profile-card">
                 <div class="avatar-wrapper">
                   <img class="avatar-img"
@@ -2959,30 +3041,42 @@
                 <div class="profile-details">
                   <div class="profile-name">Hồ Tiểu Điệp</div>
                   <div class="profile-role">Tân Cử Nhân • UFM Graduate</div>
-                  <div class="profile-actions-row">
-                    <a href="tel:0987654321" class="contact-pill-btn call" title="Gọi điện">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <div class="profile-socials">
+                    <a href="tel:0987654321" class="social-btn" title="Gọi điện">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
-                      <span>Gọi điện</span>
                     </a>
-                    <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="contact-pill-btn zalo" title="Nhắn tin Zalo">
-                      <span>💬 Nhắn tin Zalo</span>
-                    </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="Facebook">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                       </svg>
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" title="Instagram">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                       </svg>
                     </a>
+                    <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="social-btn" title="Zalo" style="font-weight: 700; font-size: 0.72rem;">
+                      Zalo
+                    </a>
                   </div>
                 </div>
+              </div>
+
+              <!-- Quick Action Call / Zalo (2 Nút Hành Động Lớn Rõ Ràng) -->
+              <div class="quick-contact-actions">
+                <a href="tel:0987654321" class="contact-cta call">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  <span>Gọi điện ngay</span>
+                </a>
+                <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="contact-cta zalo">
+                  <span>💬 Nhắn tin Zalo</span>
+                </a>
               </div>
 
               <!-- RSVP & Guestbook Submission Form -->
@@ -3444,6 +3538,11 @@
             document.body.classList.add('is-immersive-fullscreen');
             updateFullscreenUI();
           });
+        } else {
+          // Fallback cho iOS Safari (iPhone không hỗ trợ Element.requestFullscreen)
+          docEl.classList.add('is-immersive-fullscreen');
+          document.body.classList.add('is-immersive-fullscreen');
+          updateFullscreenUI();
         }
       } else {
         // --- 2. THU NHỎ / THOÁT TOÀN MÀN HÌNH ---
@@ -3476,6 +3575,10 @@
           document.body.classList.add('is-immersive-fullscreen');
           updateFullscreenUI();
         }).catch(() => { });
+      } else if (!requestMethod && !docEl.classList.contains('is-immersive-fullscreen')) {
+        docEl.classList.add('is-immersive-fullscreen');
+        document.body.classList.add('is-immersive-fullscreen');
+        updateFullscreenUI();
       }
     }
 
