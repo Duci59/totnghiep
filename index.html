@@ -488,6 +488,246 @@
       }
     }
 
+    /* ============================================================
+       2b. DẢI ẢNH PHOTOBOOTH KỶ NIỆM (Photobooth Photo Strip)
+       Trượt ra cùng thiệp mời và nằm duyên dáng ở góc trái bao thư
+       ============================================================ */
+    .photobooth-strip {
+      position: absolute;
+      top: 48px;
+      left: -68px;
+      width: 96px;
+      height: 270px;
+      background: #FFFFFF;
+      border-radius: 6px;
+      padding: 6px 5px 8px;
+      box-shadow: 0 16px 36px rgba(35, 50, 30, 0.3), 0 3px 8px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      cursor: pointer;
+      z-index: 109;
+      transform-origin: bottom center;
+      transform: translateY(0) scale(0.9) rotate(0deg);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .envelope-perspective-wrapper.is-open .photobooth-strip {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      animation: photoboothSlideOutDesktop 1.7s cubic-bezier(0.25, 1, 0.5, 1) 0.4s forwards;
+    }
+
+    @keyframes photoboothSlideOutDesktop {
+      0% {
+        opacity: 0;
+        transform: translateY(0) translateX(40px) scale(0.85) rotate(0deg) translateZ(10px);
+      }
+      20% {
+        opacity: 1;
+      }
+      50% {
+        /* Trượt vút lên cùng lúc thiệp mời mở */
+        transform: translateY(-110px) translateX(-20px) scale(1.05) rotate(-6deg) translateZ(45px);
+      }
+      100% {
+        /* An tọa nghiêng đúng vị trí màu đỏ */
+        transform: translateY(0) translateX(0) scale(1) rotate(-13deg) translateZ(45px);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .photobooth-strip {
+        top: 36px;
+        left: 8px;
+        width: 72px;
+        height: 212px;
+        padding: 5px 4px 6px;
+        border-radius: 5px;
+        transform-origin: center center;
+      }
+
+      .envelope-perspective-wrapper.is-open .photobooth-strip {
+        animation: photoboothSlideOutMobile 1.6s cubic-bezier(0.25, 1, 0.5, 1) 0.4s forwards;
+      }
+
+      @keyframes photoboothSlideOutMobile {
+        0% {
+          opacity: 0;
+          transform: translateY(0) translateX(25px) scale(0.85) rotate(0deg) translateZ(10px);
+        }
+        20% {
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(-85px) translateX(-5px) scale(1.04) rotate(-4deg) translateZ(45px);
+        }
+        100% {
+          transform: translateY(0) translateX(0) scale(1) rotate(-8deg) translateZ(45px);
+          opacity: 1;
+        }
+      }
+    }
+
+    .photobooth-strip:hover {
+      transform: translateY(-8px) scale(1.08) rotate(-7deg) translateZ(60px) !important;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(212, 175, 55, 0.35);
+      border-color: var(--color-gold-main);
+    }
+
+    .photobooth-tape {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(2deg);
+      width: 38px;
+      height: 14px;
+      background: rgba(243, 218, 142, 0.7);
+      backdrop-filter: blur(2px);
+      border: 1px dashed rgba(181, 141, 32, 0.35);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @media (max-width: 991px) {
+      .photobooth-tape {
+        width: 26px;
+        height: 10px;
+        top: -6px;
+      }
+    }
+
+    .photobooth-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .photobooth-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 2px 0 3px;
+      font-size: 0.52rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--color-gold-deep);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    @media (max-width: 991px) {
+      .photobooth-header {
+        font-size: 0.42rem;
+        padding: 1px 0 2px;
+      }
+    }
+
+    .photobooth-frames {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    @media (max-width: 991px) {
+      .photobooth-frames {
+        gap: 3px;
+      }
+    }
+
+    .photobooth-frame {
+      width: 100%;
+      flex: 1;
+      border-radius: 3px;
+      overflow: hidden;
+      background: #F4EFEA;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+
+    .photobooth-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photobooth-footer {
+      text-align: center;
+      padding-top: 4px;
+      line-height: 1.15;
+    }
+
+    .photobooth-name {
+      font-family: var(--font-heading);
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .photobooth-sub {
+      font-size: 0.46rem;
+      color: var(--color-gold-deep);
+      font-weight: 600;
+    }
+
+    .photobooth-date {
+      font-size: 0.42rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .photobooth-name {
+        font-size: 0.46rem;
+      }
+      .photobooth-sub {
+        font-size: 0.38rem;
+      }
+      .photobooth-date {
+        font-size: 0.34rem;
+      }
+    }
+
+    .photobooth-zoom-hint {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+
+    .photobooth-strip:hover .photobooth-zoom-hint {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     /* 3. Túi gấp mặt trước phong bì (Envelope Front Pocket)
           CHE KÍN HOÀN TOÀN TẤM THIỆP KHI PHONG BÌ ĐÓNG */
     .envelope-front-pocket {
@@ -2384,6 +2624,147 @@
     }
 
     /* ============================================================
+       PHOTOBOOTH LIGHTBOX MODAL (Phóng to dải ảnh photobooth)
+       ============================================================ */
+    .photobooth-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(18, 26, 16, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 1005;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+      padding: 20px;
+    }
+
+    .photobooth-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .photobooth-modal-content {
+      position: relative;
+      max-width: 320px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: zoomModal 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .photobooth-modal-close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .photobooth-modal-close:hover {
+      background: rgba(255, 255, 255, 0.45);
+      transform: scale(1.1);
+    }
+
+    .photobooth-enlarged-card {
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 16px 14px 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    .photobooth-enlarged-tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1deg);
+      width: 60px;
+      height: 22px;
+      background: rgba(243, 218, 142, 0.7);
+      border: 1px dashed rgba(181, 141, 32, 0.4);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .photobooth-enlarged-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--color-gold-deep);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .photobooth-enlarged-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .photobooth-enlarged-img-wrap {
+      width: 100%;
+      height: 155px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      background: #F3ECE6;
+    }
+
+    .photobooth-enlarged-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photobooth-enlarged-footer {
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    .photobooth-enlarged-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+    }
+
+    .photobooth-enlarged-sub {
+      font-size: 0.82rem;
+      color: var(--color-gold-deep);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .photobooth-enlarged-date {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ============================================================
        CLOSING GRATITUDE LETTER (With Love & Thank you)
        ============================================================ */
     .thankyou-letter {
@@ -2734,6 +3115,35 @@
                 <div class="card-preview-date">13.11.2026 • 13h30 - 15h30</div>
                 <div class="card-preview-venue">ĐH Tài Chính - Marketing (UFM)</div>
               </div>
+            </div>
+
+            <!-- 2b. Dải ảnh Photobooth kỷ niệm tốt nghiệp (Trượt ra cùng thiệp mời khi mở) -->
+            <div class="photobooth-strip" id="photoboothStrip" onclick="openPhotoboothModal(event)" role="button" aria-label="Xem dải ảnh photobooth kỷ niệm tốt nghiệp" title="Chạm để xem dải ảnh photobooth phóng to ✨">
+              <div class="photobooth-tape"></div>
+              <div class="photobooth-inner">
+                <div class="photobooth-header">
+                  <span>★</span>
+                  <span>PHOTOBOOTH</span>
+                  <span>★</span>
+                </div>
+                <div class="photobooth-frames">
+                  <div class="photobooth-frame">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Hồ Tiểu Điệp rạng rỡ" loading="lazy">
+                  </div>
+                  <div class="photobooth-frame">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" alt="Nụ cười cử nhân ngày tốt nghiệp" loading="lazy">
+                  </div>
+                  <div class="photobooth-frame">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80" alt="Tung mũ cử nhân ước mơ bay cao" loading="lazy">
+                  </div>
+                </div>
+                <div class="photobooth-footer">
+                  <div class="photobooth-name">HỒ TIỂU ĐIỆP</div>
+                  <div class="photobooth-sub">Graduation • 2026 🎓</div>
+                  <div class="photobooth-date">13.11.2026 • With Love ❤️</div>
+                </div>
+              </div>
+              <div class="photobooth-zoom-hint">🔍</div>
             </div>
 
             <!-- 3. Túi gấp mặt trước của phong bì (Che kín tấm thiệp) -->
@@ -3307,6 +3717,37 @@
         <img class="lightbox-img" id="lightboxActiveImg" src="" alt="Ảnh kỷ yếu phóng to">
       </div>
       <div class="lightbox-caption" id="lightboxActiveCaption"></div>
+    </div>
+  </div>
+
+  <!-- Photobooth Strip Lightbox Modal -->
+  <div class="photobooth-modal" id="photoboothModal" onclick="closePhotoboothModalOnBackdrop(event)">
+    <div class="photobooth-modal-content">
+      <button class="photobooth-modal-close" onclick="closePhotoboothModal()" aria-label="Đóng ảnh photobooth">✕</button>
+      <div class="photobooth-enlarged-card">
+        <div class="photobooth-enlarged-tape"></div>
+        <div class="photobooth-enlarged-header">
+          <span>★</span>
+          <span>GRADUATION PHOTOBOOTH</span>
+          <span>★</span>
+        </div>
+        <div class="photobooth-enlarged-grid">
+          <div class="photobooth-enlarged-img-wrap">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85" alt="Hồ Tiểu Điệp rạng rỡ">
+          </div>
+          <div class="photobooth-enlarged-img-wrap">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=85" alt="Nụ cười cử nhân ngày tốt nghiệp">
+          </div>
+          <div class="photobooth-enlarged-img-wrap">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=85" alt="Tung mũ cử nhân ước mơ bay cao">
+          </div>
+        </div>
+        <div class="photobooth-enlarged-footer">
+          <div class="photobooth-enlarged-name">HỒ TIỂU ĐIỆP</div>
+          <div class="photobooth-enlarged-sub">Tân Cử Nhân • UFM Graduate 🎓</div>
+          <div class="photobooth-enlarged-date">13.11.2026 • With Love & Gratitude ❤️</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -4227,11 +4668,44 @@
 
     // Keyboard support for Lightbox
     window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (lightboxModal && lightboxModal.classList.contains('active')) closeLightbox();
+        const pbModal = document.getElementById('photoboothModal');
+        if (pbModal && pbModal.classList.contains('active')) closePhotoboothModal();
+      }
       if (!lightboxModal.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') changeLightboxImage(-1);
       if (e.key === 'ArrowRight') changeLightboxImage(1);
     });
+
+    /* ==========================================
+       7b. PHOTOBOOTH MODAL CONTROLS
+       ========================================== */
+    function openPhotoboothModal(e) {
+      if (e) {
+        e.stopPropagation();
+      }
+      const modal = document.getElementById('photoboothModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closePhotoboothModal() {
+      const modal = document.getElementById('photoboothModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function closePhotoboothModalOnBackdrop(e) {
+      const modal = document.getElementById('photoboothModal');
+      if (e.target === modal) {
+        closePhotoboothModal();
+      }
+    }
 
     /* ==========================================
        8. TOAST NOTIFICATION UTILITY
