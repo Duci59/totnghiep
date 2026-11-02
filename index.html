@@ -28,39 +28,40 @@
   <style>
     /* ============================================================
        1. CSS VARIABLES & THEME SETUP
-       Color Palette: Matcha pastel, Soft Blush Pink, Cream Beige, Gold
+       Color Palette: Romantic Blush Rose, Pastel Pink, Cream Ivory, Royal Gold
+       (Đồng điệu 100% với tông hồng trang cuối cùng)
        ============================================================ */
     :root {
-      --color-matcha-dark: #3F573B;
-      --color-matcha-main: #6F9067;
-      --color-matcha-soft: #97B18E;
-      --color-matcha-light: #EAF0E7;
-      --color-matcha-ultra-light: #F4F7F2;
+      --color-matcha-dark: #6C2B3C;
+      --color-matcha-main: #D47087;
+      --color-matcha-soft: #EAA4B2;
+      --color-matcha-light: #FDE8EC;
+      --color-matcha-ultra-light: #FFF5F7;
 
-      --color-pink-soft: #F9E5DF;
+      --color-pink-soft: #FDE8E4;
       --color-pink-blush: #F4D3C9;
-      --color-pink-deep: #D98976;
+      --color-pink-deep: #C85F75;
 
-      --color-cream-bg: #FAF7F2;
+      --color-cream-bg: #FAF6F4;
       --color-cream-card: #FFFFFF;
-      --color-cream-border: #EFE8DC;
+      --color-cream-border: #F3E3DF;
       --color-gold-main: #D4AF37;
       --color-gold-deep: #B58D20;
       --color-gold-light: #F6E7B4;
-      --color-gold-shimmer: linear-gradient(135deg, #ECC86A 0%, #FDF3C7 50%, #C9962A 100%);
+      --color-gold-shimmer: linear-gradient(135deg, #ECC86A 0%, #F5D3C9 50%, #C97D73 100%);
 
-      --text-heading: #263324;
-      --text-body: #445041;
-      --text-muted: #798876;
+      --text-heading: #3D1F27;
+      --text-body: #543940;
+      --text-muted: #8E7079;
 
       --font-script: 'Alex Brush', cursive;
       --font-serif: 'Cormorant Garamond', serif;
       --font-heading: 'Playfair Display', serif;
       --font-sans: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      --shadow-sm: 0 4px 14px rgba(60, 80, 55, 0.06);
-      --shadow-md: 0 10px 30px rgba(60, 80, 55, 0.09);
-      --shadow-lg: 0 20px 50px rgba(50, 70, 45, 0.12);
+      --shadow-sm: 0 4px 14px rgba(120, 45, 65, 0.06);
+      --shadow-md: 0 10px 30px rgba(120, 45, 65, 0.09);
+      --shadow-lg: 0 20px 50px rgba(100, 35, 55, 0.12);
       --shadow-seal: 0 8px 25px rgba(181, 141, 32, 0.5);
 
       --radius-sm: 12px;
@@ -100,7 +101,7 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: #FAF7F2;
+      background-color: #FAF6F4;
       font-size: 16px;
       width: 100%;
     }
@@ -108,7 +109,7 @@
     body {
       font-family: var(--font-sans);
       color: var(--text-body);
-      background: radial-gradient(circle at 50% 10%, #FFFFFF 0%, #FAF6F0 50%, #F3EDE3 100%);
+      background: radial-gradient(circle at 50% 10%, #FFFFFF 0%, #FFF5F2 45%, #FAECE7 100%);
       min-height: 100vh;
       width: 100%;
       overflow-x: hidden;
@@ -261,7 +262,7 @@
       font-size: 4rem;
       color: var(--color-matcha-dark);
       line-height: 1.1;
-      text-shadow: 0 4px 18px rgba(111, 144, 103, 0.22);
+      text-shadow: 0 4px 18px rgba(212, 112, 135, 0.22);
     }
 
     @media (min-width: 992px) {
@@ -343,9 +344,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(145deg, #627F5C 0%, #4D6A48 100%);
+      background: linear-gradient(145deg, #E8A196 0%, #C47366 100%);
       border-radius: 14px;
-      box-shadow: 0 24px 55px rgba(45, 65, 40, 0.35);
+      box-shadow: 0 24px 55px rgba(160, 65, 75, 0.32);
       z-index: 1;
     }
 
@@ -710,7 +711,7 @@
       height: 0;
       border-style: solid;
       border-width: 115px 0 115px 170px;
-      border-color: transparent transparent transparent #779670;
+      border-color: transparent transparent transparent #DFA096;
     }
 
     /* Gấp tam giác phải */
@@ -722,7 +723,7 @@
       height: 0;
       border-style: solid;
       border-width: 115px 170px 115px 0;
-      border-color: transparent #71906A transparent transparent;
+      border-color: transparent #D7978D transparent transparent;
     }
 
     /* Gấp tam giác đáy */
@@ -734,7 +735,7 @@
       height: 0;
       border-style: solid;
       border-width: 0 170px 135px 170px;
-      border-color: transparent transparent #65845E transparent;
+      border-color: transparent transparent #C87E74 transparent;
     }
 
     @media (min-width: 992px) {
@@ -760,14 +761,14 @@
       height: 0;
       border-style: solid;
       border-width: 135px 170px 0 170px;
-      border-color: #8BAA83 transparent transparent transparent;
+      border-color: #EFB5AC transparent transparent transparent;
       transform-origin: top center;
       transform-style: preserve-3d;
       transform: translateZ(14px);
       transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.3s;
       z-index: 5;
       /* Nằm ngoài cùng che phủ hoàn toàn */
-      filter: drop-shadow(0 4px 8px rgba(35, 50, 30, 0.22));
+      filter: drop-shadow(0 4px 8px rgba(140, 50, 60, 0.22));
       pointer-events: none;
     }
 
@@ -1124,19 +1125,19 @@
     }
 
     .section-card.is-focused .vintage-stamp-frame {
-      box-shadow: 0 30px 80px rgba(63, 87, 59, 0.16), 0 0 0 1.5px rgba(212, 175, 55, 0.55);
+      box-shadow: 0 30px 80px rgba(108, 43, 60, 0.14), 0 0 0 1.5px rgba(212, 175, 55, 0.55);
       transform: translateY(-2px) scale(1.006);
     }
 
     .section-card.is-focused .location-info-left,
     .section-card.is-focused .map-container-right {
-      box-shadow: 0 24px 60px rgba(63, 87, 59, 0.14), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
+      box-shadow: 0 24px 60px rgba(108, 43, 60, 0.12), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
       transform: translateY(-2px);
     }
 
     .section-card.is-focused .rsvp-form-container,
     .section-card.is-focused .wishes-board {
-      box-shadow: 0 24px 60px rgba(63, 87, 59, 0.13), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
+      box-shadow: 0 24px 60px rgba(108, 43, 60, 0.12), 0 0 0 1.5px rgba(212, 175, 55, 0.45);
       transform: translateY(-2px);
     }
 
@@ -1145,27 +1146,27 @@
       transform: translateY(-2px) scale(1.008);
     }
 
-    /* Các theme nền chuyển sắc 100% full-bleed cho từng Section */
+    /* Các theme nền chuyển sắc 100% full-bleed hồng đào & rose gold thanh xuân */
     #sectionMainLetter {
-      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FAF6F0 50%, #F5EFEB 100%);
+      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #FFF7F5 50%, #FAECE7 100%);
       border-top: 1px solid var(--color-cream-border);
       border-bottom: 1px solid var(--color-cream-border);
     }
 
     #sectionLocation {
-      background: linear-gradient(180deg, #FAF6F0 0%, #EAF0E7 40%, #F4F7F2 100%);
-      border-top: 1px solid rgba(151, 177, 142, 0.35);
-      border-bottom: 1px solid rgba(151, 177, 142, 0.35);
+      background: linear-gradient(180deg, #FAECE7 0%, #FDEAE6 40%, #FFF5F2 100%);
+      border-top: 1px solid rgba(234, 164, 178, 0.35);
+      border-bottom: 1px solid rgba(234, 164, 178, 0.35);
     }
 
     #sectionContact {
-      background: linear-gradient(180deg, #F4F7F2 0%, #FFF9F7 45%, #FAF7F2 100%);
+      background: linear-gradient(180deg, #FFF5F2 0%, #FCE8E3 45%, #FAF2EF 100%);
       border-top: 1px solid rgba(212, 175, 55, 0.25);
       border-bottom: 1px solid rgba(212, 175, 55, 0.25);
     }
 
     #sectionGallery {
-      background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #FAF7F2 100%);
+      background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #FFF6F4 100%);
       border-top: 1px solid var(--color-cream-border);
       border-bottom: 1px solid var(--color-cream-border);
     }
@@ -1726,7 +1727,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: linear-gradient(135deg, #6F9067 0%, #3F573B 100%);
+      background: linear-gradient(135deg, #D47087 0%, #8D2A44 100%);
       color: #FFFFFF;
       text-decoration: none;
       padding: 15px 22px;
@@ -1734,15 +1735,15 @@
       font-weight: 600;
       font-size: 1rem;
       letter-spacing: 0.3px;
-      box-shadow: 0 8px 22px rgba(63, 87, 59, 0.28);
+      box-shadow: 0 8px 22px rgba(141, 42, 68, 0.28);
       transition: all 0.3s ease;
       margin-bottom: 18px;
     }
 
     .directions-cta-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(63, 87, 59, 0.38);
-      background: linear-gradient(135deg, #7C9F74 0%, #354B31 100%);
+      box-shadow: 0 12px 28px rgba(141, 42, 68, 0.38);
+      background: linear-gradient(135deg, #DE7E95 0%, #7A2138 100%);
     }
 
     /* Guest Tips Accordion / Cards */
@@ -1939,7 +1940,7 @@
       background: #FFFFFF;
       border: 1.5px solid var(--color-matcha-main);
       color: var(--color-matcha-dark);
-      box-shadow: 0 2px 8px rgba(111, 144, 103, 0.12);
+      box-shadow: 0 2px 8px rgba(212, 112, 135, 0.15);
     }
 
     .contact-cta.call:hover {
@@ -1966,6 +1967,9 @@
       padding: 26px 20px 24px;
       text-align: left;
       position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
     }
 
     .rsvp-form-title {
@@ -2023,7 +2027,7 @@
     }
 
     .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%233F573B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236C2B3C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 14px center;
       background-size: 13px;
@@ -2035,7 +2039,7 @@
     .form-select:focus {
       border-color: var(--color-matcha-main);
       background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(111, 144, 103, 0.2);
+      box-shadow: 0 0 0 3px rgba(212, 112, 135, 0.2);
     }
 
     .form-textarea {
@@ -2043,18 +2047,25 @@
       height: 90px;
     }
 
-    /* Attendance Chips: Grid 3 cột đều tăm tắp trên cả web lẫn iOS Mobile */
+    /* Attendance Chips: Layout 2 dòng trên Mobile (chống tràn 100%) & 3 cột trên Desktop */
     .attendance-chips {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
       margin-top: 6px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .attendance-chips label {
       display: block;
       width: 100%;
       margin: 0;
+      min-width: 0;
+    }
+
+    .attendance-chips label:first-child {
+      grid-column: span 2;
     }
 
     .chip-item {
@@ -2065,28 +2076,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 6px;
       width: 100%;
-      padding: 9px 4px;
+      padding: 11px 10px;
       border-radius: var(--radius-full);
-      background: #FAF7F2;
-      border: 1px solid var(--color-cream-border);
-      font-size: 0.76rem;
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-cream-border);
+      font-size: 0.88rem;
       font-weight: 500;
       color: var(--text-body);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
       text-align: center;
       white-space: nowrap;
       -webkit-appearance: none;
       appearance: none;
       user-select: none;
-    }
-
-    @media (max-width: 360px) {
-      .chip-label {
-        font-size: 0.7rem;
-        padding: 8px 2px;
-      }
+      box-sizing: border-box;
     }
 
     .chip-item:checked+.chip-label {
@@ -2094,12 +2100,28 @@
       border-color: var(--color-matcha-main);
       color: var(--color-matcha-dark);
       font-weight: 600;
-      box-shadow: 0 2px 8px rgba(111, 144, 103, 0.18);
+      box-shadow: 0 4px 14px rgba(212, 112, 135, 0.22);
+    }
+
+    @media (min-width: 576px) {
+      .attendance-chips {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+
+      .attendance-chips label:first-child {
+        grid-column: span 1;
+      }
+
+      .chip-label {
+        font-size: 0.82rem;
+        padding: 9px 4px;
+      }
     }
 
     .submit-wish-btn {
       width: 100%;
-      background: linear-gradient(135deg, #D4AF37 0%, #B58D20 100%);
+      background: linear-gradient(135deg, #E07A93 0%, #B84762 100%);
       color: #FFFFFF;
       -webkit-text-fill-color: #FFFFFF;
       border: none;
@@ -2110,7 +2132,7 @@
       letter-spacing: 0.5px;
       cursor: pointer;
       margin-top: 10px;
-      box-shadow: 0 6px 18px rgba(181, 141, 32, 0.35);
+      box-shadow: 0 6px 20px rgba(184, 71, 98, 0.35);
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
@@ -2125,7 +2147,8 @@
 
     .submit-wish-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(181, 141, 32, 0.45);
+      box-shadow: 0 10px 26px rgba(184, 71, 98, 0.45);
+      background: linear-gradient(135deg, #E6889F 0%, #C4516D 100%);
     }
 
     .submit-wish-btn:active {
@@ -2853,7 +2876,7 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border: 1.5px solid rgba(212, 175, 55, 0.45);
-      box-shadow: 0 8px 24px rgba(63, 87, 59, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 8px 24px rgba(108, 43, 60, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -2871,9 +2894,9 @@
     .fullscreen-toggle-btn:hover {
       background: #FFFFFF;
       border-color: var(--color-gold-main);
-      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.28), 0 4px 10px rgba(63, 87, 59, 0.1);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.28), 0 4px 10px rgba(108, 43, 60, 0.1);
       transform: translateY(-2px);
-      color: #243521;
+      color: var(--color-matcha-dark);
     }
 
     .fullscreen-toggle-btn:active {
@@ -2893,35 +2916,16 @@
     }
 
     .fullscreen-toggle-btn.is-active {
-      background: linear-gradient(135deg, rgba(234, 240, 231, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(253, 232, 236, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
       border-color: var(--color-matcha-main);
       color: var(--color-matcha-dark);
-      box-shadow: 0 8px 25px rgba(111, 144, 103, 0.2);
+      box-shadow: 0 8px 25px rgba(212, 112, 135, 0.2);
     }
 
-    /* Mobile: Icon-only fullscreen button to avoid overlapping content */
-    @media (max-width: 640px) {
+    /* Mobile & Tablet: Ẩn hoàn toàn nút phóng to thu nhỏ trên điện thoại theo yêu cầu */
+    @media (max-width: 991px) {
       .fullscreen-toggle-btn {
-        top: 12px;
-        right: 12px;
-        padding: 10px;
-        gap: 0;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        justify-content: center;
-      }
-
-      .fullscreen-toggle-btn .fs-label {
-        display: none;
-      }
-    }
-
-    @media (min-width: 641px) and (max-width: 991px) {
-      .fullscreen-toggle-btn {
-        padding: 8px 14px;
-        font-size: 0.82rem;
-        gap: 6px;
+        display: none !important;
       }
     }
 
@@ -2945,7 +2949,7 @@
 
     html.is-immersive-fullscreen::-webkit-scrollbar-thumb,
     body.is-immersive-fullscreen::-webkit-scrollbar-thumb {
-      background: rgba(111, 144, 103, 0.45);
+      background: rgba(212, 112, 135, 0.5);
       border-radius: 9999px;
     }
 
@@ -2967,7 +2971,7 @@
 
       body.is-immersive-fullscreen .vintage-stamp-frame {
         max-width: 95vw;
-        box-shadow: 0 35px 95px rgba(63, 87, 59, 0.22), 0 0 0 2px rgba(212, 175, 55, 0.6);
+        box-shadow: 0 35px 95px rgba(108, 43, 60, 0.18), 0 0 0 2px rgba(212, 175, 55, 0.6);
       }
 
       body.is-immersive-fullscreen .location-desktop-grid,
@@ -3212,8 +3216,8 @@
                     <svg class="wreath-svg-ring" viewBox="0 0 200 200">
                       <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1.5"
                         stroke-dasharray="4 3" />
-                      <circle cx="100" cy="100" r="84" fill="none" stroke="rgba(151, 177, 142, 0.4)" stroke-width="1" />
-                      <g fill="#97B18E" opacity="0.6">
+                      <circle cx="100" cy="100" r="84" fill="none" stroke="rgba(234, 164, 178, 0.5)" stroke-width="1" />
+                      <g fill="#EAA4B2" opacity="0.7">
                         <circle cx="100" cy="8" r="3.5" fill="#D4AF37" />
                         <circle cx="192" cy="100" r="3.5" fill="#D4AF37" />
                         <circle cx="100" cy="192" r="3.5" fill="#D4AF37" />
@@ -4052,7 +4056,7 @@
         const count = 200;
         const defaults = {
           origin: { y: 0.65 },
-          colors: ['#D4AF37', '#ECC86A', '#97B18E', '#6F9067', '#F4D3C9', '#FFFFFF']
+          colors: ['#D4AF37', '#ECC86A', '#D47087', '#EAA4B2', '#F4D3C9', '#FFFFFF']
         };
 
         function fire(particleRatio, opts) {
