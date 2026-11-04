@@ -699,9 +699,11 @@
       .photobooth-name {
         font-size: 0.46rem;
       }
+
       .photobooth-sub {
         font-size: 0.38rem;
       }
+
       .photobooth-date {
         font-size: 0.34rem;
       }
@@ -1087,17 +1089,32 @@
       animation: fadeSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
-    .section-card.revealed .section-badge { animation-delay: 0s; }
-    .section-card.revealed .vintage-stamp-frame { animation-delay: 0.15s; }
-    .section-card.revealed .location-desktop-grid { animation-delay: 0.1s; }
-    .section-card.revealed .rsvp-desktop-grid { animation-delay: 0.1s; }
-    .section-card.revealed .heart-gallery-wrapper { animation-delay: 0.15s; }
+    .section-card.revealed .section-badge {
+      animation-delay: 0s;
+    }
+
+    .section-card.revealed .vintage-stamp-frame {
+      animation-delay: 0.15s;
+    }
+
+    .section-card.revealed .location-desktop-grid {
+      animation-delay: 0.1s;
+    }
+
+    .section-card.revealed .rsvp-desktop-grid {
+      animation-delay: 0.1s;
+    }
+
+    .section-card.revealed .heart-gallery-wrapper {
+      animation-delay: 0.15s;
+    }
 
     @keyframes fadeSlideUp {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -1820,27 +1837,18 @@
     .rsvp-desktop-grid {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
       margin-top: 10px;
       width: 100%;
-      max-width: 1550px;
+      max-width: 580px;
       margin-left: auto;
       margin-right: auto;
     }
 
     @media (min-width: 992px) {
       .rsvp-desktop-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: start;
-      }
-    }
-
-    @media (min-width: 1600px) {
-      .rsvp-desktop-grid {
-        max-width: 1850px;
-        gap: 68px;
+        max-width: 620px;
+        gap: 24px;
       }
     }
 
@@ -2045,6 +2053,7 @@
 
     /* Ngăn ngừa lỗi iOS Safari tự động zoom trang khi chạm vào ô nhập liệu */
     @media (max-width: 768px) {
+
       .form-input,
       .form-textarea,
       .form-select {
@@ -3061,7 +3070,8 @@
             </div>
 
             <!-- 2b. Dải ảnh Photobooth kỷ niệm tốt nghiệp (Trượt ra cùng thiệp mời khi mở) -->
-            <div class="photobooth-strip" id="photoboothStrip" onclick="openPhotoboothModal(event)" role="button" aria-label="Xem dải ảnh photobooth kỷ niệm tốt nghiệp" title="Chạm để xem dải ảnh photobooth phóng to">
+            <div class="photobooth-strip" id="photoboothStrip" onclick="openPhotoboothModal(event)" role="button"
+              aria-label="Xem dải ảnh photobooth kỷ niệm tốt nghiệp" title="Chạm để xem dải ảnh photobooth phóng to">
               <div class="photobooth-tape"></div>
               <div class="photobooth-inner">
                 <div class="photobooth-header">
@@ -3069,13 +3079,19 @@
                 </div>
                 <div class="photobooth-frames">
                   <div class="photobooth-frame">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Hồ Tiểu Điệp rạng rỡ" loading="lazy">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+                      alt="Hồ Tiểu Điệp rạng rỡ" loading="lazy">
                   </div>
                   <div class="photobooth-frame">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" alt="Nụ cười cử nhân ngày tốt nghiệp" loading="lazy">
+                    <img
+                      src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80"
+                      alt="Nụ cười cử nhân ngày tốt nghiệp" loading="lazy">
                   </div>
                   <div class="photobooth-frame">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80" alt="Tung mũ cử nhân ước mơ bay cao" loading="lazy">
+                    <img
+                      src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80"
+                      alt="Tung mũ cử nhân ước mơ bay cao" loading="lazy">
                   </div>
                 </div>
                 <div class="photobooth-footer">
@@ -3319,8 +3335,10 @@
               <div class="guest-tips-list">
                 <div class="tip-item">
                   <div class="tip-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
                     </svg>
                   </div>
                   <div>
@@ -3331,8 +3349,10 @@
                 </div>
                 <div class="tip-item">
                   <div class="tip-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                      <circle cx="12" cy="13" r="4" />
                     </svg>
                   </div>
                   <div>
@@ -3343,8 +3363,11 @@
                 </div>
                 <div class="tip-item">
                   <div class="tip-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                      <path d="M2 12h20" />
                     </svg>
                   </div>
                   <div>
@@ -3401,23 +3424,29 @@
                   <div class="profile-role">Tân Cử Nhân • UFM Graduate</div>
                   <div class="profile-socials">
                     <a href="tel:0987654321" class="social-btn" title="Gọi điện">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
                     </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      title="Facebook">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                       </svg>
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      title="Instagram">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                       </svg>
                     </a>
-                    <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="social-btn" title="Zalo" style="font-weight: 700; font-size: 0.72rem;">
+                    <a href="https://zalo.me/0987654321" target="_blank" rel="noopener noreferrer" class="social-btn"
+                      title="Zalo" style="font-weight: 700; font-size: 0.72rem;">
                       Zalo
                     </a>
                   </div>
@@ -3428,7 +3457,8 @@
               <div class="quick-contact-actions">
                 <a href="tel:0987654321" class="contact-cta call">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                   <span>Gọi điện ngay</span>
                 </a>
@@ -3450,15 +3480,7 @@
                       required>
                   </div>
 
-                  <div class="form-group">
-                    <label class="form-label" for="guestRelation">Mối quan hệ</label>
-                    <select id="guestRelation" class="form-select">
-                      <option value="Bạn bè">Bạn bè thân thiết</option>
-                      <option value="Thầy cô">Quý Thầy Cô kính mến</option>
-                      <option value="Gia đình">Gia đình & Họ hàng</option>
-                      <option value="Đồng nghiệp">Đồng nghiệp & Anh/Chị</option>
-                    </select>
-                  </div>
+
 
                   <div class="form-group">
                     <label class="form-label">Bạn sẽ đến chung vui chứ?</label>
@@ -3495,25 +3517,6 @@
 
             </div>
 
-            <!-- Right Column: Wishes Board (Sổ lưu bút) -->
-            <div class="wishes-board">
-              <div class="wishes-board-title">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <span>Sổ Lưu Bút Lời Chúc</span>
-                  <button type="button" class="sync-sheet-btn" onclick="syncWishesFromSheet(true)"
-                    title="Làm mới sổ lưu bút" aria-label="Làm mới sổ lưu bút">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path
-                        d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-                    </svg>
-                  </button>
-                </div>
-                <span class="wishes-count-badge" id="wishesCount">0 lời chúc</span>
-              </div>
-              <div class="wishes-list" id="wishesList">
-                <!-- Wishes dynamically rendered here -->
-              </div>
             </div>
 
           </div>
@@ -3545,75 +3548,91 @@
 
               <!-- Row 1: 2 đỉnh trên của trái tim (cột 2 & 4) -->
               <div class="heart-photo-item" style="grid-column: 2; grid-row: 1;" onclick="openLightbox(0)">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Nụ cười cử nhân rạng rỡ" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
+                  alt="Nụ cười cử nhân rạng rỡ" loading="lazy">
                 <div class="heart-caption-pill">Nụ cười rực rỡ</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 4; grid-row: 1;" onclick="openLightbox(1)">
-                <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80" alt="Bó hoa ly trắng tinh khôi" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80"
+                  alt="Bó hoa ly trắng tinh khôi" loading="lazy">
                 <div class="heart-caption-pill">Hoa ly tinh khôi</div>
               </div>
 
               <!-- Row 2: 4 ảnh trải dài (cột 1, 2, 4, 5) tạo vòm vai trái tim -->
               <div class="heart-photo-item" style="grid-column: 1; grid-row: 2;" onclick="openLightbox(2)">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80" alt="Tung mũ cử nhân" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
+                  alt="Tung mũ cử nhân" loading="lazy">
                 <div class="heart-caption-pill">Tung mũ ước mơ</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 2; grid-row: 2;" onclick="openLightbox(3)">
-                <img src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=600&q=80" alt="Giảng đường UFM" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=600&q=80"
+                  alt="Giảng đường UFM" loading="lazy">
                 <div class="heart-caption-pill">Giảng đường UFM</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 3; grid-row: 2;" onclick="openLightbox(4)">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Khoảnh khắc thanh xuân" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                  alt="Khoảnh khắc thanh xuân" loading="lazy">
                 <div class="heart-caption-pill">Hồ Tiểu Điệp</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 4; grid-row: 2;" onclick="openLightbox(5)">
-                <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=600&q=80" alt="Tà áo cử nhân" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=600&q=80"
+                  alt="Tà áo cử nhân" loading="lazy">
                 <div class="heart-caption-pill">Áo cử nhân</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 5; grid-row: 2;" onclick="openLightbox(6)">
-                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80" alt="Bên người thân thương" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
+                  alt="Bên người thân thương" loading="lazy">
                 <div class="heart-caption-pill">Hội bạn thân</div>
               </div>
 
               <!-- Row 3: 5 ảnh đầy đặn phần thân trái tim (cột 1 đến 5) -->
               <div class="heart-photo-item" style="grid-column: 1; grid-row: 3;" onclick="openLightbox(7)">
-                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80" alt="Lễ tốt nghiệp thiêng liêng" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80"
+                  alt="Lễ tốt nghiệp thiêng liêng" loading="lazy">
                 <div class="heart-caption-pill">Lễ tốt nghiệp</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 2; grid-row: 3;" onclick="openLightbox(8)">
-                <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=600&q=80" alt="Kỷ niệm ngày tốt nghiệp" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=600&q=80"
+                  alt="Kỷ niệm ngày tốt nghiệp" loading="lazy">
                 <div class="heart-caption-pill">Kỷ niệm đẹp</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 3; grid-row: 3;" onclick="openLightbox(9)">
-                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Trang sách thanh xuân" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                  alt="Trang sách thanh xuân" loading="lazy">
                 <div class="heart-caption-pill">4 năm đại học</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 4; grid-row: 3;" onclick="openLightbox(10)">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Đồng đội và bạn bè" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+                  alt="Đồng đội và bạn bè" loading="lazy">
                 <div class="heart-caption-pill">Đồng hành</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 5; grid-row: 3;" onclick="openLightbox(11)">
-                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Nụ cười ngày nhận bằng" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80"
+                  alt="Nụ cười ngày nhận bằng" loading="lazy">
                 <div class="heart-caption-pill">Tương lai mở rộng</div>
               </div>
 
               <!-- Row 4: 3 ảnh gom gọn phần dưới (cột 2, 3, 4) -->
               <div class="heart-photo-item" style="grid-column: 2; grid-row: 4;" onclick="openLightbox(12)">
-                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80" alt="Góc sân trường nắng ấm" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80"
+                  alt="Góc sân trường nắng ấm" loading="lazy">
                 <div class="heart-caption-pill">Khuôn viên UFM</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 3; grid-row: 4;" onclick="openLightbox(13)">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Màu áo cử nhân UFM" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
+                  alt="Màu áo cử nhân UFM" loading="lazy">
                 <div class="heart-caption-pill">Tân cử nhân UFM</div>
               </div>
               <div class="heart-photo-item" style="grid-column: 4; grid-row: 4;" onclick="openLightbox(14)">
-                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80" alt="Những trang lưu bút" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
+                  alt="Những trang lưu bút" loading="lazy">
                 <div class="heart-caption-pill">Trang thanh xuân</div>
               </div>
 
               <!-- Row 5: 1 ảnh chóp nhọn đáy trái tim (cột 3) -->
               <div class="heart-photo-item" style="grid-column: 3; grid-row: 5;" onclick="openLightbox(15)">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Chúc mừng ngày tốt nghiệp" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+                  alt="Chúc mừng ngày tốt nghiệp" loading="lazy">
                 <div class="heart-caption-pill">Trọn vẹn yêu thương</div>
               </div>
 
@@ -3637,7 +3656,9 @@
           </p>
 
           <div style="display: flex; align-items: center; justify-content: center; gap: 14px;">
-            <span style="font-size: 0.95rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-matcha-dark); font-weight: 600;">Tân Cử Nhân</span>
+            <span
+              style="font-size: 0.95rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-matcha-dark); font-weight: 600;">Tân
+              Cử Nhân</span>
           </div>
 
           <div class="thankyou-signature">Hồ Tiểu Điệp</div>
@@ -3678,7 +3699,8 @@
   <!-- Photobooth Strip Lightbox Modal -->
   <div class="photobooth-modal" id="photoboothModal" onclick="closePhotoboothModalOnBackdrop(event)">
     <div class="photobooth-modal-content">
-      <button class="photobooth-modal-close" onclick="closePhotoboothModal()" aria-label="Đóng ảnh photobooth">✕</button>
+      <button class="photobooth-modal-close" onclick="closePhotoboothModal()"
+        aria-label="Đóng ảnh photobooth">✕</button>
       <div class="photobooth-enlarged-card">
         <div class="photobooth-enlarged-tape"></div>
         <div class="photobooth-enlarged-header">
@@ -3686,13 +3708,16 @@
         </div>
         <div class="photobooth-enlarged-grid">
           <div class="photobooth-enlarged-img-wrap">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85" alt="Hồ Tiểu Điệp rạng rỡ">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85"
+              alt="Hồ Tiểu Điệp rạng rỡ">
           </div>
           <div class="photobooth-enlarged-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=85" alt="Nụ cười cử nhân ngày tốt nghiệp">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=85"
+              alt="Nụ cười cử nhân ngày tốt nghiệp">
           </div>
           <div class="photobooth-enlarged-img-wrap">
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=85" alt="Tung mũ cử nhân ước mơ bay cao">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=85"
+              alt="Tung mũ cử nhân ước mơ bay cao">
           </div>
         </div>
         <div class="photobooth-enlarged-footer">
@@ -4234,233 +4259,11 @@
        ========================================== */
 
     // Đặt tên key cache phiên bản mới để tự động dọn sạch các lời chúc test cũ khỏi bộ nhớ tạm
-    const WISHES_CACHE_KEY = 'graduation_wishes_htd_v3';
-
-    // Xóa bỏ hoàn toàn các case mẫu giả lập và cache cũ khỏi bộ nhớ tạm trình duyệt
-    function cleanOldMockWishes() {
-      // Dọn sạch các key cũ để không bị lưu lời chúc ma
-      localStorage.removeItem('graduation_wishes_htd');
-      localStorage.removeItem('graduation_wishes_htd_v2');
-
-      const stored = localStorage.getItem(WISHES_CACHE_KEY);
-      if (stored) {
-        try {
-          const list = JSON.parse(stored);
-          if (Array.isArray(list)) {
-            const filtered = list.filter(item => {
-              const n = (item.name || '').trim();
-              return n !== "Hoàng Yến (K18 Marketing)" &&
-                n !== "Thầy Quốc Nam" &&
-                n !== "Anh Minh Quân" &&
-                n !== "Hong Nhung (K18 UFM)" &&
-                n !== "Hong Nhung" &&
-                n !== "Hồng Nhung" &&
-                n !== "Test Guest" &&
-                n !== "Test Check" &&
-                item.id !== 1 && item.id !== 2 && item.id !== 3;
-            });
-            localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(filtered));
-            return filtered;
-          }
-        } catch (e) {
-          localStorage.removeItem(WISHES_CACHE_KEY);
-        }
-      }
-      return [];
-    }
-
-    // Hàm phân tích định dạng ngày tháng tiếng Việt & quốc tế
-    function parseVietnameseDate(str) {
-      if (!str) return null;
-      if (typeof str === 'number') return new Date(str);
-      str = String(str).trim();
-
-      // Định dạng ISO: 2026-11-02T...
-      if (/^\d{4}-\d{2}-\d{2}/.test(str)) {
-        const d = new Date(str);
-        if (!isNaN(d.getTime())) return d;
-      }
-
-      // Định dạng: "HH:mm:ss DD/MM/YYYY" hoặc "HH:mm DD/MM/YYYY" (chuẩn toLocaleString vi-VN)
-      const mTimeFirst = str.match(/^(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?\s+(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
-      if (mTimeFirst) {
-        const hour = parseInt(mTimeFirst[1], 10);
-        const min = parseInt(mTimeFirst[2], 10);
-        const sec = mTimeFirst[3] ? parseInt(mTimeFirst[3], 10) : 0;
-        const day = parseInt(mTimeFirst[4], 10);
-        const month = parseInt(mTimeFirst[5], 10) - 1;
-        const year = parseInt(mTimeFirst[6], 10);
-        return new Date(year, month, day, hour, min, sec);
-      }
-
-      // Định dạng: "DD/MM/YYYY HH:mm:ss" hoặc "DD/MM/YYYY"
-      const mDateFirst = str.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})(?:\s+(\d{1,2}):(\d{1,2})(?::(\d{1,2}))?)?$/);
-      if (mDateFirst) {
-        const day = parseInt(mDateFirst[1], 10);
-        const month = parseInt(mDateFirst[2], 10) - 1;
-        const year = parseInt(mDateFirst[3], 10);
-        const hour = mDateFirst[4] ? parseInt(mDateFirst[4], 10) : 0;
-        const min = mDateFirst[5] ? parseInt(mDateFirst[5], 10) : 0;
-        const sec = mDateFirst[6] ? parseInt(mDateFirst[6], 10) : 0;
-        return new Date(year, month, day, hour, min, sec);
-      }
-
-      const fallback = new Date(str);
-      return isNaN(fallback.getTime()) ? null : fallback;
-    }
-
-    // Định dạng thời gian hiển thị thông minh (Fix lỗi luôn hiện 'Vừa xong')
-    function formatWishTime(rawTimestamp) {
-      if (!rawTimestamp) return "Mới đây";
-      const date = parseVietnameseDate(rawTimestamp);
-
-      // Nếu không parse được dạng số, giữ lại chuỗi nếu nó không phải 'Vừa xong'
-      if (!date) {
-        return (typeof rawTimestamp === 'string' && rawTimestamp !== 'Vừa xong') ? rawTimestamp : 'Mới đây';
-      }
-
-      const now = new Date();
-      const diffMs = now.getTime() - date.getTime();
-      const diffSec = Math.floor(diffMs / 1000);
-      const diffMin = Math.floor(diffSec / 60);
-      const diffHours = Math.floor(diffMin / 60);
-
-      const pad = (n) => (n < 10 ? '0' + n : n);
-      const timeStr = `${pad(date.getHours())}:${pad(date.getMinutes())}`;
-      const dateStr = `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
-
-      if (diffSec >= 0 && diffSec < 60) {
-        return "Vừa xong";
-      } else if (diffMin > 0 && diffMin < 60) {
-        return `${diffMin} phút trước (${timeStr})`;
-      } else if (diffHours > 0 && diffHours < 24 && date.toDateString() === now.toDateString()) {
-        return `Hôm nay lúc ${timeStr}`;
-      } else if (date.getDate() === now.getDate() - 1 && date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear()) {
-        return `Hôm qua lúc ${timeStr}`;
-      } else {
-        return `${timeStr} - ${dateStr}`;
-      }
-    }
-
-    // Hiển thị danh sách lời chúc ra giao diện
-    function renderWishes(wishes) {
-      const wishesList = document.getElementById('wishesList');
-      const wishesCount = document.getElementById('wishesCount');
-
-      if (!wishes || wishes.length === 0) {
-        if (wishesCount) wishesCount.innerText = "0 lời chúc";
-        wishesList.innerHTML = `
-          <div style="text-align: center; padding: 42px 18px; background: rgba(255, 255, 255, 0.7); border: 1px dashed rgba(212, 175, 55, 0.4); border-radius: 16px; margin: 10px 0;">
-            <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-matcha-dark); margin-bottom: 6px;">Sổ lưu bút chưa có lời chúc</h4>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 420px; margin: 0 auto;">
-              Hãy là người đầu tiên gửi lời chúc tốt đẹp nhất và xác nhận tham dự đến tân cử nhân <strong>Hồ Tiểu Điệp</strong> nhé!
-            </p>
-          </div>
-        `;
-        return;
-      }
-
-      if (wishesCount) {
-        wishesCount.innerText = `${wishes.length} lời chúc`;
-      }
-
-      const bubblesHtml = wishes.map(w => {
-        const timeDisplay = formatWishTime(w.createdAt || w.timestamp || w.time);
-        return `
-          <div class="wish-bubble">
-            <div class="wish-header">
-              <div class="wish-author">
-                <span>${escapeHtml(w.name)}</span>
-                <span class="wish-relation-badge">${escapeHtml(w.relation || 'Bạn bè')}</span>
-              </div>
-              <div class="wish-time">${timeDisplay}</div>
-            </div>
-            <div class="wish-attendance-tag">Trạng thái: <strong>${escapeHtml(w.attendance || 'Chắc chắn tham gia')}</strong></div>
-            <div class="wish-text">${escapeHtml(w.text || w.message || '')}</div>
-          </div>
-        `;
-      }).join('');
-
-      const inviteFooterHtml = (wishes.length < 4) ? `
-        <div class="wishes-board-invite-note">
-          <div>
-            <strong>Lưu giữ khoảnh khắc thanh xuân</strong>
-            <p style="margin-top: 2px; font-size: 0.82rem; color: var(--text-muted); line-height: 1.4;">
-              Mỗi lời chúc là một kỷ niệm vô giá đồng hành cùng Hồ Tiểu Điệp trên chặng đường mới.
-            </p>
-          </div>
-        </div>
-      ` : '';
-
-      wishesList.innerHTML = bubblesHtml + inviteFooterHtml;
-    }
-
-    // Tải lời chúc: Ưu tiên kéo dữ liệu trực tiếp từ Google Sheet
-    async function syncWishesFromSheet(showFeedback = false) {
-      const targetSheetUrl = GOOGLE_SHEET_URL.trim();
-
-      if (targetSheetUrl && targetSheetUrl.startsWith("http")) {
-        try {
-          const res = await fetch(targetSheetUrl, { method: 'GET', redirect: 'follow' });
-          if (res.ok) {
-            const text = await res.text();
-            let data = null;
-            try {
-              data = JSON.parse(text);
-            } catch (jsonErr) {
-              console.warn("Google Sheet chưa kích hoạt doGet(e) đúng cách. Phản hồi:", text.slice(0, 150));
-            }
-
-            if (data && data.result === "success" && Array.isArray(data.data)) {
-              const sheetWishes = data.data.map((item, idx) => ({
-                id: item.id || `sheet_${idx}_${item.timestamp}`,
-                name: item.name || 'Khách mời',
-                relation: item.relation || 'Bạn bè',
-                attendance: item.attendance || 'Chắc chắn tham gia',
-                text: item.message || item.text || '',
-                timestamp: item.timestamp,
-                createdAt: item.timestamp
-              }));
-              renderWishes(sheetWishes);
-              localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(sheetWishes));
-
-              const syncBtnSvg = document.querySelector('.sync-sheet-btn svg');
-              if (syncBtnSvg && showFeedback) {
-                syncBtnSvg.style.transition = 'transform 0.6s ease';
-                syncBtnSvg.style.transform = 'rotate(360deg)';
-                setTimeout(() => {
-                  syncBtnSvg.style.transition = 'none';
-                  syncBtnSvg.style.transform = 'rotate(0deg)';
-                }, 650);
-              }
-              return;
-            }
-          }
-        } catch (err) {
-          console.warn("Sync note (fallback to local cache):", err);
-        }
-      }
-
-      // Fallback: Sử dụng dữ liệu thực trong LocalStorage (đã lọc sạch case mẫu)
-      const localWishes = cleanOldMockWishes();
-      renderWishes(localWishes);
-    }
-
-    function loadWishes() {
-      // 1. Dọn sạch mẫu cũ và hiển thị ngay các lời chúc thực tế đã lưu
-      const localWishes = cleanOldMockWishes();
-      renderWishes(localWishes);
-
-      // 2. Kéo dữ liệu mới nhất từ Google Sheet ngầm
-      syncWishesFromSheet(false);
-    }
-
-    // Xử lý gửi lời chúc mới
+        // Xử lý gửi lời chúc mới và xác nhận tham dự (Gửi trực tiếp lên Google Sheets riêng tư)
     async function handleWishSubmit(e) {
       e.preventDefault();
       const submitBtn = document.getElementById('submitWishBtn');
       const btnText = document.getElementById('btnWishText');
-      const btnIcon = document.getElementById('btnWishIcon');
 
       const nameInput = document.getElementById('guestName');
       const relationInput = document.getElementById('guestRelation');
@@ -4469,7 +4272,8 @@
 
       const name = nameInput.value.trim();
       const message = messageInput.value.trim();
-      const relation = relationInput.value;
+      // Mặc định mối quan hệ là Bạn bè theo yêu cầu gửi lên Sheet
+      const relation = relationInput ? relationInput.value : "Bạn bè";
       const attendance = attendanceInput ? attendanceInput.value : "Chắc chắn tham gia";
 
       if (!name || !message) {
@@ -4479,28 +4283,11 @@
 
       // Đổi trạng thái nút bấm sang Loading
       submitBtn.disabled = true;
-      btnText.innerText = "Đang lưu lời chúc...";
+      btnText.innerText = "Đang gửi lời chúc...";
 
       const currentTimestamp = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
-      const nowMs = Date.now();
 
-      const newWish = {
-        id: nowMs,
-        name: name,
-        relation: relation,
-        attendance: attendance,
-        text: message,
-        createdAt: nowMs,
-        timestamp: currentTimestamp
-      };
-
-      // 1. Lưu ngay vào LocalStorage và hiển thị lập tức lên danh sách
-      let wishes = cleanOldMockWishes();
-      wishes.unshift(newWish);
-      localStorage.setItem(WISHES_CACHE_KEY, JSON.stringify(wishes));
-      renderWishes(wishes);
-
-      // 2. Gửi dữ liệu sang Google Sheets
+      // Gửi dữ liệu trực tiếp sang Google Sheets
       const targetSheetUrl = GOOGLE_SHEET_URL.trim();
 
       if (targetSheetUrl && targetSheetUrl.startsWith("http")) {
@@ -4519,13 +4306,13 @@
               message: message
             })
           });
-          showToast("Lời chúc của bạn đã được gửi thành công. Cảm ơn bạn rất nhiều!");
+          showToast("Lời chúc của bạn đã được gửi thành công đến Điệp!");
         } catch (fetchErr) {
           console.warn("Wishes submit notice:", fetchErr);
-          showToast("Lời chúc của bạn đã được gửi thành công. Cảm ơn bạn rất nhiều!");
+          showToast("Lời chúc của bạn đã được gửi thành công đến Điệp!");
         }
       } else {
-        showToast("Lời chúc của bạn đã được gửi thành công. Cảm ơn bạn rất nhiều!");
+        showToast("Lời chúc của bạn đã được gửi thành công đến Điệp!");
       }
 
       // Bắn pháo hoa ăn mừng
@@ -4537,8 +4324,9 @@
         });
       }
 
-      // Reset form
+      // Reset ô lời chúc
       messageInput.value = "";
+      nameInput.value = "";
       submitBtn.disabled = false;
       btnText.innerText = "Gửi Lời Chúc Mừng";
     }
@@ -4547,8 +4335,6 @@
       if (!str) return '';
       return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
     }
-
-    loadWishes();
 
     /* ==========================================
        7. PHOTO GALLERY LIGHTBOX (Modal Zoom) - 16 Photos Heart Mosaic
