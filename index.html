@@ -237,37 +237,41 @@
     }
 
     .hero-sub-title {
-      font-size: 0.92rem;
+      font-size: clamp(0.72rem, 2.7vw, 0.92rem);
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: clamp(1.5px, 0.8vw, 4px);
       color: var(--color-matcha-dark);
       font-weight: 600;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: clamp(6px, 2vw, 14px);
+      white-space: nowrap;
     }
 
     .hero-sub-title::before,
     .hero-sub-title::after {
       content: "";
-      width: 40px;
+      width: clamp(16px, 5vw, 40px);
       height: 1.5px;
       background: var(--color-matcha-soft);
+      flex-shrink: 1;
     }
 
     .hero-main-title {
       font-family: var(--font-script);
-      font-size: 4rem;
+      font-size: clamp(2.1rem, 9.2vw, 3.4rem);
+      white-space: nowrap;
       color: var(--color-matcha-dark);
-      line-height: 1.1;
+      line-height: 1.15;
       text-shadow: 0 4px 18px rgba(212, 112, 135, 0.22);
     }
 
     @media (min-width: 992px) {
       .hero-main-title {
         font-size: 5.8rem;
+        white-space: normal;
       }
     }
 
@@ -524,14 +528,37 @@
     }
 
     @media (max-width: 991px) {
+      .card-preview-border {
+        padding: 10px 10px 10px 56px;
+      }
+
+      .card-preview-title {
+        font-size: 1.95rem;
+      }
+
+      .card-preview-name {
+        font-size: 1.1rem;
+        letter-spacing: 1.2px;
+      }
+
+      .card-preview-date {
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+
+      .card-preview-venue {
+        font-size: 0.74rem;
+        white-space: nowrap;
+      }
+
       .photobooth-strip {
-        top: 36px;
-        left: 8px;
-        width: 72px;
-        height: 212px;
-        padding: 5px 4px 6px;
+        top: 24px;
+        left: -10px;
+        width: 65px;
+        height: 196px;
+        padding: 4px 3px 6px;
         border-radius: 5px;
-        transform: translateY(0) rotate(-8deg) translateZ(45px);
+        transform: translateY(0) rotate(-9deg) translateZ(45px);
       }
     }
 
