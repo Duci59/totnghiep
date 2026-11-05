@@ -389,45 +389,86 @@
       background: rgba(255, 253, 250, 0.96);
     }
 
-    .card-preview-icon {
-      font-size: 1.6rem;
+    .card-preview-intro {
+      font-family: var(--font-script);
+      font-size: 2.1rem;
+      color: var(--color-rose-deep);
+      line-height: 1.05;
       margin-bottom: 2px;
     }
 
-    .card-preview-title {
-      font-family: var(--font-script);
-      font-size: 2.1rem;
-      color: var(--color-matcha-dark);
-      line-height: 1.1;
-    }
-
     @media (min-width: 992px) {
-      .card-preview-title {
+      .card-preview-intro {
         font-size: 2.6rem;
       }
     }
 
-    .card-preview-name {
+    .card-preview-guest {
       font-family: var(--font-serif);
       font-weight: 700;
-      letter-spacing: 1.5px;
-      font-size: 1.2rem;
+      letter-spacing: 0.8px;
+      font-size: 1.22rem;
       color: var(--color-gold-deep);
       text-transform: uppercase;
-      margin-top: 2px;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    @media (min-width: 992px) {
+      .card-preview-guest {
+        font-size: 1.45rem;
+      }
+    }
+
+    .card-preview-action {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.2;
+      margin-bottom: 2px;
+      font-weight: 500;
+    }
+
+    @media (min-width: 992px) {
+      .card-preview-action {
+        font-size: 0.9rem;
+      }
+    }
+
+    .card-preview-host {
+      font-family: var(--font-heading);
+      font-size: 1.24rem;
+      font-weight: 700;
+      color: var(--color-matcha-dark);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 992px) {
+      .card-preview-host {
+        font-size: 1.45rem;
+      }
+    }
+
+    .card-preview-divider {
+      width: 44px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-gold-main), transparent);
+      margin: 6px auto 4px auto;
     }
 
     .card-preview-date {
-      font-size: 0.86rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-top: 4px;
+      margin-top: 2px;
       font-weight: 500;
     }
 
     .card-preview-venue {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       color: var(--color-matcha-dark);
-      margin-top: 4px;
+      margin-top: 2px;
       font-weight: 600;
     }
 
@@ -1695,6 +1736,35 @@
         font-size: 4rem;
         margin-bottom: 18px;
       }
+    }
+
+    .invitation-target-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 18px;
+      background: rgba(234, 164, 178, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 20px;
+      margin: 0 auto 16px auto;
+      font-size: 0.92rem;
+      color: var(--color-matcha-dark);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .invitation-target-badge .target-prefix {
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    .invitation-target-badge .target-name {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--color-gold-deep);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     @media (min-width: 992px) {
@@ -3400,8 +3470,11 @@
             <!-- 2. Tấm thiệp nằm sâu bên trong (Được giấu kín hoàn toàn khi đóng) -->
             <div class="envelope-card-preview" id="previewCard">
               <div class="card-preview-border">
-                <div class="card-preview-title">Thư Mời Tốt Nghiệp</div>
-                <div class="card-preview-name">Hồ Tiểu Điệp</div>
+                <div class="card-preview-intro">Thân mời</div>
+                <div class="card-preview-guest" id="previewCardGuest">Bạn thân mến</div>
+                <div class="card-preview-action">Tới tham dự lễ tốt nghiệp của</div>
+                <div class="card-preview-host">Tiểu Điệp</div>
+                <div class="card-preview-divider"></div>
                 <div class="card-preview-date">11.11.2026 • 15h00 - 17h00</div>
                 <div class="card-preview-venue">Trường Đại học Tài Chính - Marketing</div>
               </div>
@@ -3520,6 +3593,11 @@
                 <div class="letter-left-content">
                   <div class="invitation-intro">YOU'RE INVITED IN</div>
                   <h2 class="invitation-title">Graduation</h2>
+
+                  <div class="invitation-target-badge" id="sectionTargetBadge">
+                    <span class="target-prefix">Thân mời:</span>
+                    <strong class="target-name" id="sectionGuestName">Bạn thân mến</strong>
+                  </div>
 
                   <div class="invitation-salutation">
                     <p>"Một hành trình đáng nhớ không chỉ được tạo nên bởi những thành quả, mà còn bởi những kỷ niệm và
@@ -3823,8 +3901,7 @@
 
                   <div class="form-group">
                     <label class="form-label" for="guestName">Tên của bạn *</label>
-                    <input type="text" id="guestName" class="form-input" placeholder="Nhập tên của bạn"
-                      required>
+                    <input type="text" id="guestName" class="form-input" placeholder="Nhập tên của bạn" required>
                   </div>
 
 
@@ -3993,10 +4070,11 @@
              ============================================================ -->
       <section class="section-card thankyou-letter" id="sectionThankyou">
         <div class="thankyou-script-title">With Love & Gratitude</div>
-        <div class="thankyou-sub">Lời Cảm Ơn Từ Trái Tim</div>
 
         <div class="thankyou-text">
-          <p>"Tiểu Điệp luôn tự hào vì đã đi đến ngày hôm nay, nhưng hơn hết là biết ơn vì trên hành trình ấy luôn có những người yêu thương, tin tưởng và đồng hành. Tấm bằng tốt nghiệp là thành quả của riêng mình, nhưng những yêu thương làm nên hành trình này sẽ mãi là điều mà Điệp trân trọng nhất.</p>
+          <p>"Tiểu Điệp luôn tự hào vì đã đi đến ngày hôm nay, nhưng hơn hết là biết ơn vì trên hành trình ấy luôn có
+            những người yêu thương, tin tưởng và đồng hành. Tấm bằng tốt nghiệp là thành quả của riêng mình, nhưng những
+            yêu thương làm nên hành trình này sẽ mãi là điều mà Điệp trân trọng nhất.</p>
           <p>Cảm ơn vì đã hiện diện, yêu thương và góp phần làm nên một hành trình mà Tiểu Điệp sẽ luôn nhớ mãi."</p>
         </div>
 
@@ -4089,6 +4167,56 @@
        CẤU HÌNH GOOGLE SHEETS (GOOGLE APPS SCRIPT WEB APP)
        ============================================================ */
     const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycby6wgq6IfA7dXUg7fWily_pzOo1r_fYZHEl328jBct0pBH-YH1-JlD7oyiZyRDS3rWhtA/exec";
+
+    /* ============================================================
+       CÁ NHÂN HÓA THƯ MỜI THEO URL QUERY PARAMETER
+       Hỗ trợ các query params: ?to=, ?name=, ?guest=, ?u=, ?n=
+       Ví dụ: https://totnghiep-mu.vercel.app/?to=Hoàng+Yến
+       ============================================================ */
+    function getInvitedGuestFromUrl() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const raw = urlParams.get('to') || urlParams.get('name') || urlParams.get('guest') || urlParams.get('u') || urlParams.get('n') || '';
+        return raw.trim();
+      } catch (e) {
+        return '';
+      }
+    }
+
+    const currentInvitedGuest = getInvitedGuestFromUrl();
+
+    function applyPersonalizedGuestName() {
+      const guestDisplayName = currentInvitedGuest || 'Bạn thân mến';
+
+      // 1. Lá thư rút ra từ phong bì
+      const previewCardGuest = document.getElementById('previewCardGuest');
+      if (previewCardGuest) {
+        previewCardGuest.innerText = guestDisplayName;
+      }
+
+      // 2. Dòng chào tagline trên màn hình đầu
+      const heroTagline = document.getElementById('heroTagline');
+      if (heroTagline) {
+        if (currentInvitedGuest) {
+          heroTagline.innerText = `Trân trọng kính mời ${currentInvitedGuest} đến chung vui cùng Điệp`;
+        } else {
+          heroTagline.innerText = `Trân trọng kính mời bạn đến chung vui cùng Điệp`;
+        }
+      }
+
+      // 3. Phần chi tiết thư mời (Section 1)
+      const sectionGuestName = document.getElementById('sectionGuestName');
+      if (sectionGuestName) {
+        sectionGuestName.innerText = guestDisplayName;
+      }
+    }
+
+    // Tự động khởi tạo tên khách mời ngay khi nạp trang
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', applyPersonalizedGuestName);
+    } else {
+      applyPersonalizedGuestName();
+    }
 
     /* ==========================================
        1. CANVAS SPARKLE & LILY PETALS EFFECT
@@ -4648,6 +4776,11 @@
 
       const currentTimestamp = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
 
+      // Định danh người nhận thiệp từ URL (nếu có) để Google Sheet ghi nhận nguồn link đã gửi cho ai
+      const urlGuest = currentInvitedGuest;
+      const sheetName = urlGuest ? `${name} [Link: ${urlGuest}]` : name;
+      const sheetRelation = urlGuest ? `Link mời: ${urlGuest}` : relation;
+
       // Gửi dữ liệu trực tiếp sang Google Sheets
       const targetSheetUrl = GOOGLE_SHEET_URL.trim();
 
@@ -4661,10 +4794,12 @@
             },
             body: JSON.stringify({
               timestamp: currentTimestamp,
-              name: name,
-              relation: relation,
+              name: sheetName,
+              relation: sheetRelation,
               attendance: attendance,
-              message: message
+              message: message,
+              invitedGuest: urlGuest || "",
+              guestFormName: name
             })
           });
           showToast("Lời chúc của bạn đã được gửi thành công đến Điệp!");

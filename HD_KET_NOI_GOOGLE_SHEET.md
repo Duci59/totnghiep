@@ -161,3 +161,27 @@ function doGet(e) {
 3. Dán link vừa copy ở Bước 3 vào giữa hai dấu ngoặc kép `""`.
 4. Lưu file lại (`Ctrl + S`).
 5. **Hoàn tất!** Giờ đây mỗi khi bất kỳ ai gửi lời chúc hoặc xác nhận tham dự trên web, dữ liệu sẽ ngay lập tức xuất hiện trong Google Sheet của bạn trong vòng 1-2 giây! 🎉
+
+---
+
+## 💌 BƯỚC 5: Hướng Dẫn Tạo Link Thiệp Mời Cá Nhân Hóa Từng Khách Mời
+
+Bạn không cần backend vẫn có thể gửi link riêng cho từng người bạn. Chỉ cần thêm tham số `?to=Tên_Bạn` vào sau đường link trang web!
+
+### Cách tạo link:
+- Link chung (không kèm tên, hiển thị mặc định *"Bạn thân mến"*):  
+  `https://totnghiep-mu.vercel.app/`
+- Link gửi cho bạn Hoàng Yến:  
+  `https://totnghiep-mu.vercel.app/?to=Hoàng+Yến`
+- Link gửi cho bạn Thảo Vy:  
+  `https://totnghiep-mu.vercel.app/?to=Thảo+Vy`
+- Link gửi cho Anh Nam:  
+  `https://totnghiep-mu.vercel.app/?to=Anh+Nam`
+
+*(Mẹo: Khoảng trắng giữa các chữ bạn có thể gõ dấu `+` hoặc `%20` hoặc gõ tiếng Việt có dấu bình thường trên Zalo/Messenger/Facebook, trình duyệt sẽ tự động nhận diện).*
+
+### Dữ liệu ghi nhận lên Google Sheet:
+- Khi bạn bè nhận được link cá nhân hóa và bấm gửi lời chúc, dù ở ô "Tên của bạn" họ có điền biệt danh (ví dụ *"Yến Cún"*, *"Vy Vy"*, hay bất kỳ tên gì), hệ thống sẽ **tự động đính kèm tên từ link** gửi lên Google Sheet:
+  - **Cột B (Tên khách mời)**: `Yến Cún [Link: Hoàng Yến]`
+  - **Cột C (Mối quan hệ)**: `Link mời: Hoàng Yến`
+- Nhờ vậy bạn luôn biết chính xác 100% lời chúc này đến từ người bạn nào mà bạn đã gửi link!
