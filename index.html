@@ -8,9 +8,7 @@
 
   <!-- OpenGraph Meta Tags for Social Sharing (Facebook, Zalo, iMessage) -->
   <meta property="og:title" content="Thiệp Mời Lễ Tốt Nghiệp - Hồ Tiểu Điệp">
-  <meta property="og:description"
-    content="Trân trọng kính mời bạn đến chung vui cùng Điệp trong ngày Lễ Tốt Nghiệp Đại Học Tài Chính - Marketing (UFM)!">
-  <meta property="og:image"
+  <meta property="og:description" <meta property="og:image"
     content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#A4B99B">
@@ -19,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet">
 
   <!-- Canvas Confetti Library from CDN (with JS fallback) -->
@@ -355,7 +353,7 @@
     }
 
     /* 2. Tấm thiệp nằm sâu bên trong phong bì (Inside Invitation Card)
-          Ban đầu được GIẤU KÍN HOÀN TOÀN phía sau túi gấp mặt trước và nắp che */
+          Trình bày thanh lịch theo phong cách thiệp in thật với kẹp giấy hồng tinh xảo */
     .envelope-card-preview {
       position: absolute;
       top: 14px;
@@ -363,10 +361,9 @@
       width: calc(100% - 28px);
       height: calc(100% - 36px);
       background: #FFFFFF;
-      background-image: radial-gradient(#F5EFEB 15%, transparent 16%);
-      background-size: 16px 16px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      box-shadow: 0 16px 45px rgba(60, 25, 35, 0.22);
+      border: 1px solid rgba(225, 215, 210, 0.65);
       z-index: 2;
       opacity: 0;
       visibility: hidden;
@@ -374,102 +371,114 @@
       /* Khóa ẩn hoàn toàn khi đóng, ngăn chặn 100% việc thò đuôi ra dưới đáy bao thư */
       transform: translateY(0) scale(0.96) translateZ(2px);
       pointer-events: none;
+      box-sizing: border-box;
+      overflow: visible;
     }
 
-    .card-preview-border {
+    /* Kẹp giấy màu hồng rose-gold mô phỏng kẹp thật ở góc trên bên trái thiệp */
+    .card-paperclip-svg {
+      position: absolute;
+      top: -14px;
+      left: 16px;
+      width: 20px;
+      height: 50px;
+      filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.2));
+      z-index: 120;
+      pointer-events: none;
+    }
+
+    @media (min-width: 992px) {
+      .card-paperclip-svg {
+        top: -16px;
+        left: 20px;
+        width: 24px;
+        height: 56px;
+      }
+    }
+
+    .card-preview-content {
       width: 100%;
       height: 100%;
-      border: 1px dashed var(--color-gold-main);
-      border-radius: 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 12px;
-      background: rgba(255, 253, 250, 0.96);
+      padding: 24px 18px 22px 18px;
+      box-sizing: border-box;
+      text-align: center;
+      background: #FFFFFF;
+      border-radius: 4px;
     }
 
+    /* Dòng 1: THÂN MỜI (Bodoni Moda - High-contrast editorial serif uppercase) */
     .card-preview-intro {
-      font-family: var(--font-script);
-      font-size: 2.1rem;
-      color: var(--color-rose-deep);
-      line-height: 1.05;
-      margin-bottom: 2px;
+      font-family: 'Bodoni Moda', 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #2D1A22;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 6px;
     }
 
     @media (min-width: 992px) {
       .card-preview-intro {
-        font-size: 2.6rem;
+        font-size: 1.65rem;
+        letter-spacing: 3.5px;
+        margin-bottom: 8px;
       }
     }
 
+    /* Dòng 2: Tên người nhận (Great Vibes / Alex Brush - Calligraphy script) */
     .card-preview-guest {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      font-size: 1.22rem;
-      color: var(--color-gold-deep);
-      text-transform: uppercase;
-      line-height: 1.2;
-      margin-bottom: 3px;
+      font-family: 'Great Vibes', 'Alex Brush', cursive;
+      font-size: 2.35rem;
+      font-weight: 400;
+      color: #4A1D2B;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      word-break: break-word;
     }
 
     @media (min-width: 992px) {
       .card-preview-guest {
-        font-size: 1.45rem;
+        font-size: 2.85rem;
+        margin-bottom: 12px;
       }
     }
 
+    /* Dòng 3: Tới tham dự lễ tốt nghiệp của (Bodoni Moda - High-contrast serif) */
     .card-preview-action {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-style: italic;
-      line-height: 1.2;
-      margin-bottom: 2px;
-      font-weight: 500;
+      font-family: 'Bodoni Moda', 'Playfair Display', serif;
+      font-size: 1.02rem;
+      font-weight: 400;
+      color: #2D1A22;
+      line-height: 1.35;
+      margin-bottom: 4px;
     }
 
     @media (min-width: 992px) {
       .card-preview-action {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
+        margin-bottom: 6px;
       }
     }
 
+    /* Dòng 4: Tiểu Điệp (Alex Brush / Great Vibes - Elegant flourished script) */
     .card-preview-host {
-      font-family: var(--font-heading);
-      font-size: 1.24rem;
-      font-weight: 700;
-      color: var(--color-matcha-dark);
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      line-height: 1.2;
+      font-family: 'Alex Brush', 'Great Vibes', cursive;
+      font-size: 2.95rem;
+      font-weight: 400;
+      color: #5C1D2E;
+      line-height: 1.1;
+      margin-top: 2px;
     }
 
     @media (min-width: 992px) {
       .card-preview-host {
-        font-size: 1.45rem;
+        font-size: 3.6rem;
       }
-    }
-
-    .card-preview-divider {
-      width: 44px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-gold-main), transparent);
-      margin: 6px auto 4px auto;
-    }
-
-    .card-preview-date {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 2px;
-      font-weight: 500;
-    }
-
-    .card-preview-venue {
-      font-size: 0.72rem;
-      color: var(--color-matcha-dark);
-      margin-top: 2px;
-      font-weight: 600;
     }
 
     /* Khi mở phong bì: Tấm thiệp trượt lên cao ra khỏi phong bì rồi hạ thấp xuống dưới trang nhã */
@@ -1754,17 +1763,19 @@
     }
 
     .invitation-target-badge .target-prefix {
-      font-style: italic;
-      color: var(--text-muted);
+      font-family: 'Bodoni Moda', serif;
+      font-style: normal;
+      font-weight: 500;
+      color: #2D1A22;
+      letter-spacing: 1px;
     }
 
     .invitation-target-badge .target-name {
-      font-family: var(--font-serif);
-      font-size: 1.08rem;
-      font-weight: 700;
-      color: var(--color-gold-deep);
+      font-family: 'Great Vibes', 'Alex Brush', cursive;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: #4A1D2B;
       letter-spacing: 0.5px;
-      text-transform: uppercase;
     }
 
     @media (min-width: 992px) {
@@ -3457,7 +3468,6 @@
         <div class="hero-header">
           <div class="hero-sub-title">Lễ Tốt Nghiệp Đại Học</div>
           <h1 class="hero-main-title">Graduation Invitation</h1>
-          <div class="hero-tagline" id="heroTagline">Trân trọng kính mời bạn đến chung vui cùng Điệp</div>
         </div>
 
         <!-- 3D Interactive Envelope (Kín hoàn toàn trước khi bấm con dấu) -->
@@ -3469,14 +3479,19 @@
 
             <!-- 2. Tấm thiệp nằm sâu bên trong (Được giấu kín hoàn toàn khi đóng) -->
             <div class="envelope-card-preview" id="previewCard">
-              <div class="card-preview-border">
-                <div class="card-preview-intro">Thân mời</div>
+              <!-- Kẹp giấy màu hồng rose-gold tinh tế ở góc trên bên trái theo mẫu -->
+              <svg class="card-paperclip-svg" viewBox="0 0 26 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 12V42C8 46.5 11 49.5 14.5 49.5C18 49.5 21 46.5 21 42V15C21 8.5 16.5 4 11 4C5.5 4 1.5 8.5 1.5 15V45" 
+                      stroke="#C0586D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 14V40M21 16V40M1.5 16V43" 
+                      stroke="#FFA5B5" stroke-width="1" stroke-linecap="round" opacity="0.65"/>
+              </svg>
+
+              <div class="card-preview-content">
+                <div class="card-preview-intro">THÂN MỜI</div>
                 <div class="card-preview-guest" id="previewCardGuest">Bạn thân mến</div>
                 <div class="card-preview-action">Tới tham dự lễ tốt nghiệp của</div>
                 <div class="card-preview-host">Tiểu Điệp</div>
-                <div class="card-preview-divider"></div>
-                <div class="card-preview-date">11.11.2026 • 15h00 - 17h00</div>
-                <div class="card-preview-venue">Trường Đại học Tài Chính - Marketing</div>
               </div>
             </div>
 
@@ -4192,16 +4207,6 @@
       const previewCardGuest = document.getElementById('previewCardGuest');
       if (previewCardGuest) {
         previewCardGuest.innerText = guestDisplayName;
-      }
-
-      // 2. Dòng chào tagline trên màn hình đầu
-      const heroTagline = document.getElementById('heroTagline');
-      if (heroTagline) {
-        if (currentInvitedGuest) {
-          heroTagline.innerText = `Trân trọng kính mời ${currentInvitedGuest} đến chung vui cùng Điệp`;
-        } else {
-          heroTagline.innerText = `Trân trọng kính mời bạn đến chung vui cùng Điệp`;
-        }
       }
 
       // 3. Phần chi tiết thư mời (Section 1)
