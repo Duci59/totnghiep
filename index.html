@@ -2848,35 +2848,27 @@
     }
 
     .heart-caption-pill {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 6px 4px;
-      font-size: 0.65rem;
-      color: #FFFFFF;
-      font-weight: 500;
-      text-align: center;
-      background: linear-gradient(180deg, transparent 0%, rgba(40, 15, 25, 0.85) 100%);
-      opacity: 0;
-      transform: translateY(6px);
-      transition: all 0.3s ease;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      pointer-events: none;
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     @media (min-width: 768px) {
       .heart-caption-pill {
-        font-size: 0.72rem;
-        padding: 8px 6px;
+        display: none !important;
       }
     }
 
     .heart-photo-item:hover .heart-caption-pill {
-      opacity: 1;
-      transform: translateY(0);
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
     }
 
     /* Lightbox Modal */
@@ -2944,13 +2936,14 @@
     }
 
     .lightbox-caption {
-      display: none;
-      color: #FAF7F2;
-      font-size: 1.05rem;
-      margin-top: 16px;
-      text-align: center;
-      font-weight: 400;
-      padding: 0 20px;
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
     }
 
     .lightbox-close-btn {
@@ -4096,7 +4089,7 @@
       <div class="lightbox-img-wrapper">
         <img class="lightbox-img" id="lightboxActiveImg" src="" alt="Ảnh kỷ yếu phóng to">
       </div>
-      <div class="lightbox-caption" id="lightboxActiveCaption"></div>
+      <div class="lightbox-caption" id="lightboxActiveCaption" style="display: none !important;"></div>
     </div>
   </div>
 
@@ -4901,7 +4894,10 @@
     function updateLightboxContent() {
       const item = galleryData[currentLightboxIdx];
       lightboxActiveImg.src = item.src;
-      lightboxActiveCaption.innerText = item.caption;
+      if (lightboxActiveCaption) {
+        lightboxActiveCaption.innerText = "";
+        lightboxActiveCaption.style.display = "none";
+      }
     }
 
     // Keyboard support for Lightbox
