@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet">
 
   <!-- Canvas Confetti Library from CDN (with JS fallback) -->
@@ -1283,7 +1283,7 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(circle at center, rgba(20, 13, 17, 0.35) 0%, rgba(14, 7, 11, 0.88) 100%),
-                  linear-gradient(180deg, rgba(253, 232, 236, 0.05) 0%, transparent 25%, transparent 75%, rgba(10, 5, 8, 0.95) 100%);
+        linear-gradient(180deg, rgba(253, 232, 236, 0.05) 0%, transparent 25%, transparent 75%, rgba(10, 5, 8, 0.95) 100%);
       pointer-events: none;
       z-index: 2;
     }
@@ -1311,7 +1311,7 @@
       aspect-ratio: 1706 / 2560;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 
+      box-shadow:
         0 25px 60px -15px rgba(0, 0, 0, 0.75),
         0 0 0 1px rgba(248, 229, 184, 0.38),
         0 0 45px rgba(212, 112, 135, 0.22);
@@ -1321,7 +1321,7 @@
 
     .hero-photo-frame:hover {
       transform: translateY(-4px) scale(1.012);
-      box-shadow: 
+      box-shadow:
         0 32px 70px -15px rgba(0, 0, 0, 0.85),
         0 0 0 1.5px rgba(248, 229, 184, 0.65),
         0 0 55px rgba(212, 112, 135, 0.35);
@@ -1460,12 +1460,12 @@
       }
 
       .fullscreen-photo-backdrop-overlay {
-        background: linear-gradient(180deg, 
-          rgba(15, 10, 12, 0.45) 0%, 
-          transparent 18%, 
-          transparent 58%, 
-          rgba(15, 8, 12, 0.8) 80%,
-          rgba(15, 8, 12, 0.96) 100%);
+        background: linear-gradient(180deg,
+            rgba(15, 10, 12, 0.45) 0%,
+            transparent 18%,
+            transparent 58%,
+            rgba(15, 8, 12, 0.8) 80%,
+            rgba(15, 8, 12, 0.96) 100%);
         z-index: 2;
       }
 
@@ -1518,7 +1518,7 @@
         border: 1px solid rgba(248, 229, 184, 0.35);
         padding: 6px 16px;
         border-radius: 999px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       }
 
       .hero-photo-editorial {
@@ -1537,7 +1537,7 @@
       .hero-photo-title {
         font-size: clamp(2.8rem, 10vw, 3.6rem);
         margin-bottom: 2px;
-        text-shadow: 0 4px 16px rgba(0,0,0,0.85);
+        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
       }
 
       .hero-photo-faculty {
@@ -1545,7 +1545,7 @@
         letter-spacing: 2px;
         margin-bottom: 14px;
         color: #F8E5B8;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
       }
 
       .hero-photo-cta {
@@ -1555,7 +1555,7 @@
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.4);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
       }
 
       .hero-photo-cta-arrow {
@@ -1682,23 +1682,24 @@
     }
 
     .invitation-title {
-      font-family: var(--font-script);
-      font-size: 3rem;
+      font-family: 'Great Vibes', var(--font-script), cursive;
+      font-size: 3.3rem;
       color: var(--color-matcha-dark);
-      line-height: 1.1;
+      line-height: 1.15;
       margin-bottom: 16px;
+      letter-spacing: 0.5px;
     }
 
     @media (min-width: 576px) {
       .invitation-title {
-        font-size: 3.8rem;
+        font-size: 4rem;
         margin-bottom: 18px;
       }
     }
 
     @media (min-width: 992px) {
       .invitation-title {
-        font-size: 5rem;
+        font-size: 5.2rem;
       }
     }
 
@@ -3440,10 +3441,8 @@
         <div class="fullscreen-photo-container">
           <!-- Khung hình chân dung giữ nguyên tỉ lệ không bị crop -->
           <div class="hero-photo-frame">
-            <img class="hero-photo-main"
-              src="img/sectionHeroPhoto.jpg"
-              alt="Tân cử nhân Hồ Tiểu Điệp - ĐH Tài Chính - Marketing (UFM)"
-              loading="eager">
+            <img class="hero-photo-main" src="img/sectionHeroPhoto.jpg"
+              alt="Tân cử nhân Hồ Tiểu Điệp - ĐH Tài Chính - Marketing (UFM)" loading="eager">
             <div class="hero-photo-frame-shine"></div>
           </div>
 
@@ -3509,8 +3508,8 @@
 
                 <!-- Left: Formal Letter & Graduate Info -->
                 <div class="letter-left-content">
-                  <div class="invitation-intro">Kính gửi Thầy Cô, Gia Đình & Bạn Bè</div>
-                  <h2 class="invitation-title">Thư Mời Tốt Nghiệp</h2>
+                  <div class="invitation-intro">YOU'RE INVITED IN</div>
+                  <h2 class="invitation-title">Graduation</h2>
 
                   <p class="invitation-salutation">
                     "Bốn năm giảng đường là chuyến tàu đẹp nhất của tuổi thanh xuân. Sau bao nỗ lực và được đón nhận
@@ -3850,165 +3849,165 @@
 
             </div>
 
-            </div>
-
           </div>
-
-        </section>
-
-        <!-- ============================================================
-             PHẦN 4: NHẬT KÝ HÌNH ẢNH (Photo Diary / Gallery)
-             Responsive: 4 columns on Desktop
-             ============================================================ -->
-        <section class="section-card" id="sectionGallery">
-
-          <div style="text-align: center; max-width: 650px; margin: 0 auto 30px;">
-            <span class="section-badge">
-              <span>ART & MEMORIES</span>
-            </span>
-            <h3
-              style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-matcha-dark); margin: 12px 0 8px; letter-spacing: 0.5px; font-weight: 700;">
-              Khoảnh Khắc Thanh Xuân
-            </h3>
-            <p style="font-size: 0.92rem; color: var(--text-muted); font-style: italic; letter-spacing: 0.5px;">
-              Từng thước phim ghi lại hành trình 4 năm rực rỡ và tràn đầy niềm tự hào
-            </p>
-          </div>
-
-          <!-- Heart-shaped Photo Mosaic (14 Photos) -->
-          <div class="heart-gallery-wrapper">
-            <div class="heart-photo-grid" id="heartPhotoGrid">
-
-              <!-- Row 1: 2 đỉnh trên của trái tim (cột 2 & 4) -->
-              <div class="heart-photo-item" style="grid-column: 2; grid-row: 1;" onclick="openLightbox(0)">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
-                  alt="Nụ cười cử nhân rạng rỡ" loading="lazy">
-                <div class="heart-caption-pill">Nụ cười rực rỡ</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 4; grid-row: 1;" onclick="openLightbox(1)">
-                <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80"
-                  alt="Bó hoa ly trắng tinh khôi" loading="lazy">
-                <div class="heart-caption-pill">Hoa ly tinh khôi</div>
-              </div>
-
-              <!-- Row 2: 4 ảnh trải dài (cột 1, 2, 4, 5) tạo vòm vai trái tim -->
-              <div class="heart-photo-item" style="grid-column: 1; grid-row: 2;" onclick="openLightbox(2)">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
-                  alt="Tung mũ cử nhân" loading="lazy">
-                <div class="heart-caption-pill">Tung mũ ước mơ</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 2; grid-row: 2;" onclick="openLightbox(3)">
-                <img src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=600&q=80"
-                  alt="Giảng đường UFM" loading="lazy">
-                <div class="heart-caption-pill">Giảng đường UFM</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 3; grid-row: 2;" onclick="openLightbox(4)">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                  alt="Khoảnh khắc thanh xuân" loading="lazy">
-                <div class="heart-caption-pill">Hồ Tiểu Điệp</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 4; grid-row: 2;" onclick="openLightbox(5)">
-                <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=600&q=80"
-                  alt="Tà áo cử nhân" loading="lazy">
-                <div class="heart-caption-pill">Áo cử nhân</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 5; grid-row: 2;" onclick="openLightbox(6)">
-                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
-                  alt="Bên người thân thương" loading="lazy">
-                <div class="heart-caption-pill">Hội bạn thân</div>
-              </div>
-
-              <!-- Row 3: 5 ảnh đầy đặn phần thân trái tim (cột 1 đến 5) -->
-              <div class="heart-photo-item" style="grid-column: 1; grid-row: 3;" onclick="openLightbox(7)">
-                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80"
-                  alt="Lễ tốt nghiệp thiêng liêng" loading="lazy">
-                <div class="heart-caption-pill">Lễ tốt nghiệp</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 2; grid-row: 3;" onclick="openLightbox(8)">
-                <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=600&q=80"
-                  alt="Kỷ niệm ngày tốt nghiệp" loading="lazy">
-                <div class="heart-caption-pill">Kỷ niệm đẹp</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 3; grid-row: 3;" onclick="openLightbox(9)">
-                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
-                  alt="Trang sách thanh xuân" loading="lazy">
-                <div class="heart-caption-pill">4 năm đại học</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 4; grid-row: 3;" onclick="openLightbox(10)">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
-                  alt="Đồng đội và bạn bè" loading="lazy">
-                <div class="heart-caption-pill">Đồng hành</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 5; grid-row: 3;" onclick="openLightbox(11)">
-                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80"
-                  alt="Nụ cười ngày nhận bằng" loading="lazy">
-                <div class="heart-caption-pill">Tương lai mở rộng</div>
-              </div>
-
-              <!-- Row 4: 3 ảnh gom gọn phần dưới (cột 2, 3, 4) -->
-              <div class="heart-photo-item" style="grid-column: 2; grid-row: 4;" onclick="openLightbox(12)">
-                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80"
-                  alt="Góc sân trường nắng ấm" loading="lazy">
-                <div class="heart-caption-pill">Khuôn viên UFM</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 3; grid-row: 4;" onclick="openLightbox(13)">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
-                  alt="Màu áo cử nhân UFM" loading="lazy">
-                <div class="heart-caption-pill">Tân cử nhân UFM</div>
-              </div>
-              <div class="heart-photo-item" style="grid-column: 4; grid-row: 4;" onclick="openLightbox(14)">
-                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
-                  alt="Những trang lưu bút" loading="lazy">
-                <div class="heart-caption-pill">Trang thanh xuân</div>
-              </div>
-
-              <!-- Row 5: 1 ảnh chóp nhọn đáy trái tim (cột 3) -->
-              <div class="heart-photo-item" style="grid-column: 3; grid-row: 5;" onclick="openLightbox(15)">
-                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
-                  alt="Chúc mừng ngày tốt nghiệp" loading="lazy">
-                <div class="heart-caption-pill">Trọn vẹn yêu thương</div>
-              </div>
-
-            </div>
-          </div>
-
-        </section>
-
-        <!-- ============================================================
-             LỜI CẢM ƠN CHÂN THÀNH (With Love & Thank you)
-             ============================================================ -->
-        <section class="section-card thankyou-letter" id="sectionThankyou">
-          <div class="thankyou-script-title">With Love & Gratitude</div>
-          <div class="thankyou-sub">Lời Cảm Ơn Từ Trái Tim</div>
-
-          <p class="thankyou-text">
-            Cảm ơn Ba Mẹ đã luôn là điểm tựa vững chãi nhất cuộc đời con.<br>
-            Cảm ơn Quý Thầy Cô đã tận tâm truyền trao tri thức và soi sáng tương lai.<br>
-            Cảm ơn bạn bè thân thương đã cùng Điệp viết nên những trang thanh xuân tuyệt đẹp không thể nào quên.<br>
-            Sự hiện diện và lời chúc của mọi người chính là món quà quý giá nhất trong ngày trọng đại này!
-          </p>
-
-          <div style="display: flex; align-items: center; justify-content: center; gap: 14px;">
-            <span
-              style="font-size: 0.95rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-matcha-dark); font-weight: 600;">Tân
-              Cử Nhân</span>
-          </div>
-
-          <div class="thankyou-signature">Hồ Tiểu Điệp</div>
-          <div class="thankyou-footer-note">Hẹn gặp bạn vào Thứ Sáu, ngày 13 tháng 11 năm 2026!</div>
-        </section>
 
       </div>
 
-      <!-- Floating Back to Top Button -->
-      <button class="back-to-top-btn" id="backToTopBtn" onclick="scrollToTop()" aria-label="Cuộn lên đầu trang">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 15l-6-6-6 6" />
-        </svg>
-      </button>
+      </section>
+
+      <!-- ============================================================
+             PHẦN 4: NHẬT KÝ HÌNH ẢNH (Photo Diary / Gallery)
+             Responsive: 4 columns on Desktop
+             ============================================================ -->
+      <section class="section-card" id="sectionGallery">
+
+        <div style="text-align: center; max-width: 650px; margin: 0 auto 30px;">
+          <span class="section-badge">
+            <span>ART & MEMORIES</span>
+          </span>
+          <h3
+            style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--color-matcha-dark); margin: 12px 0 8px; letter-spacing: 0.5px; font-weight: 700;">
+            Khoảnh Khắc Thanh Xuân
+          </h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); font-style: italic; letter-spacing: 0.5px;">
+            Từng thước phim ghi lại hành trình 4 năm rực rỡ và tràn đầy niềm tự hào
+          </p>
+        </div>
+
+        <!-- Heart-shaped Photo Mosaic (14 Photos) -->
+        <div class="heart-gallery-wrapper">
+          <div class="heart-photo-grid" id="heartPhotoGrid">
+
+            <!-- Row 1: 2 đỉnh trên của trái tim (cột 2 & 4) -->
+            <div class="heart-photo-item" style="grid-column: 2; grid-row: 1;" onclick="openLightbox(0)">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80"
+                alt="Nụ cười cử nhân rạng rỡ" loading="lazy">
+              <div class="heart-caption-pill">Nụ cười rực rỡ</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 4; grid-row: 1;" onclick="openLightbox(1)">
+              <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80"
+                alt="Bó hoa ly trắng tinh khôi" loading="lazy">
+              <div class="heart-caption-pill">Hoa ly tinh khôi</div>
+            </div>
+
+            <!-- Row 2: 4 ảnh trải dài (cột 1, 2, 4, 5) tạo vòm vai trái tim -->
+            <div class="heart-photo-item" style="grid-column: 1; grid-row: 2;" onclick="openLightbox(2)">
+              <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80"
+                alt="Tung mũ cử nhân" loading="lazy">
+              <div class="heart-caption-pill">Tung mũ ước mơ</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 2; grid-row: 2;" onclick="openLightbox(3)">
+              <img src="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&w=600&q=80"
+                alt="Giảng đường UFM" loading="lazy">
+              <div class="heart-caption-pill">Giảng đường UFM</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 3; grid-row: 2;" onclick="openLightbox(4)">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                alt="Khoảnh khắc thanh xuân" loading="lazy">
+              <div class="heart-caption-pill">Hồ Tiểu Điệp</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 4; grid-row: 2;" onclick="openLightbox(5)">
+              <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?auto=format&fit=crop&w=600&q=80"
+                alt="Tà áo cử nhân" loading="lazy">
+              <div class="heart-caption-pill">Áo cử nhân</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 5; grid-row: 2;" onclick="openLightbox(6)">
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
+                alt="Bên người thân thương" loading="lazy">
+              <div class="heart-caption-pill">Hội bạn thân</div>
+            </div>
+
+            <!-- Row 3: 5 ảnh đầy đặn phần thân trái tim (cột 1 đến 5) -->
+            <div class="heart-photo-item" style="grid-column: 1; grid-row: 3;" onclick="openLightbox(7)">
+              <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80"
+                alt="Lễ tốt nghiệp thiêng liêng" loading="lazy">
+              <div class="heart-caption-pill">Lễ tốt nghiệp</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 2; grid-row: 3;" onclick="openLightbox(8)">
+              <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=600&q=80"
+                alt="Kỷ niệm ngày tốt nghiệp" loading="lazy">
+              <div class="heart-caption-pill">Kỷ niệm đẹp</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 3; grid-row: 3;" onclick="openLightbox(9)">
+              <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                alt="Trang sách thanh xuân" loading="lazy">
+              <div class="heart-caption-pill">4 năm đại học</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 4; grid-row: 3;" onclick="openLightbox(10)">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+                alt="Đồng đội và bạn bè" loading="lazy">
+              <div class="heart-caption-pill">Đồng hành</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 5; grid-row: 3;" onclick="openLightbox(11)">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80"
+                alt="Nụ cười ngày nhận bằng" loading="lazy">
+              <div class="heart-caption-pill">Tương lai mở rộng</div>
+            </div>
+
+            <!-- Row 4: 3 ảnh gom gọn phần dưới (cột 2, 3, 4) -->
+            <div class="heart-photo-item" style="grid-column: 2; grid-row: 4;" onclick="openLightbox(12)">
+              <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=600&q=80"
+                alt="Góc sân trường nắng ấm" loading="lazy">
+              <div class="heart-caption-pill">Khuôn viên UFM</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 3; grid-row: 4;" onclick="openLightbox(13)">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
+                alt="Màu áo cử nhân UFM" loading="lazy">
+              <div class="heart-caption-pill">Tân cử nhân UFM</div>
+            </div>
+            <div class="heart-photo-item" style="grid-column: 4; grid-row: 4;" onclick="openLightbox(14)">
+              <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
+                alt="Những trang lưu bút" loading="lazy">
+              <div class="heart-caption-pill">Trang thanh xuân</div>
+            </div>
+
+            <!-- Row 5: 1 ảnh chóp nhọn đáy trái tim (cột 3) -->
+            <div class="heart-photo-item" style="grid-column: 3; grid-row: 5;" onclick="openLightbox(15)">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80"
+                alt="Chúc mừng ngày tốt nghiệp" loading="lazy">
+              <div class="heart-caption-pill">Trọn vẹn yêu thương</div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ============================================================
+             LỜI CẢM ƠN CHÂN THÀNH (With Love & Thank you)
+             ============================================================ -->
+      <section class="section-card thankyou-letter" id="sectionThankyou">
+        <div class="thankyou-script-title">With Love & Gratitude</div>
+        <div class="thankyou-sub">Lời Cảm Ơn Từ Trái Tim</div>
+
+        <p class="thankyou-text">
+          Cảm ơn Ba Mẹ đã luôn là điểm tựa vững chãi nhất cuộc đời con.<br>
+          Cảm ơn Quý Thầy Cô đã tận tâm truyền trao tri thức và soi sáng tương lai.<br>
+          Cảm ơn bạn bè thân thương đã cùng Điệp viết nên những trang thanh xuân tuyệt đẹp không thể nào quên.<br>
+          Sự hiện diện và lời chúc của mọi người chính là món quà quý giá nhất trong ngày trọng đại này!
+        </p>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 14px;">
+          <span
+            style="font-size: 0.95rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-matcha-dark); font-weight: 600;">Tân
+            Cử Nhân</span>
+        </div>
+
+        <div class="thankyou-signature">Hồ Tiểu Điệp</div>
+        <div class="thankyou-footer-note">Hẹn gặp bạn vào Thứ Sáu, ngày 13 tháng 11 năm 2026!</div>
+      </section>
 
     </div>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top-btn" id="backToTopBtn" onclick="scrollToTop()" aria-label="Cuộn lên đầu trang">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+  </div>
   </div>
 
   <!-- ============================================================
@@ -4608,7 +4607,7 @@
        ========================================== */
 
     // Đặt tên key cache phiên bản mới để tự động dọn sạch các lời chúc test cũ khỏi bộ nhớ tạm
-        // Xử lý gửi lời chúc mới và xác nhận tham dự (Gửi trực tiếp lên Google Sheets riêng tư)
+    // Xử lý gửi lời chúc mới và xác nhận tham dự (Gửi trực tiếp lên Google Sheets riêng tư)
     async function handleWishSubmit(e) {
       e.preventDefault();
       const submitBtn = document.getElementById('submitWishBtn');
