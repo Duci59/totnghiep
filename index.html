@@ -4174,6 +4174,13 @@
     /* Tính toán vị trí cuộn sao cho nội dung thẻ/phần chính nằm NGAY CHÍNH GIỮA màn hình */
     function getCenteredScrollTarget(targetEl) {
       if (!targetEl) return 0;
+
+      // Với màn hình toàn cảnh 100vh (như #sectionHeroPhoto), cuộn khớp chuẩn xác đỉnh section (0px offset),
+      // triệt tiêu hoàn toàn vệt trắng thừa ở mép trên
+      if (targetEl.id === 'sectionHeroPhoto' || targetEl.classList.contains('fullscreen-photo-screen')) {
+        return Math.max(0, Math.round(targetEl.getBoundingClientRect().top + window.pageYOffset));
+      }
+
       const windowHeight = window.innerHeight;
 
       // Tìm khối nội dung trọng tâm bên trong (như vintage-stamp-frame, location grid, rsvp grid, gallery,...)
