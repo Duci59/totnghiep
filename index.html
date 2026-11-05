@@ -1668,7 +1668,7 @@
         grid-template-columns: 1.25fr 0.85fr;
         gap: 50px;
         align-items: center;
-        text-align: left;
+        text-align: center;
       }
     }
 
@@ -1709,10 +1709,12 @@
       font-style: italic;
       line-height: 1.85;
       margin-bottom: 24px;
+      text-align: center;
     }
 
     .invitation-salutation p {
       margin-bottom: 12px;
+      text-align: center;
     }
 
     .invitation-salutation p:last-child {
@@ -1728,7 +1730,7 @@
 
     @media (min-width: 992px) {
       .graduate-spotlight {
-        align-items: flex-start;
+        align-items: center;
       }
     }
 
@@ -3118,6 +3120,16 @@
       line-height: 2.1;
       padding: 0 16px;
       font-weight: 400;
+      text-align: center;
+    }
+
+    .thankyou-text p {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .thankyou-text p:last-child {
+      margin-bottom: 0;
     }
 
     .thankyou-signature {
@@ -3470,7 +3482,7 @@
             <p class="hero-photo-quote desktop-only">
               "Chặng đường 4 năm đại học khép lại, mở ra hành trình mới tràn ngập niềm tin và tự hào."
             </p>
-            </div>
+          </div>
         </div>
       </section>
 
@@ -3510,8 +3522,10 @@
                   <h2 class="invitation-title">Graduation</h2>
 
                   <div class="invitation-salutation">
-                    <p>"Một hành trình đáng nhớ không chỉ được tạo nên bởi những thành quả, mà còn bởi những kỷ niệm và yêu thương trên suốt chặng đường.</p>
-                    <p>Mình biết ơn vì đã luôn có mọi người đồng hành, động viên và sẻ chia. Sẽ thật trọn vẹn nếu Tiểu Điệp được cùng các bạn lưu giữ khoảnh khắc tốt nghiệp ý nghĩa này.</p>
+                    <p>"Một hành trình đáng nhớ không chỉ được tạo nên bởi những thành quả, mà còn bởi những kỷ niệm và
+                      yêu thương trên suốt chặng đường.</p>
+                    <p>Mình biết ơn vì đã luôn có mọi người đồng hành, động viên và sẻ chia. Sẽ thật trọn vẹn nếu Tiểu
+                      Điệp được cùng các bạn lưu giữ khoảnh khắc tốt nghiệp ý nghĩa này.</p>
                     <p>Cảm ơn vì đã là một phần trong hành trình của mình!"</p>
                   </div>
 
@@ -3523,9 +3537,8 @@
                     <h3 class="graduate-name">Hồ Tiểu Điệp</h3>
 
                     <div class="degree-info-badge">
-                      <span>Cử nhân Marketing & Quản trị Thương hiệu</span>
+                      <span>Viện Công nghệ Tài chính Ngân hàng</span>
                     </div>
-                    <div class="university-name">Trường Đại học Tài Chính - Marketing (UFM)</div>
                   </div>
                 </div>
 
@@ -3706,7 +3719,8 @@
                   </div>
                   <div>
                     <div class="tip-title">Gợi ý đi metro</div>
-                    <div class="tip-desc">🚈 Từ ga gần nhất nhà tình iu đến Ga Ngã Tư Thủ Đức hoặc ga Khu Công nghệ cao rùi bắt grab qua trường mình cho mát mẻ, thuận tiện nha.</div>
+                    <div class="tip-desc">🚈 Từ ga gần nhất nhà tình iu đến Ga Ngã Tư Thủ Đức hoặc ga Khu Công nghệ cao
+                      rùi bắt grab qua trường mình cho mát mẻ, thuận tiện nha.</div>
                   </div>
                 </div>
               </div>
@@ -3809,7 +3823,7 @@
 
                   <div class="form-group">
                     <label class="form-label" for="guestName">Tên của bạn *</label>
-                    <input type="text" id="guestName" class="form-input" placeholder="Ví dụ: Hoàng Yến, Thầy Nam,..."
+                    <input type="text" id="guestName" class="form-input" placeholder="Nhập tên của bạn"
                       required>
                   </div>
 
@@ -3981,12 +3995,10 @@
         <div class="thankyou-script-title">With Love & Gratitude</div>
         <div class="thankyou-sub">Lời Cảm Ơn Từ Trái Tim</div>
 
-        <p class="thankyou-text">
-          Cảm ơn Ba Mẹ đã luôn là điểm tựa vững chãi nhất cuộc đời con.<br>
-          Cảm ơn Quý Thầy Cô đã tận tâm truyền trao tri thức và soi sáng tương lai.<br>
-          Cảm ơn bạn bè thân thương đã cùng Điệp viết nên những trang thanh xuân tuyệt đẹp không thể nào quên.<br>
-          Sự hiện diện và lời chúc của mọi người chính là món quà quý giá nhất trong ngày trọng đại này!
-        </p>
+        <div class="thankyou-text">
+          <p>"Tiểu Điệp luôn tự hào vì đã đi đến ngày hôm nay, nhưng hơn hết là biết ơn vì trên hành trình ấy luôn có những người yêu thương, tin tưởng và đồng hành. Tấm bằng tốt nghiệp là thành quả của riêng mình, nhưng những yêu thương làm nên hành trình này sẽ mãi là điều mà Điệp trân trọng nhất.</p>
+          <p>Cảm ơn vì đã hiện diện, yêu thương và góp phần làm nên một hành trình mà Tiểu Điệp sẽ luôn nhớ mãi."</p>
+        </div>
 
         <div style="display: flex; align-items: center; justify-content: center; gap: 14px;">
           <span
